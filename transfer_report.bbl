@@ -1,0 +1,74 @@
+\begin{thebibliography}{}
+
+\bibitem[Bloem-Reddy et~al., 2018]{bntl}
+Bloem-Reddy, B., Foster, A., Mathieu, E., and Teh, Y.~W. (2018).
+\newblock Sampling and inference for beta neutral-to-the-left models of sparse
+  networks.
+\newblock In {\em Uncertainty in Artifical Intelligence}.
+
+\bibitem[Bloem-Reddy et~al., 2017]{bnpppl}
+Bloem-Reddy, B., Mathieu, E., Foster, A., Rainforth, T., Teh, Y.~W., Ge, H.,
+  Lomel{\'\i}, M., and Ghahramani, Z. (2017).
+\newblock Sampling and inference for discrete random probability measures in
+  probabilistic programs.
+\newblock In {\em NIPS Workshop on Advances in Approximate Bayesian Inference}.
+
+\bibitem[Chaloner, 1984]{chaloner1984}
+Chaloner, K. (1984).
+\newblock Optimal bayesian experimental design for linear models.
+\newblock {\em The Annals of Statistics}, pages 283--300.
+
+\bibitem[Dasgupta, 2006]{dasgupta2006}
+Dasgupta, S. (2006).
+\newblock Coarse sample complexity bounds for active learning.
+\newblock In {\em Advances in neural information processing systems}, pages
+  235--242.
+
+\bibitem[Golovin et~al., 2010]{golovin2010}
+Golovin, D., Krause, A., and Ray, D. (2010).
+\newblock Near-optimal bayesian active learning with noisy observations.
+\newblock In {\em Advances in Neural Information Processing Systems}, pages
+  766--774.
+
+\bibitem[Lindley, 1956]{lindley1956}
+Lindley, D.~V. (1956).
+\newblock On a measure of the information provided by an experiment.
+\newblock {\em The Annals of Mathematical Statistics}, pages 986--1005.
+
+\bibitem[Medin and Schaffer, 1978]{medin1978}
+Medin, D.~L. and Schaffer, M.~M. (1978).
+\newblock Context theory of classification learning.
+\newblock {\em Psychological review}, 85(3):207.
+
+\bibitem[Nowak, 2009]{nowak2009}
+Nowak, R. (2009).
+\newblock Noisy generalized binary search.
+\newblock In {\em Advances in neural information processing systems}, pages
+  1366--1374.
+
+\bibitem[Ouyang et~al., 2016]{ouyang2016}
+Ouyang, L., Tessler, M.~H., Ly, D., and Goodman, N. (2016).
+\newblock Practical optimal experiment design with probabilistic programs.
+\newblock {\em arXiv preprint arXiv:1608.05046}.
+
+\bibitem[van Den~Berg et~al., 2003]{berg2003}
+van Den~Berg, J., Curtis, A., and Trampert, J. (2003).
+\newblock Optimal nonlinear bayesian experimental design: an application to
+  amplitude versus offset experiments.
+\newblock {\em Geophysical Journal International}, 155(2):411--421.
+
+\bibitem[Vanlier et~al., 2012]{vanlier2012}
+Vanlier, J., Tiemann, C.~A., Hilbers, P.~A., and van Riel, N.~A. (2012).
+\newblock A bayesian approach to targeted experiment design.
+\newblock {\em Bioinformatics}, 28(8):1136--1142.
+
+\bibitem[Vincent and Rainforth, 2017]{vincent2017}
+Vincent, B.~T. and Rainforth, T. (2017).
+\newblock The darc toolbox: automated, flexible, and efficient delayed and
+  risky choice experiments using bayesian adaptive design.
+
+\bibitem[Youssef, ]{youssefreview}
+Youssef, N.~A.
+\newblock A review on optimal experimental design.
+
+\end{thebibliography}

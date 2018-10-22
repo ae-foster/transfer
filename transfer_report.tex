@@ -1,0 +1,139 @@
+\documentclass[a4paper, 10pt]{report} %draft
+
+\usepackage[right=1in, left=1in, top=1in, bottom=1in]{geometry}
+\linespread{1.5}
+\usepackage{amsmath, amsthm, amssymb} %math's packages
+\usepackage[utf8]{inputenc} %document encoding
+
+\usepackage{amsmath, amsthm, amssymb}
+\usepackage{enumerate}
+\usepackage{verbatim}
+%\usepackage{indentfirst}
+\usepackage{graphicx}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{subcaption}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage[T1]{fontenc}
+\usepackage{makecell}
+\usepackage{colortbl}
+\usepackage{booktabs}
+%\usepackage{babel}
+\usepackage{array,multirow,graphicx}
+\usepackage{tikz}
+\usepackage[most]{tcolorbox} %using color boxes
+\usepackage{pgfplots} %plots
+\usepackage{standalone} %including other files without preambule
+\usepackage{setspace}
+
+\usetikzlibrary{arrows.meta}
+\hyphenation{distributions}
+\usetikzlibrary{arrows, positioning, shapes.geometric}
+\newtheoremstyle{break}% name
+{}%         Space above, empty = `usual value'
+{}%         Space below
+{\itshape}% Body font
+{}%         Indent amount (empty = no indent, \parindent = para indent)
+{\bfseries}% Thm head font
+{.}%        Punctuation after thm head
+{\newline}% Space after thm head: \newline = linebreak
+{}%         Thm head spec
+
+\graphicspath{ {./Plots_transfer/} }
+%\usepackage[svgnames]{xcolor}
+%\usepackage[round]{natbib}
+
+
+\newcommand{\expect}{\mathbb{E}}	
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\prob}{\mathbb{P}}	
+\newcommand{\tP}{\tilde{P}}	
+\newcommand{\tPg}{\tilde{P}_{\gamma}}	
+\newcommand{\tpi}{\tilde{\pi}}	
+\newcommand{\tpig}{\tilde{\pi}_{\gamma}}
+\newcommand{\tpigLi}{\tilde{P}_{\gamma,L,i}} 
+\newcommand{\tpigLk}{\tilde{P}_{\gamma,L,k}} 
+\newcommand{\tpigJi}{\tilde{P}_{\gamma,J,i}} 
+\newcommand{\tpigJk}{\tilde{P}_{\gamma,J,k}} 
+\newcommand{\RJi}{R_{\gamma,J,i}} 
+\newcommand{\RJk}{R_{\gamma,J,k}}
+\newcommand{\RLi}{R_{\gamma,L,i}} 
+\newcommand{\RLk}{R_{\gamma,L,k}}
+\newcommand{\Qgi}{Q_{\gamma,i}} 
+\newcommand{\Qgk}{Q_{\gamma,k}}
+
+\newcommand{\agi}{a_{\gamma,i}} 
+\newcommand{\agk}{a_{\gamma,k}}  
+\newcommand{\agj}{a_{\gamma,j}}  
+\newcommand{\wgi}{w_{\gamma,i}} 
+\newcommand{\wgk}{w_{\gamma,k}}
+\newcommand{\wgj}{w_{\gamma,j}}
+\newcommand{\giY}{\gamma \in \mathcal{Y}} 
+\newcommand{\bb}[1]{\mathbb{#1}}
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}%[section]
+\newtheorem{assu}[thm]{Assumption}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{cor}[thm]{Corollary}
+%
+\theoremstyle{definition}
+\newtheorem{ex}[thm]{Example}
+\newtheorem{defi}[thm]{Definition}
+\newtheorem{alg}{Algorithm}
+%
+\theoremstyle{remark}
+\newtheorem{remark}[thm]{Remark}
+\renewcommand{\baselinestretch}{1.5}
+
+\begin{document}
+	
+	\include{title_page}
+	
+	\tableofcontents
+	
+\newpage
+	\chapter*{Acknowledgements}
+	\addcontentsline{toc}{chapter}{Acknowledements}
+	I have been fortunate, in the first year of my DPhil, to have worked with a number of brilliant people. First and foremost, I would like to acknowledge the support, advice and patience of my supervisor, Yee Whye Teh. Also within Oxford, both Benjamin Bloem-Reddy and Tom Rainforth have been incredibly generous with their time and expertise. Without them, I would have struggled to achieve much in my first year. I would also like to thank Emile Mathieu for his unwavering support and friendship. I am grateful to Noah Goodman for taking a gamble on an unknown DPhil student and supporting my application to Uber Technologies for an internship. Noah's enthusiasm and guidance made my internship a joy, and also set me on a new and exciting research path. I'd like to extend my thanks to Martin Jankowiak and Eli Bingham, as well as the whole pyro team, for their continued help and support.
+	
+	
+	%The author would like to thank his supervisor, Professor , for his assistance and detailed feedback. 
+	%\newpage
+	
+	\chapter*{Preface}
+	\addcontentsline{toc}{chapter}{Preface}
+	\label{chap:preface}
+	\input{preface}
+	
+	\chapter{Introduction and literature review}
+	\label{chap:intro}
+	\input{intro}
+	
+	\chapter{Probabilistic modelling and inference}
+	\label{chap:probabilistic_modelling}
+	\input{probabilistic_modelling}
+	
+	\chapter{Probabilistic programming}
+	\label{chap:ppl}
+	\input{ppl}
+	
+	\chapter{Optimal experiment design}
+	\label{chap:oed}
+	\input{oed}
+	
+	\chapter{Future directions}
+	\label{chap:future}
+	\input{future}
+	
+	\input{appendix}
+	\clearpage %fixing numeration
+	\addcontentsline{toc}{chapter}{Bibliography}
+	
+	\bibliography{referencs}
+	\bibliographystyle{apalike}
+	
+\end{document}

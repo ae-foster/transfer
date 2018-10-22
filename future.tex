@@ -1,0 +1,48 @@
+\section{EIG}
+\subsection{EIG estimation on simpler models}
+Current project. Focus is on linear-type models (see Kruschke) that are used in applied stats. We can implement some semi-whitebox methods here. The aim is to use these models and EIG estimators in active learning loops. So we want sub-second estimation. This leads to methods based on relatively structued guides.
+
+\subsection{EIG estimation on complex models}
+Very related, but taking a more black box approach. Assume that the model is too complex to build a structured guide, but that the experiment is very expensive. So we can spend more time on EIG estimation. Deep learning approaches, like Donsker-Varadhan, might look more attractive.
+
+\subsection{Theory of EIG estimators}
+Are estimators statistically consistent? Can we estimate, bound or approximate the error, or the relative error across different $d$?
+
+\subsection{EIG gradients}
+How best to estimate the gradient $\partial_d \text{EIG}$? Can we obtain bounds? What would Rainforth gradient estimation look like? Can we optimise EIG in a GAN-like fashion -- iterative updates of $q$ and $d$.
+
+\subsection{EIG optimisation}
+Are there special features of EIG that we can exploit when using Bayes opt, or something else, to do EIG optimisation?
+
+\subsection{Model misspecification}
+How best to deal with model misspecification in experiment design. A uniform increase in $y$ entropy does not change design... what would be the right paradigm for this?
+
+\subsection{Sequential design and active learning}
+Further considerations for using EIG estimation/optimisation in a live active learning loop.
+
+\subsection{Optional stopping}
+Suppose we use posterior entropy as an optional stopping criterion, and use EIG for sequential experiment design. How would this impact final conclusions that we are able to make about data?
+
+\subsection{Dynamic models}
+Experiment design for systems that change as a result of the experimentation. Things like the atmosphere or a pond.
+
+
+\section{Beyond EIG}
+
+\subsection{Causal inference}
+What if we design an experiment for causal strucuture learning? \textit{And} information? How do these fields intersect? Speak to Robin Evans.
+
+\subsection{Power}
+This is a theoretical question. How does the Bayesian notion of EIG intersect with frequentist notions of experiment design, in particular, statistical power?
+
+\subsection{Cost}
+Designing experiments for information, but with a cost assicatiated with each experiment. Sequential case may be more interesting that one shot (which seems simple).
+
+\subsection{Non-greedy}
+Related to above. Solving the non-greedy experimental design problem brings in elements from POMDPs and RL. Should we use EIG here? Should we use RL reward functions? Are they in some sense (approximately) the same? Could greedy EIG optimisation arise as a good approximation to the RL task?
+
+\subsection{Other criteria}
+In active learning, they have criteria about the expected misclassification, and some other criteria. Can we connect these? In classical experiment design they have all these mysterious criteria like $D$-optimality and so on.
+
+\subsection{Experiment design for model criticism}
+Rather than assuming the model to be true and looking to gain information within the model, suppose instead that we have an empirical distribution and seek a new experiment to best expose flaws in the whole model. For instance, when comparing the posterior predictive and empirical distributions (possibly conditional on an input).

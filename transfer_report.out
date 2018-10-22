@@ -1,0 +1,28 @@
+\BOOKMARK [0][-]{chapter*.2}{Acknowledements}{}% 1
+\BOOKMARK [0][-]{chapter*.3}{Preface}{}% 2
+\BOOKMARK [0][-]{chapter.1}{Introduction and literature review}{}% 3
+\BOOKMARK [1][-]{section.1.1}{TODOs}{chapter.1}% 4
+\BOOKMARK [1][-]{section.1.2}{Optimal experiment design}{chapter.1}% 5
+\BOOKMARK [2][-]{subsection.1.2.1}{Literature review}{section.1.2}% 6
+\BOOKMARK [0][-]{chapter.2}{Probabilistic modelling and inference}{}% 7
+\BOOKMARK [0][-]{chapter.3}{Probabilistic programming}{}% 8
+\BOOKMARK [0][-]{chapter.4}{Optimal experiment design}{}% 9
+\BOOKMARK [0][-]{chapter.5}{Future directions}{}% 10
+\BOOKMARK [1][-]{section.5.1}{EIG}{chapter.5}% 11
+\BOOKMARK [2][-]{subsection.5.1.1}{EIG estimation on simpler models}{section.5.1}% 12
+\BOOKMARK [2][-]{subsection.5.1.2}{EIG estimation on complex models}{section.5.1}% 13
+\BOOKMARK [2][-]{subsection.5.1.3}{Theory of EIG estimators}{section.5.1}% 14
+\BOOKMARK [2][-]{subsection.5.1.4}{EIG gradients}{section.5.1}% 15
+\BOOKMARK [2][-]{subsection.5.1.5}{EIG optimisation}{section.5.1}% 16
+\BOOKMARK [2][-]{subsection.5.1.6}{Model misspecification}{section.5.1}% 17
+\BOOKMARK [2][-]{subsection.5.1.7}{Sequential design and active learning}{section.5.1}% 18
+\BOOKMARK [2][-]{subsection.5.1.8}{Optional stopping}{section.5.1}% 19
+\BOOKMARK [2][-]{subsection.5.1.9}{Dynamic models}{section.5.1}% 20
+\BOOKMARK [1][-]{section.5.2}{Beyond EIG}{chapter.5}% 21
+\BOOKMARK [2][-]{subsection.5.2.1}{Causal inference}{section.5.2}% 22
+\BOOKMARK [2][-]{subsection.5.2.2}{Power}{section.5.2}% 23
+\BOOKMARK [2][-]{subsection.5.2.3}{Cost}{section.5.2}% 24
+\BOOKMARK [2][-]{subsection.5.2.4}{Non-greedy}{section.5.2}% 25
+\BOOKMARK [2][-]{subsection.5.2.5}{Other criteria}{section.5.2}% 26
+\BOOKMARK [2][-]{subsection.5.2.6}{Experiment design for model criticism}{section.5.2}% 27
+\BOOKMARK [0][-]{subsection.5.2.6}{Bibliography}{}% 28
