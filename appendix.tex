@@ -1,0 +1,42 @@
+\section{Multi-step experiment design as reinforcement learning}
+\label{sec:oedasrl}
+\subsection{Setup}
+Finite time horizon $t=1, ..., T$.
+\begin{itemize}
+\item States $s_t = (\theta, h_t)$. Where $h_t = d_{1:t}, Y_{1:t}$ the history of designs $d$ and outcomes $Y$ up to the current time. The practical state $s'_t$ consists of the sufficient statistics for $\theta$ obtained from $h_t$. These are the states we will encounter in our trees. Occasionally it is feasible to compute the belief states $b_t$, encoding the full posterior for $\theta$ given that history.
+\item Actions $a_t = d_{t+1}$. Transitions are fully deterministic.
+\item Observations $o_t = (d_t, Y_t)$. Here $Y_t \sim p(y | \theta, d)$ is the outcome of performing the experiment using design $d_t$.
+\item Rewards $r_t = r(t, \theta, d_t, Y_t)$. We take $r$ to be a non-random function. The rewards are functions of the random observations.
+\end{itemize}
+
+\subsection{Connection to information-criterion}
+\subsubsection{Horizon 1}
+Suppose $T=1$. And choose the following reward function
+\begin{equation}
+r(t, \theta, d, y) = \log \frac{p(\theta | y, d)}{p(\theta)} = \log \frac{p(y | \theta, d)}{p(y|d)}
+\end{equation}
+The $Q$-function of action $d_1$ is the expected reward
+\begin{equation}
+	Q(\cdot, d_1) = E_{Y \sim p(y|\theta, d)}[r(t, \theta, d_1, Y)]
+\end{equation}
+
+Since we have no observation of $\theta$, the belief $Q$-function of the belief state $p(\theta)$ and action $d_1$ is
+\begin{equation}
+	Q(p(\theta), d_1) = E_{\Theta \sim p(\theta)}\{E_{Y \sim p(y|\Theta, d)}[r(t, \Theta, d_1, Y)]\}
+\end{equation}
+which reduces to the familiar expression
+\begin{equation}
+	Q(p(\theta), d_1) = \int p(y, \theta | d) \log \frac{p(\theta | y, d)}{p(\theta)} d\theta dy
+\end{equation}
+
+\subsubsection{Horizon $T$}
+This formalism provides a convenient way to avoid the greedy approach to sequential design.
+
+Suppose the belief at time $t$ is $b_t(\theta)$. This can be computed from the sufficient stats $s'_t$. We take the reward to be $0$ at $t<T$ and
+\begin{equation}
+	r(T, \theta, b_T(\theta)) = \log \frac{b_T(\theta) }{p(\theta)}
+\end{equation}
+we have updated $b$ according to Bayes Theorem so
+\begin{equation}
+	b_T(\theta) = p(\theta | Y_{1:T}, d_{1:T})
+\end{equation}

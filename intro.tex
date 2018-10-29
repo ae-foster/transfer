@@ -1,15 +1,22 @@
-\section{TODOs}
+Much of machine learning is concerned with the analysis of given data. By contrast, the fields of optimal experiment design and active learning are concerned with the creation of new data by experimentation or query. In many contexts, careful design of the experiment leads to more efficient learning. The gain in efficiency can be dramatic -- rendering previously infeasible experimental programs feasible. (citation needed)
 
-\begin{itemize}
-	\item Probabilistic modelling is important.
-	\item Applied stats models
-	\item Bayesian nonparametric models
-	\item Probabilistic programming helps to do automation
-\end{itemize}
+Idealised active learning can be represented as follows
+\begin{center}
+\begin{tikzpicture}
+	[every node/.style={inner sep=10,outer sep=0,rounded corners}]
+	\node (design) [draw, align=center] at (0, 0) {Design next \\ experiment};
+	\node (perform) [draw, align=center] at (2, -3.46) {Perform \\ experiment};
+	\node [draw] (analyse) at (-2, -3.46) {Analyse data};
+	\draw [->] (design) -- (perform);
+	\draw [->] (perform) -- (analyse);
+	\draw [->] (analyse) -- (design);
+\end{tikzpicture}
+\end{center}
+It is only within the context of a proposed data analysis that the optimality or suboptimality of an experiment design can be assessed.
 
-
-\section{Optimal experiment design}
-Consider the following graphical model
+\section{Foundations}
+\subsection{Problem specification}
+We assume the data analysis model for the experiment takes the form given by the graphical model
 \begin{center}
 \begin{tikzpicture}
 	\tikzstyle{every node}=[draw,shape=circle]
@@ -20,17 +27,111 @@ Consider the following graphical model
 	\draw [->] (t) -- (y);
 \end{tikzpicture}
 \end{center}
-in which $d$ represents a (non-random) control variate, the design of the experiment, $\theta$ represents a latent variable and $y$ represents the observed outcome of the experiment.
+in which $d$ represents the (non-random) design of the experiment, $\theta$ represents a latent variable and $y$ represents the observed outcome of the experiment. In iterated experiment design, we assume that $\theta$ remains fixed between experiments but $d$ is reselected and $y$ resampled at each experiment. The probabilistic data analysis model is represented by $p(y | \theta, d)$.
+
+
+\subsection{Criteria for one-step design}
+Suppose we assign a real-valued utility $U(y, \theta, d)$ to the event of observing $y$ under design $d$ when the true latent variable was $\theta$. We can average over $y$ to obtain
+\begin{equation}
+	U(\theta, d) = \int p(y | \theta, d)\ U(y, \theta, d)\ dy
+\end{equation}
+We can deal with $\theta$ in various ways
+\begin{itemize}
+	\item The Bayesian approach \cite{chaloner1995} places a prior $p(\theta)$ on $\theta$ and takes $U(d) = \int p(\theta)\ U(\theta, d)\ d\theta$
+	\item The minimax approach \cite{fedorov1972} takes $U(d) = \inf_\theta U(\theta, d)$
+	\item The local approach \cite{pronzato2010} begins with an estimate $\hat{\theta}$ and sets $U(d) = U(\hat{\theta}, d)$
+\end{itemize}
+Here, we primarily focus on the Bayesian approach. This is not an arbitrary decision, it can be motivated from decision theoretic considerations \cite{lindley1972}. See \cite{chaloner1995}, \cite{ryan2015} for further discussion of Bayesian experimental design.
+
+Alternatively, we could take the (matrix-valued) `utility'
+\begin{equation}
+	U(y, \theta, d) = \left( \frac{\partial}{\partial \theta} \log p(y | \theta, d) \right)^2
+\end{equation}
+which leads to the the Fisher Information Matrix, used in many experiment design criteria \cite{pronzato2010}, defined as
+\begin{equation}
+	\mathcal{I}(\theta, d) = \int \left( \frac{\partial}{\partial \theta} \log p(y | \theta, d) \right)^2 p(y | \theta, d)\ dy
+\end{equation}
+We can obtain a scalar utility from $\mathcal{I}(\theta, d)$ by choosing from the `alphabetical' criteria \cite{box1982} which are defined as
+\begin{itemize}
+	\item D-optimality $U(d, \theta) = \text{det } \mathcal{I}(\theta, d)$
+	\item A-optimality $U(d, \theta) = \text{tr } \mathcal{I}(\theta, d)$
+	\item E-optimality $U(d, \theta) = \max_i \lambda_i$ where $\lambda_i$ are the eigenvalues of $\mathcal{I}(\theta, d)$
+\end{itemize}
+
+Work dating back to \cite{lindley1956} instead uses an information-theoretic utility \footnote{It can also be shown \cite{chaloner1995} that this utility leads to a (modified form) of D-optimality for linear models.}
+\begin{equation}
+	U(y, \theta, d) = \log \frac{p(\theta | y, d)}{p(\theta)} = \log \frac{p(y | \theta, d)}{p(y|d)}
+\end{equation}
+and Lindley established that this is the only form that satisfies certain intuitive properties of an informative experiment. For this reason, we will focus on this utility. See \cite{ryan2015} for a fuller discussion of utility functions used in experiment design.
+
+With the information-theoretic utility and Bayesian averaging, we arrive at the following form for $U(d)$, called the \textbf{expected information gain}
+\begin{equation}
+	U(d) = \eig(d) = \int p(y, \theta | d) \log\frac{p(\theta | y, d)}{p(\theta)} \ dy\ d\theta
+\end{equation}
+The EIG can be interpreted in a number of ways
+\begin{enumerate}
+\item As the expectation of information gain. If we define
+\begin{equation}
+	\text{IG}(y, d) = \text{KL}(\ p(\theta | y, d)\ ||\ p(\theta)\ ) 
+\end{equation}
+then $\eig(d) = \expect_{y\sim p(y|d)}[\text{IG}(y, d)] $.
+\item From APE. Define the \textbf{average posterior entropy} (APE) as 
+\begin{align}
+	\ape(d) &= \int p(y, \theta | d) \log p(\theta | y, d) \ dy \ d\theta \\
+	&= -\int p(y|d) \entropy{p(\theta | y, d)}
+\end{align}
+where $H$ is the differential entropy.
+Then
+\begin{equation}
+	\eig(d) = \entropy{p(\theta)} - \ape(d)
+\end{equation}
+and the prior entropy is a constant w.r.t. $d$. Thus EIG maximisation corresponds to APE
+minimisation.
+\item Mutual information. Recall the mutual information is defined as
+\begin{equation}
+	\text{MI}(x, y) = \kl{p(x, y)}{p(x)p(y)}
+\end{equation}
+then we have
+\begin{align}
+	\text{MI}(y, \theta | d) &= \kl{p(y, \theta | d)}{p(y|d)p(\theta)} \\
+	&= \int p(y, \theta | d) \log \frac{p(y, \theta | d)}{p(\theta)p(y|d)} \\
+	&= \eig(d)
+\end{align}
+\item Epistemic uncertainty.
+The total entropy or uncertainty in response $y$ is
+\begin{equation}
+	\entropy{p(y|d)}
+\end{equation}
+the aleatoric uncertainty under parameter $\theta$ is
+\begin{equation}
+	\entropy{p(y|\theta, d)}
+\end{equation}
+Under prior $p(\theta)$, the expected aleatoric uncertainty is
+\begin{equation}
+	\expect_{\theta \sim p(\theta)}\left[ \entropy{p(y|\theta, d)} \right]
+\end{equation}
+The epistemic uncertainty, under $p(\theta)$, is
+\begin{align}
+	&\entropy{p(y|d)} - \expect_{\theta \sim p(\theta)}\left[ \entropy{p(y|\theta, d)} \right] \\
+	=&-\int p(y|d)\log p(y|d) + \int p(y, \theta | d)\log p(y|\theta, d)\\
+	=& \eig(d)
+\end{align}
+
+\end{enumerate}
+
+
+\subsection{Criteria for multi-step design}
+Designing a sequence of multiple experiments, with a view to maximise expected utility can be viewed as a partially observable Markov Decision Process, and falls within the scope of reinforcement learning \cite{pang2018}. The problem is also referred to as backward induction or stochastic dynamic programming. See \ref{sec:oedasrl} for an explicit representation of experiment design as RL. A typical approximate strategy is to optimise the expected utility at each experiment (the greedy strategy), although some have considered non-greedy strategies \cite{gonzalez2016} \cite{pang2018}. See \cite[sec 6.1]{ryan2015} for a summary of backwards induction approaches.
 
 
 
-1. introduce the problem
-2. discuss EIG. Where does EIG come from? Interpretations of EIG
-3. literature review-- who uses OED, how have they approached the problem?
-4. mutual information lit review
 
 
-\subsection{Literature review}
+\subsection{Statistical validity}
+References for consistency
+
+
+\subsection{Applications}
 TODO: Major revisions needed
 
 \subsubsection{Machine learning and statistics}

@@ -13,10 +13,20 @@ Bloem-Reddy, B., Mathieu, E., Foster, A., Rainforth, T., Teh, Y.~W., Ge, H.,
   probabilistic programs.
 \newblock In {\em NIPS Workshop on Advances in Approximate Bayesian Inference}.
 
+\bibitem[Box, 1982]{box1982}
+Box, G.~E. (1982).
+\newblock Choice of response surface design and alphabetic optimality.
+\newblock Technical report, WISCONSIN UNIV-MADISON MATHEMATICS RESEARCH CENTER.
+
 \bibitem[Chaloner, 1984]{chaloner1984}
 Chaloner, K. (1984).
 \newblock Optimal bayesian experimental design for linear models.
 \newblock {\em The Annals of Statistics}, pages 283--300.
+
+\bibitem[Chaloner and Verdinelli, 1995]{chaloner1995}
+Chaloner, K. and Verdinelli, I. (1995).
+\newblock Bayesian experimental design: A review.
+\newblock {\em Statistical Science}, pages 273--304.
 
 \bibitem[Dasgupta, 2006]{dasgupta2006}
 Dasgupta, S. (2006).
@@ -24,16 +34,31 @@ Dasgupta, S. (2006).
 \newblock In {\em Advances in neural information processing systems}, pages
   235--242.
 
+\bibitem[Fedorov, 1972]{fedorov1972}
+Fedorov, V. (1972).
+\newblock {\em Theory of optimal experiments}.
+\newblock Academic Press, New York.
+
 \bibitem[Golovin et~al., 2010]{golovin2010}
 Golovin, D., Krause, A., and Ray, D. (2010).
 \newblock Near-optimal bayesian active learning with noisy observations.
 \newblock In {\em Advances in Neural Information Processing Systems}, pages
   766--774.
 
+\bibitem[Gonz{\'a}lez et~al., 2016]{gonzalez2016}
+Gonz{\'a}lez, J., Osborne, M., and Lawrence, N. (2016).
+\newblock Glasses: Relieving the myopia of bayesian optimisation.
+\newblock In {\em Artificial Intelligence and Statistics}, pages 790--799.
+
 \bibitem[Lindley, 1956]{lindley1956}
 Lindley, D.~V. (1956).
 \newblock On a measure of the information provided by an experiment.
 \newblock {\em The Annals of Mathematical Statistics}, pages 986--1005.
+
+\bibitem[Lindley, 1972]{lindley1972}
+Lindley, D.~V. (1972).
+\newblock {\em Bayesian statistics, a review}, volume~2.
+\newblock SIAM.
 
 \bibitem[Medin and Schaffer, 1978]{medin1978}
 Medin, D.~L. and Schaffer, M.~M. (1978).
@@ -50,6 +75,23 @@ Nowak, R. (2009).
 Ouyang, L., Tessler, M.~H., Ly, D., and Goodman, N. (2016).
 \newblock Practical optimal experiment design with probabilistic programs.
 \newblock {\em arXiv preprint arXiv:1608.05046}.
+
+\bibitem[Pang et~al., 2018]{pang2018}
+Pang, K., Dong, M., Wu, Y., and Hospedales, T. (2018).
+\newblock Meta-learning transferable active learning policies by deep
+  reinforcement learning.
+\newblock {\em arXiv preprint arXiv:1806.04798}.
+
+\bibitem[Pronzato, 2010]{pronzato2010}
+Pronzato, L. (2010).
+\newblock One-step ahead adaptive d-optimal design on a finite design space is
+  asymptotically optimal.
+\newblock {\em Metrika}, 71(2):219--238.
+
+\bibitem[Ryan et~al., 2015]{ryan2015}
+Ryan, E.~G., Drovandi, C.~C., and Pettitt, A.~N. (2015).
+\newblock Fully bayesian experimental design for pharmacokinetic studies.
+\newblock {\em Entropy}, 17(3):1063--1089.
 
 \bibitem[van Den~Berg et~al., 2003]{berg2003}
 van Den~Berg, J., Curtis, A., and Trampert, J. (2003).

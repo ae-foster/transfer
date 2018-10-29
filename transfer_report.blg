@@ -1,51 +1,55 @@
-This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
-Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+This is BibTeX, Version 0.99d (TeX Live 2018)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: transfer_report.aux
 A level-1 auxiliary file: title_page.aux
 The style file: apalike.bst
 Database file #1: referencs.bib
+Repeated entry---line 122 of file referencs.bib
+ : @article{lindley1956
+ :                     ,
+I'm skipping whatever remains of this entry
 Warning--empty journal in vincent2017
 Warning--empty year in youssefreview
 Warning--empty journal in youssefreview
-You've used 13 entries,
+You've used 21 entries,
             1935 wiz_defined-function locations,
-            549 strings with 5905 characters,
-and the built_in function-call counts, 5611 in all, are:
-= -- 554
-> -- 209
-< -- 12
-+ -- 76
-- -- 70
-* -- 427
-:= -- 926
-add.period$ -- 37
-call.type$ -- 13
-change.case$ -- 100
-chr.to.int$ -- 13
-cite$ -- 16
-duplicate$ -- 246
-empty$ -- 407
-format.name$ -- 87
-if$ -- 1142
+            593 strings with 7016 characters,
+and the built_in function-call counts, 8653 in all, are:
+= -- 859
+> -- 309
+< -- 20
++ -- 108
+- -- 102
+* -- 658
+:= -- 1445
+add.period$ -- 61
+call.type$ -- 21
+change.case$ -- 155
+chr.to.int$ -- 21
+cite$ -- 24
+duplicate$ -- 376
+empty$ -- 630
+format.name$ -- 129
+if$ -- 1753
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 13
-newline$ -- 66
-num.names$ -- 39
-pop$ -- 115
+missing$ -- 22
+newline$ -- 106
+num.names$ -- 63
+pop$ -- 170
 preamble$ -- 1
-purify$ -- 100
+purify$ -- 156
 quote$ -- 0
-skip$ -- 192
+skip$ -- 297
 stack$ -- 0
-substring$ -- 398
-swap$ -- 58
-text.length$ -- 5
+substring$ -- 614
+swap$ -- 84
+text.length$ -- 8
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 78
+type$ -- 122
 warning$ -- 3
-while$ -- 46
+while$ -- 72
 width$ -- 0
-write$ -- 161
-(There were 3 warnings)
+write$ -- 263
+(There was 1 error message)
