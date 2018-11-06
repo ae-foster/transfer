@@ -1,5 +1,22 @@
 \begin{thebibliography}{}
 
+\bibitem[Barber and Agakov, 2004]{ba}
+Barber, D. and Agakov, F. (2004).
+\newblock The im algorithm: a variational approach to information maximization.
+\newblock {\em Advances in Neural Information Processing Systems}, 16:201.
+
+\bibitem[Belghazi et~al., 2018]{mine}
+Belghazi, I., Rajeswar, S., Baratin, A., Hjelm, R.~D., and Courville, A.
+  (2018).
+\newblock Mine: mutual information neural estimation.
+\newblock {\em arXiv preprint arXiv:1801.04062}.
+
+\bibitem[Berry and Fristedt, 1985]{berry1985}
+Berry, D.~A. and Fristedt, B. (1985).
+\newblock Bandit problems: sequential allocation of experiments (monographs on
+  statistics and applied probability).
+\newblock {\em London: Chapman and Hall}, 5.
+
 \bibitem[Bloem-Reddy et~al., 2018]{bntl}
 Bloem-Reddy, B., Foster, A., Mathieu, E., and Teh, Y.~W. (2018).
 \newblock Sampling and inference for beta neutral-to-the-left models of sparse
@@ -28,6 +45,19 @@ Chaloner, K. and Verdinelli, I. (1995).
 \newblock Bayesian experimental design: A review.
 \newblock {\em Statistical Science}, pages 273--304.
 
+\bibitem[Chen et~al., 2018]{tianqichen}
+Chen, T.~Q., Li, X., Grosse, R., and Duvenaud, D. (2018).
+\newblock Isolating sources of disentanglement in variational autoencoders.
+\newblock {\em arXiv preprint arXiv:1802.04942}.
+
+\bibitem[Chen et~al., 2016]{infogan}
+Chen, X., Duan, Y., Houthooft, R., Schulman, J., Sutskever, I., and Abbeel, P.
+  (2016).
+\newblock Infogan: Interpretable representation learning by information
+  maximizing generative adversarial nets.
+\newblock In {\em Advances in neural information processing systems}, pages
+  2172--2180.
+
 \bibitem[Dasgupta, 2006]{dasgupta2006}
 Dasgupta, S. (2006).
 \newblock Coarse sample complexity bounds for active learning.
@@ -50,6 +80,11 @@ Gonz{\'a}lez, J., Osborne, M., and Lawrence, N. (2016).
 \newblock Glasses: Relieving the myopia of bayesian optimisation.
 \newblock In {\em Artificial Intelligence and Statistics}, pages 790--799.
 
+\bibitem[Hu, 1998]{hu1998}
+Hu, I. (1998).
+\newblock On sequential designs in nonlinear problems.
+\newblock {\em Biometrika}, 85(2):496--503.
+
 \bibitem[Lindley, 1956]{lindley1956}
 Lindley, D.~V. (1956).
 \newblock On a measure of the information provided by an experiment.
@@ -60,16 +95,35 @@ Lindley, D.~V. (1972).
 \newblock {\em Bayesian statistics, a review}, volume~2.
 \newblock SIAM.
 
+\bibitem[Long et~al., 2013]{long2013}
+Long, Q., Scavino, M., Tempone, R., and Wang, S. (2013).
+\newblock Fast estimation of expected information gains for bayesian
+  experimental designs based on laplace approximations.
+\newblock {\em Computer Methods in Applied Mechanics and Engineering},
+  259:24--39.
+
 \bibitem[Medin and Schaffer, 1978]{medin1978}
 Medin, D.~L. and Schaffer, M.~M. (1978).
 \newblock Context theory of classification learning.
 \newblock {\em Psychological review}, 85(3):207.
+
+\bibitem[Myung et~al., 2013]{myung2013}
+Myung, J.~I., Cavagnaro, D.~R., and Pitt, M.~A. (2013).
+\newblock A tutorial on adaptive design optimization.
+\newblock {\em Journal of mathematical psychology}, 57(3-4):53--67.
 
 \bibitem[Nowak, 2009]{nowak2009}
 Nowak, R. (2009).
 \newblock Noisy generalized binary search.
 \newblock In {\em Advances in neural information processing systems}, pages
   1366--1374.
+
+\bibitem[Nowozin et~al., 2016]{fgan}
+Nowozin, S., Cseke, B., and Tomioka, R. (2016).
+\newblock f-gan: Training generative neural samplers using variational
+  divergence minimization.
+\newblock In {\em Advances in Neural Information Processing Systems}, pages
+  271--279.
 
 \bibitem[Ouyang et~al., 2016]{ouyang2016}
 Ouyang, L., Tessler, M.~H., Ly, D., and Goodman, N. (2016).
@@ -82,11 +136,22 @@ Pang, K., Dong, M., Wu, Y., and Hospedales, T. (2018).
   reinforcement learning.
 \newblock {\em arXiv preprint arXiv:1806.04798}.
 
+\bibitem[Paninski, 2005]{paninski2005}
+Paninski, L. (2005).
+\newblock Asymptotic theory of information-theoretic experimental design.
+\newblock {\em Neural Computation}, 17(7):1480--1507.
+
 \bibitem[Pronzato, 2010]{pronzato2010}
 Pronzato, L. (2010).
 \newblock One-step ahead adaptive d-optimal design on a finite design space is
   asymptotically optimal.
 \newblock {\em Metrika}, 71(2):219--238.
+
+\bibitem[Rainforth et~al., 2018]{nmc}
+Rainforth, T., Cornish, R., Yang, H., Warrington, A., and Wood, F. (2018).
+\newblock On nesting monte carlo estimators.
+\newblock In {\em International Conference on Machine Learning}, pages
+  4264--4273.
 
 \bibitem[Ryan et~al., 2015]{ryan2015}
 Ryan, E.~G., Drovandi, C.~C., and Pettitt, A.~N. (2015).

@@ -1,25 +1,30 @@
 \section{Multi-step experiment design as reinforcement learning}
 \label{sec:oedasrl}
 \subsection{Setup}
-Finite time horizon $t=1, ..., T$.
+Suppose we have a determinic, finite time horizon $t=1, ..., T$. We specify as Partially Observable Markov Decision Process (POMDP) as follows.
 \begin{itemize}
-\item States $s_t = (\theta, h_t)$. Where $h_t = d_{1:t}, Y_{1:t}$ the history of designs $d$ and outcomes $Y$ up to the current time. The practical state $s'_t$ consists of the sufficient statistics for $\theta$ obtained from $h_t$. These are the states we will encounter in our trees. Occasionally it is feasible to compute the belief states $b_t$, encoding the full posterior for $\theta$ given that history.
-\item Actions $a_t = d_{t+1}$. Transitions are fully deterministic.
+\item States $s_t = (\theta, h_t)$, where $h_t = d_{1:t}, Y_{1:t}$ the history of designs $d$ and outcomes $Y$ up to the current time. The practical state $s'_t$ consists of the sufficient statistics for $\theta$ obtained from $h_t$. Occasionally it is feasible to compute the belief states $b_t$, encoding the full posterior for $\theta$ given that history $h_t$.
+\item Actions $a_t = d_{t+1}$. Transitions correspond to running the experiment and producing the outcome $Y_{t+1}$.
 \item Observations $o_t = (d_t, Y_t)$. Here $Y_t \sim p(y | \theta, d)$ is the outcome of performing the experiment using design $d_t$.
-\item Rewards $r_t = r(t, \theta, d_t, Y_t)$. We take $r$ to be a non-random function. The rewards are functions of the random observations.
+\item Rewards $r_t = r(t, \theta, h_t)$. We take $r$ to be a non-random function. Note that in many OED settings, we take $r_t = 0$ for $t<T$. Intuitively, this means we only care about our final understanding of or action upon the system, not the path taken to it. This is the choice made by \cite{gonzalez2016} among others.
 \end{itemize}
+Under this set-up, the \textit{optimal experiment design policy} is a $\pi$ from histories $h_t$ to actions $a_t$ which maximises the total reward
+\begin{equation}
+	R_T = \expect \left[ \sum_{t=1}^T \gamma^t r_t \mid \pi \right]
+\end{equation}
+where $\gamma \in [0,1]$ is the discount factor. In a finite horizon setting, we typically set this to 1.
+
 
 \subsection{Connection to information-criterion}
 \subsubsection{Horizon 1}
-Suppose $T=1$. And choose the following reward function
+Suppose $T=1$. Choose the following reward function
 \begin{equation}
-r(t, \theta, d, y) = \log \frac{p(\theta | y, d)}{p(\theta)} = \log \frac{p(y | \theta, d)}{p(y|d)}
+r(1, \theta, h) = \log \frac{p(\theta | y, d)}{p(\theta)} = \log \frac{p(y | \theta, d)}{p(y|d)}
 \end{equation}
 The $Q$-function of action $d_1$ is the expected reward
 \begin{equation}
-	Q(\cdot, d_1) = E_{Y \sim p(y|\theta, d)}[r(t, \theta, d_1, Y)]
+	Q(s_0, d_1) = E_{Y \sim p(y|\theta, d)}[r(t, \theta, d_1, Y)]
 \end{equation}
-
 Since we have no observation of $\theta$, the belief $Q$-function of the belief state $p(\theta)$ and action $d_1$ is
 \begin{equation}
 	Q(p(\theta), d_1) = E_{\Theta \sim p(\theta)}\{E_{Y \sim p(y|\Theta, d)}[r(t, \Theta, d_1, Y)]\}
@@ -34,7 +39,7 @@ This formalism provides a convenient way to avoid the greedy approach to sequent
 
 Suppose the belief at time $t$ is $b_t(\theta)$. This can be computed from the sufficient stats $s'_t$. We take the reward to be $0$ at $t<T$ and
 \begin{equation}
-	r(T, \theta, b_T(\theta)) = \log \frac{b_T(\theta) }{p(\theta)}
+	r(T, \theta, h_T) = r(T, \theta, b_T(\theta)) = \log \frac{b_T(\theta) }{p(\theta)}
 \end{equation}
 we have updated $b$ according to Bayes Theorem so
 \begin{equation}

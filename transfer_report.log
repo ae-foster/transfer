@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.10.24)  30 OCT 2018 10:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.10.31)  6 NOV 2018 14:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -777,10 +777,10 @@ Library (tcolorbox): 'tcbfitting.code.tex' version '4.14'
 Library (tcolorbox): 'tcbxparse.code.tex' version '4.14'
 (/usr/local/texlive/2018/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 (/usr/local/texlive/2018/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2018-10-19 L3 programming layer (loader) 
+Package: expl3 2018-10-26 L3 programming layer (loader) 
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/l3kernel/expl3-code.tex
-Package: expl3 2018-10-19 L3 programming layer (code)
+Package: expl3 2018-10-26 L3 programming layer (code)
 \c_max_int=\count168
 \l_tmpa_int=\count169
 \l_tmpb_int=\count170
@@ -927,7 +927,7 @@ Package: expl3 2018-10-19 L3 programming layer (code)
 \l__seq_internal_b_int=\count317
 )
 (/usr/local/texlive/2018/texmf-dist/tex/latex/l3kernel/l3pdfmode.def
-File: l3pdfmode.def 2018-10-19 v L3 Experimental driver: PDF mode
+File: l3pdfmode.def 2018-10-26 v L3 Experimental driver: PDF mode
 \l__driver_color_stack_int=\count318
 ))
 Package: xparse 2018-10-17 L3 Experimental document command parser
@@ -1220,20 +1220,20 @@ File: pgflibraryshapes.geometric.code.tex 2008/06/26 v3.0.1a (rcs-revision 1.1)
  (./transfer_report.aux (./title_page.aux))
 \openout1 = `transfer_report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 97.
-LaTeX Font Info:    ... okay on input line 97.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 97.
-LaTeX Font Info:    ... okay on input line 97.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 97.
-LaTeX Font Info:    ... okay on input line 97.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 97.
-LaTeX Font Info:    ... okay on input line 97.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 97.
-LaTeX Font Info:    ... okay on input line 97.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 97.
-LaTeX Font Info:    ... okay on input line 97.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 97.
-LaTeX Font Info:    ... okay on input line 97.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1304,7 +1304,7 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \AtBeginShipoutBox=\box77
-Package hyperref Info: Link coloring OFF on input line 97.
+Package hyperref Info: Link coloring OFF on input line 99.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -1314,9 +1314,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count346
 )
-LaTeX Info: Redefining \ref on input line 97.
-LaTeX Info: Redefining \pageref on input line 97.
-LaTeX Info: Redefining \nameref on input line 97.
+LaTeX Info: Redefining \ref on input line 99.
+LaTeX Info: Redefining \pageref on input line 99.
+LaTeX Info: Redefining \nameref on input line 99.
 
 (./transfer_report.out) (./transfer_report.out)
 \@outlinefile=\write6
@@ -1328,7 +1328,7 @@ ABD: EveryShipout initializing macros
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.16} into 
 your preamble.
- on input line 97.
+ on input line 99.
 
 \openout2 = `title_page.aux'.
 
@@ -1345,7 +1345,7 @@ converted-to.pdf>
 rtical_CMYK-eps-converted-to.pdf figures/Dept_Stats_logo_vertical_CMYK.eps>
 (epstopdf)             \includegraphics on input line 6.
 Package epstopdf Info: Output file is already uptodate.
-<figures/Dept_Stats_logo_vertical_CMYK-eps-converted-to.pdf, id=179, 110.4125pt
+<figures/Dept_Stats_logo_vertical_CMYK-eps-converted-to.pdf, id=207, 110.4125pt
  x 145.54375pt>
 File: figures/Dept_Stats_logo_vertical_CMYK-eps-converted-to.pdf Graphic file (
 type pdf)
@@ -1372,7 +1372,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.32 ...e {5.2.4}Non-greedy}{15}{subsection.5.2.4}
+l.39 ...8}Optional stopping}{22}{subsection.5.1.8}
                                                    [1
 
 
@@ -1394,126 +1394,135 @@ Chapter 1.
 (./intro.tex [5
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 40.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 47.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 40.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 47.
 
-Overfull \hbox (6.4477pt too wide) in paragraph at lines 49--51
+Overfull \hbox (6.4477pt too wide) in paragraph at lines 60--62
 \T1/cmr/m/n/10 which leads to the the Fisher In-for-ma-tion Ma-trix, used in ma
 ny ex-per-i-ment de-sign cri-te-ria [[]],
  []
 
-[6] [7] [8]
-Overfull \hbox (18.74002pt too wide) in paragraph at lines 146--147
+[6] [7] [8] [9]
+Overfull \hbox (17.9773pt too wide) in paragraph at lines 211--212
+\T1/cmr/m/n/10 Some have con-sid-ered non-greedy strate-gies [[]] [[]]. See [[]
+,
+ []
+
+[10] [11] [12] [13]
+
+LaTeX Warning: Reference `chap:voed' on page 14 undefined on input line 324.
+
+
+LaTeX Warning: Citation `shahriari2016' on page 14 undefined on input line 344.
+
+
+
+LaTeX Warning: Citation `pes' on page 14 undefined on input line 351.
+
+[14]
+
+LaTeX Warning: Citation `srinivas2009' on page 15 undefined on input line 353.
+
+
+LaTeX Warning: Citation `mcleod2017' on page 15 undefined on input line 355.
+
+
+Overfull \hbox (18.74002pt too wide) in paragraph at lines 369--370
 []\T1/cmr/m/n/10 The con-nec-tion be-tween ac-tive learn-ing and Bayesian op-ti
 -mal de-sign was ex-plored in [[]].
  []
 
-
-Overfull \hbox (64.88043pt too wide) in paragraph at lines 157--158
+[15]
+Overfull \hbox (64.88043pt too wide) in paragraph at lines 380--381
 []\T1/cmr/m/n/10 A canon-i-cal ex-per-i-ment dis-cussed in this pa-per is the 5
 -4 ex-per-i-ment for cat-e-gory learn-ing [[]].
  []
 
-[9]) [10]
+[16]) [17]
 Chapter 2.
-(./probabilistic_modelling.tex) [11
+(./probabilistic_modelling.tex) [18
 
 ]
 Chapter 3.
-(./ppl.tex) [12
+(./ppl.tex) [19
 
 ]
 Chapter 4.
-(./oed.tex) [13
+(./oed.tex) [20
 
 ]
 Chapter 5.
-(./future.tex [14
+(./future.tex [21
 
-] [15]) [16]
+] [22]) [23]
 Chapter 6.
-(./appendix.tex [17
+(./appendix.tex [24
 
-]) [18] (./transfer_report.bbl [19
+]) [25] (./transfer_report.bbl [26
 
 
-]) [20]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 145.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 145.
+] [27]) [28]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 147.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 147.
 
 (./transfer_report.aux (./title_page.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 145.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 145.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 147.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 147.
+Package rerunfilecheck Info: File `transfer_report.out' has not changed.
+(rerunfilecheck)             Checksum: 889A25F04EB02A6694151C40D4CEE7B8;2820.
 
 
-Package rerunfilecheck Warning: File `transfer_report.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
+LaTeX Warning: There were undefined references.
 
-Package rerunfilecheck Info: Checksums for `transfer_report.out':
-(rerunfilecheck)             Before: 268921F2E0F59CEDC5723F57D1AB00CB;2356
-(rerunfilecheck)             After:  AF3B7DB67620D65A452FFEEC710EC596;2400.
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 145.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 147.
  ) 
 Here is how much of TeX's memory you used:
- 46784 strings out of 492639
- 1068034 string characters out of 6129286
- 1251811 words of memory out of 5000000
- 49837 multiletter control sequences out of 15000+600000
+ 46908 strings out of 492639
+ 1069565 string characters out of 6129286
+ 1252831 words of memory out of 5000000
+ 49892 multiletter control sequences out of 15000+600000
  550953 words of font info for 63 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
- 63i,10n,101p,1380b,627s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 63i,13n,101p,1380b,627s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exi
 st, replaced by a fixed one
-
-pdfTeX warning (dest): name{equation.5.3.6} has been referenced but does not ex
-ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.5.3.2} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.5.3.1} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.5.3} has been referenced but does not exist
-, replaced by a fixed one
 
 {/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</
 usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></u
 sr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
-r/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/
-local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/lo
-cal/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local
-/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/te
-xlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/tex
-live/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texli
-ve/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/t
-exlive/2018/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/tex
-live/2018/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texli
-ve/2018/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive
-/2018/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/local/texlive/2
-018/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/201
-8/texmf-dist/fonts/type1/public/cm-super/sfcc1200.pfb></usr/local/texlive/2018/
-texmf-dist/fonts/type1/public/cm-super/sfcc1440.pfb></usr/local/texlive/2018/te
-xmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/texlive/2018/texm
-f-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive/2018/texmf-
-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2018/texmf-di
-st/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2018/texmf-dist
-/fonts/type1/public/cm-super/sfrm2488.pfb></usr/local/texlive/2018/texmf-dist/f
-onts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2018/texmf-dist/fon
-ts/type1/public/cm-super/sfti1200.pfb></usr/local/texlive/2018/texmf-dist/fonts
-/type1/public/cm-super/sftt1000.pfb>
-Output written on transfer_report.pdf (21 pages, 408084 bytes).
+r/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/
+local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/lo
+cal/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/loca
+l/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/t
+exlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texl
+ive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texli
+ve/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive
+/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2
+018/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texli
+ve/2018/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive
+/2018/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2
+018/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/201
+8/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/local/texlive/2018/
+texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2018/te
+xmf-dist/fonts/type1/public/cm-super/sfcc1200.pfb></usr/local/texlive/2018/texm
+f-dist/fonts/type1/public/cm-super/sfcc1440.pfb></usr/local/texlive/2018/texmf-
+dist/fonts/type1/public/cm-super/sfrm0500.pfb></usr/local/texlive/2018/texmf-di
+st/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/texlive/2018/texmf-dist
+/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive/2018/texmf-dist/f
+onts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2018/texmf-dist/fon
+ts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2018/texmf-dist/fonts
+/type1/public/cm-super/sfrm2488.pfb></usr/local/texlive/2018/texmf-dist/fonts/t
+ype1/public/cm-super/sfti1000.pfb></usr/local/texlive/2018/texmf-dist/fonts/typ
+e1/public/cm-super/sfti1200.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1
+/public/cm-super/sftt1000.pfb>
+Output written on transfer_report.pdf (29 pages, 490189 bytes).
 PDF statistics:
- 537 PDF objects out of 1000 (max. 8388607)
- 459 compressed objects within 5 object streams
- 120 named destinations out of 1000 (max. 500000)
- 434 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 713 PDF objects out of 1000 (max. 8388607)
+ 622 compressed objects within 7 object streams
+ 189 named destinations out of 1000 (max. 500000)
+ 490 words of extra memory for PDF output out of 10000 (max. 10000000)
 

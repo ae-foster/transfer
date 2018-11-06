@@ -4,52 +4,52 @@ The top-level auxiliary file: transfer_report.aux
 A level-1 auxiliary file: title_page.aux
 The style file: apalike.bst
 Database file #1: referencs.bib
-Repeated entry---line 122 of file referencs.bib
- : @article{lindley1956
- :                     ,
+Repeated entry---line 253 of file referencs.bib
+ : @article{long2013
+ :                  ,
 I'm skipping whatever remains of this entry
 Warning--empty journal in vincent2017
 Warning--empty year in youssefreview
 Warning--empty journal in youssefreview
-You've used 21 entries,
+You've used 32 entries,
             1935 wiz_defined-function locations,
-            593 strings with 7016 characters,
-and the built_in function-call counts, 8653 in all, are:
-= -- 859
-> -- 309
-< -- 20
-+ -- 108
-- -- 102
-* -- 658
-:= -- 1445
-add.period$ -- 61
-call.type$ -- 21
-change.case$ -- 155
-chr.to.int$ -- 21
-cite$ -- 24
-duplicate$ -- 376
-empty$ -- 630
-format.name$ -- 129
-if$ -- 1753
+            655 strings with 8818 characters,
+and the built_in function-call counts, 13555 in all, are:
+= -- 1345
+> -- 520
+< -- 27
++ -- 184
+- -- 174
+* -- 1061
+:= -- 2268
+add.period$ -- 94
+call.type$ -- 32
+change.case$ -- 246
+chr.to.int$ -- 32
+cite$ -- 35
+duplicate$ -- 570
+empty$ -- 964
+format.name$ -- 216
+if$ -- 2731
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 22
-newline$ -- 106
-num.names$ -- 63
-pop$ -- 170
+missing$ -- 33
+newline$ -- 161
+num.names$ -- 96
+pop$ -- 257
 preamble$ -- 1
-purify$ -- 156
+purify$ -- 247
 quote$ -- 0
-skip$ -- 297
+skip$ -- 451
 stack$ -- 0
-substring$ -- 614
-swap$ -- 84
-text.length$ -- 8
+substring$ -- 965
+swap$ -- 126
+text.length$ -- 11
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 122
+type$ -- 188
 warning$ -- 3
-while$ -- 72
+while$ -- 112
 width$ -- 0
-write$ -- 263
+write$ -- 404
 (There was 1 error message)
