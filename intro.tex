@@ -320,6 +320,7 @@ and we note that we can replace $\psi_{nm'}$ with $\psi_m$ when $\theta$ and $\p
 A number of authors \cite{long2013, ryan2015} use some form of Laplace approximation to $p(\theta|y,d)$ to estimate expected information gain. In \cite{ouyang2016}, probabilistic programming is used to completely solve the inference problem (in finite spaces) en route to estimating EIG.
 
 \subsection{Mutual information estimation}
+\label{sec:mie}
 As mentioned previously, EIG estimation is mathematically equivalent to mutual information estimation, a topic that has received recent attention in part due to the connection with Generative Adversarial Networks (GANs) \cite{infogan} and disentanglement \cite{tianqichen}. In the following section, we drop $d$ from our graphical model, and consider a joint density $p(y, \theta) = p(\theta)p(y|\theta)$.
 
 Since $p(\theta|y)$ is typically an intractable, we might use an approximation $q(\theta|y)$. An idea used by \cite{ba} and \cite{infogan} is to bound the mutual information in terms of an amortised posterior $q(\theta|y)$ as

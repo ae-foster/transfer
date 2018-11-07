@@ -239,6 +239,11 @@ Rezende, D.~J., Mohamed, S., and Wierstra, D. (2014).
   generative models.
 \newblock In {\em ICML}.
 
+\bibitem[Robbins and Monro, 1951]{robbins1951stochastic}
+Robbins, H. and Monro, S. (1951).
+\newblock A stochastic approximation method.
+\newblock {\em The annals of mathematical statistics}, pages 400--407.
+
 \bibitem[Rouder, 2014]{rouder2014}
 Rouder, J.~N. (2014).
 \newblock Optional stopping: No problem for bayesians.

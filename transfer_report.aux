@@ -92,6 +92,7 @@
 \citation{fgan}
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.2.3}Inference based approaches}{14}{subsection.1.2.3}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.2.4}Mutual information estimation}{14}{subsection.1.2.4}}
+\newlabel{sec:mie}{{1.2.4}{14}{Mutual information estimation}{subsection.1.2.4}{}}
 \newlabel{eq:dv}{{1.55}{14}{Mutual information estimation}{equation.1.2.55}{}}
 \citation{shahriari2016}
 \citation{pes}
@@ -129,64 +130,70 @@
 \citation{rezende2015variational}
 \citation{tabak2013family}
 \citation{pyro}
-\@writefile{toc}{\contentsline {chapter}{\numberline {2}Variational optimal experiment design}{18}{chapter.2}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {2}Estimating EIG}{18}{chapter.2}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chap:voed}{{2}{18}{Variational optimal experiment design}{chapter.2}{}}
+\newlabel{chap:voed}{{2}{18}{Estimating EIG}{chapter.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.1}Variational optimal experiment design}{18}{section.2.1}}
 \citation{robbins1951stochastic}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.0.1}Bounding EIG}{19}{subsection.2.0.1}}
-\newlabel{eq:postbound}{{2.3}{19}{Bounding EIG}{equation.2.0.3}{}}
-\newlabel{eq:margbound}{{2.6}{19}{Bounding EIG}{equation.2.0.6}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.0.2}Estimation}{19}{subsection.2.0.2}}
-\newlabel{eq:maxpost}{{2.7}{19}{Estimation}{equation.2.0.7}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.0.3}Accounting for random effects}{19}{subsection.2.0.3}}
-\newlabel{eq:EIGp-app}{{2.9}{20}{Accounting for random effects}{equation.2.0.9}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.0.4}Experiments}{20}{subsection.2.0.4}}
-\newlabel{sec:experiments}{{2.0.4}{20}{Experiments}{subsection.2.0.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.1}Bounding EIG}{19}{subsection.2.1.1}}
+\newlabel{sec:bounds}{{2.1.1}{19}{Bounding EIG}{subsection.2.1.1}{}}
+\newlabel{eq:postbound}{{2.3}{19}{Bounding EIG}{equation.2.1.3}{}}
+\newlabel{eq:margbound}{{2.6}{19}{Bounding EIG}{equation.2.1.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.2}Estimation}{19}{subsection.2.1.2}}
+\newlabel{eq:maxpost}{{2.7}{19}{Estimation}{equation.2.1.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.3}Accounting for random effects}{19}{subsection.2.1.3}}
+\newlabel{eq:EIGp-app}{{2.9}{20}{Accounting for random effects}{equation.2.1.9}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.4}Experiments}{20}{subsection.2.1.4}}
+\newlabel{sec:experiments}{{2.1.4}{20}{Experiments}{subsection.2.1.4}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {2.1}{\ignorespaces Bias and variance of EIG estimation averaged over 10 runs and 11 designs. Each method was run for 10 seconds. For more details on the models and experimental setup see Appendix\nobreakspace  {}\ref  {sec:expdeets}. Note that the directions of the bias for the posterior and marginal match the fact that they are lower and upper bounds, as would be expected. \vspace  {-10pt}\relax }}{21}{table.caption.11}}
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
 \newlabel{tab:abserrors}{{2.1}{21}{Bias and variance of EIG estimation averaged over 10 runs and 11 designs. Each method was run for 10 seconds. For more details on the models and experimental setup see Appendix~\ref {sec:expdeets}. Note that the directions of the bias for the posterior and marginal match the fact that they are lower and upper bounds, as would be expected. \vspace {-10pt}\relax }{table.caption.11}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.0.5}Figures}{21}{subsection.2.0.5}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces LinReg: EIG estimates for a linear regression model over 11 designs. We plot the mean and twice the standard deviation from 10 runs. Computational time was set to 10 seconds for comparison.\relax }}{21}{figure.caption.12}}
 \newlabel{fig:lm}{{2.1}{21}{LinReg: EIG estimates for a linear regression model over 11 designs. We plot the mean and twice the standard deviation from 10 runs. Computational time was set to 10 seconds for comparison.\relax }{figure.caption.12}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.5}Choice of variational family}{21}{subsection.2.1.5}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces LinReg + RE: EIG estimates for a linear regression model with random effects. Settings as in Figure\nobreakspace  {}\ref  {fig:lm}.\relax }}{22}{figure.caption.13}}
 \newlabel{fig:lm_re}{{2.2}{22}{LinReg + RE: EIG estimates for a linear regression model with random effects. Settings as in Figure~\ref {fig:lm}.\relax }{figure.caption.13}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2.3}{\ignorespaces LinReg large ${\rm  dim}(y)$: with settings as in Figure\nobreakspace  {}\ref  {fig:lm}.\relax }}{22}{figure.caption.14}}
 \newlabel{fig:largen}{{2.3}{22}{LinReg large ${\rm dim}(y)$: with settings as in Figure~\ref {fig:lm}.\relax }{figure.caption.14}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.4}{\ignorespaces N$\Gamma ^{-1}$Reg: EIG estimates for a Normal inverse-Gamma model. Settings as in Figure\nobreakspace  {}\ref  {fig:lm}.\relax }}{22}{figure.caption.15}}
-\newlabel{fig:nig}{{2.4}{22}{N$\Gamma ^{-1}$Reg: EIG estimates for a Normal inverse-Gamma model. Settings as in Figure~\ref {fig:lm}.\relax }{figure.caption.15}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {3}Future directions}{23}{chapter.3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.4}{\ignorespaces N$\Gamma ^{-1}$Reg: EIG estimates for a Normal inverse-Gamma model. Settings as in Figure\nobreakspace  {}\ref  {fig:lm}.\relax }}{23}{figure.caption.15}}
+\newlabel{fig:nig}{{2.4}{23}{N$\Gamma ^{-1}$Reg: EIG estimates for a Normal inverse-Gamma model. Settings as in Figure~\ref {fig:lm}.\relax }{figure.caption.15}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.2}Extensions}{23}{section.2.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.1}Donsker-Varadhan}{23}{subsection.2.2.1}}
+\newlabel{eq:dveig}{{2.23}{23}{Donsker-Varadhan}{equation.2.2.23}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.2}Analytic entropy}{24}{subsection.2.2.2}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {3}Future directions}{25}{chapter.3}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chap:future}{{3}{23}{Future directions}{chapter.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.1}EIG}{23}{section.3.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.1}EIG estimation on simpler models}{23}{subsection.3.1.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.2}EIG estimation on complex models}{23}{subsection.3.1.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.3}Theory of EIG estimators}{23}{subsection.3.1.3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.4}EIG gradients}{23}{subsection.3.1.4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.5}EIG optimisation}{23}{subsection.3.1.5}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.6}Model misspecification}{24}{subsection.3.1.6}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.7}Sequential design and active learning}{24}{subsection.3.1.7}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.8}Optional stopping}{24}{subsection.3.1.8}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.9}Dynamic models}{24}{subsection.3.1.9}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.2}Beyond EIG}{24}{section.3.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}Causal inference}{24}{subsection.3.2.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}Power}{24}{subsection.3.2.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.3}Cost}{24}{subsection.3.2.3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.4}Non-greedy}{24}{subsection.3.2.4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.5}Other criteria}{25}{subsection.3.2.5}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.6}Experiment design for model criticism}{25}{subsection.3.2.6}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}Appendix}{26}{chapter.4}}
+\newlabel{chap:future}{{3}{25}{Future directions}{chapter.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.1}EIG}{25}{section.3.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.1}EIG estimation on simpler models}{25}{subsection.3.1.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.2}EIG estimation on complex models}{25}{subsection.3.1.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.3}Theory of EIG estimators}{25}{subsection.3.1.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.4}EIG gradients}{25}{subsection.3.1.4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.5}EIG optimisation}{25}{subsection.3.1.5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.6}Model misspecification}{26}{subsection.3.1.6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.7}Sequential design and active learning}{26}{subsection.3.1.7}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.8}Optional stopping}{26}{subsection.3.1.8}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.9}Dynamic models}{26}{subsection.3.1.9}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}Beyond EIG}{26}{section.3.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}Causal inference}{26}{subsection.3.2.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}Power}{26}{subsection.3.2.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.3}Cost}{26}{subsection.3.2.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.4}Non-greedy}{26}{subsection.3.2.4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.5}Other criteria}{27}{subsection.3.2.5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.6}Experiment design for model criticism}{27}{subsection.3.2.6}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Appendix}{28}{chapter.4}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}Experiment details}{26}{section.4.1}}
-\newlabel{sec:expdeets}{{4.1}{26}{Experiment details}{section.4.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.1}LinReg}{26}{subsection.4.1.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Experiment details}{28}{section.4.1}}
+\newlabel{sec:expdeets}{{4.1}{28}{Experiment details}{section.4.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.1}LinReg}{28}{subsection.4.1.1}}
 \citation{kingma2014adam}
 \citation{vincent2017}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.2}LinReg + RE}{27}{subsection.4.1.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.3}LinReg large ${\rm  dim}(y)$}{28}{subsection.4.1.3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.4}N$\Gamma ^{-1}$Reg}{28}{subsection.4.1.4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.2}LinReg + RE}{29}{subsection.4.1.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.3}LinReg large ${\rm  dim}(y)$}{30}{subsection.4.1.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.4}N$\Gamma ^{-1}$Reg}{30}{subsection.4.1.4}}
 \bibdata{referencs}
 \bibcite{azimi2012}{Azimi et\nobreakspace  {}al., 2012}
 \bibcite{ba}{Barber and Agakov, 2004}
@@ -200,7 +207,7 @@
 \bibcite{tianqichen}{Chen et\nobreakspace  {}al., 2018}
 \bibcite{infogan}{Chen et\nobreakspace  {}al., 2016}
 \bibcite{cohn1996}{Cohn et\nobreakspace  {}al., 1996}
-\@writefile{toc}{\contentsline {chapter}{Bibliography}{29}{equation.4.1.19}}
+\@writefile{toc}{\contentsline {chapter}{Bibliography}{31}{equation.4.1.19}}
 \bibcite{dayan1995helmholtz}{Dayan et\nobreakspace  {}al., 1995}
 \bibcite{de2017}{de\nobreakspace  {}Heide and Gr{\"u}nwald, 2017}
 \bibcite{drovandi2017}{Drovandi et\nobreakspace  {}al., 2017}
@@ -231,6 +238,7 @@
 \bibcite{nmc}{Rainforth et\nobreakspace  {}al., 2018}
 \bibcite{rezende2015variational}{Rezende and Mohamed, 2015}
 \bibcite{rezende2014stochastic}{Rezende et\nobreakspace  {}al., 2014}
+\bibcite{robbins1951stochastic}{Robbins and Monro, 1951}
 \bibcite{rouder2014}{Rouder, 2014}
 \bibcite{ryanreview}{Ryan et\nobreakspace  {}al., 2018}
 \bibcite{ryan2015}{Ryan et\nobreakspace  {}al., 2015}
