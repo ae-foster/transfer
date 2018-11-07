@@ -255,9 +255,11 @@ A powerful answer to the second question was given by \cite{paninski2005} and is
 Under further conditions, we can show that the posteriors $p(\theta | y_{1:T}, d_{1:T})$ are asymptotically Normal with covariance matrix $\Sigma_\text{info}$. The same result holds for i.i.d. sampling of designs, giving rise to $\Sigma_\text{iid}$. We have that $\text{det}\ \Sigma_\text{info} \le \text{det}\ \Sigma_\text{iid}$. This led \cite{paninski2005} to say ``Thus, information maximization is in a rigorous sense asymptotically more efficient than the i.i.d. sampling strategy.'' Related results were obtained by \cite{pronzato2010} and \cite{hu1998}.
 
 \section{Estimation of EIG}
+\label{sec:esteig}
 The estimation of EIG, and quantities mathematically equivalent to it, has received attention from a diverse group of researchers.
 
 \subsection{Challenges in EIG estimation}
+\label{sec:challenges}
 Recall
 \begin{align}
 	\label{eig:post}
@@ -278,6 +280,7 @@ which is typically intractable.
 We survey existing approaches to EIG estimation.
 
 \subsection{Nested Monte Carlo}
+\label{sec:nmc}
 The estimator of \cite{vincent2017} and \cite{myung2013}, among others, is a nested Monte Carlo (NMC) estimator
 \begin{equation}
 	\eig(d) \approx \frac{1}{N}\sum_{n=1}^N \left[ \log p(y_n | \theta_n, d) - \log \left(\frac{1}{M} \sum_{m=1}^M p(y_n | \theta_m, d) \right) \right]

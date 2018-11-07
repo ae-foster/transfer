@@ -1,0 +1,150 @@
+\section{Experiment details}
+\label{sec:expdeets}
+
+\subsection{LinReg}
+A classical Bayesian linear regression model has the following form
+\begin{align}
+	\theta &\sim N(\mu_0, \Sigma_0) \\
+	y | \theta, d & \sim N(X_d\theta, \sigma^2 I)
+\end{align}
+where $X_d$ is the design matrix.
+
+In our LinReg example, we took:
+\begin{align}
+	\mu_0 &= 0 \\
+	\Sigma_0 &= \begin{pmatrix}
+		10^2 & 0 \\
+		0 & 0.1^2
+	\end{pmatrix} \\
+	\sigma^2 &= 1 \\
+	X_d &=
+	\begin{pmatrix}
+		1 & 0 \\
+		\vdots & \vdots \\
+		1 & 0 \\
+		0 & 1 \\
+		\vdots & \vdots \\
+		0 & 1
+	\end{pmatrix} \text{ a } (10 \times 2) \text{ matrix}
+\end{align}
+with all 11 possible designs considered.
+
+We chose families of variational distributions that include the true posterior (or true marginal). For the amortised posterior, we set $\phi = (\Lambda, \delta, \Sigma_\text{p})$ and let
+\begin{align}
+	\qp(\theta | y, d; \phi) &\sim N(\mu_\text{p}, \Sigma_\text{p}) \\
+	\text{where } \mu_\text{p} &= (X_d^T X_d+\Lambda)^{-1}(X_d^T X_d + \Lambda)(y + \delta)
+\end{align}
+and $\Lambda$ is a diagonal matrix and $\Sigma_\text{p}$ is positive definite. For the marginal, we simple take $\phi = (\mu_\text{m}, \Sigma_\text{m})$ and
+\begin{equation}
+	\qm(y|d;\phi) \sim N(\mu_\text{m}, \Sigma_\text{m})
+\end{equation}
+
+Finally, for each of our variational methods we used the Adam optimizer \cite{kingma2014adam} with a learning rate specified below. Each iteration used  $N_t$ samples, with $T$ iterations in total. We used $N$ samples for the final evaluation. NMC settings are $N, M$ \cite{vincent2017} and we took the advice of the authors to set $N = M^2$.
+
+The exact parameter settings, to get about 10 seconds of computation for each method, were
+\begin{center}
+\begin{tabu}{|c|c|c|c|c|c|c|c|c|c|}
+\hline
+	\multicolumn{2}{|c|}{NMC} & \multicolumn{4}{|c|}{Posterior} & \multicolumn{4}{|c|}{Marginal} \\
+	\hline
+	$N$ & $M$ & $N_t$ & $T$ & lr & $N$ & $N_t$ & $T$ & lr & $N$ \\
+	\hline
+	$110^2$ & 110 & 10 & 1200 & 0.05 & 500 & 10 & 1200 & 0.05 & 500 \\
+	\hline
+\end{tabu}
+\end{center}
+
+\subsection{LinReg + RE}
+In this experiment, we extended the model to include random effects. Specifically, 
+\begin{align}
+	\theta &\sim N(\mu_0, \Sigma_0) \\
+	\tilde{\theta} &\sim N(\tilde{\mu}_0, \tilde{\Sigma}_0) \\
+	y | \theta, d & \sim N(X_d\theta+ \tilde{X}\tilde{\theta}, \sigma^2 I)
+\end{align}
+where
+\begin{align}
+	\tilde{\mu}_0 &= 0 \\
+	\tilde{\Sigma}_0 &= I_{10} \\
+	\tilde{X} &= I_{10}
+\end{align}
+Here $\theta$ is the random variable of interest, while $\tilde{\theta}$ is a nuisance variable that needs to be integrated out.
+The variational distribution for the likelihood, $\ql$, was the same as $\qm$, except that the mean was shifted by $X_d\theta$.
+
+The exact parameter settings, to get about 10 seconds of computation for each method, were
+\begin{center}
+\begin{tabu}{|c|c|c|c|c|c|c|c|c|c|}
+\hline
+	\multicolumn{2}{|c|}{NMC} & \multicolumn{4}{|c|}{Posterior} & \multicolumn{4}{|c|}{Marginal} \\
+	\hline
+	$N$ & $M$ & $N_t$ & $T$ & lr & $N$ & $N_t$ & $T$ & lr & $N$ \\
+	\hline
+	$52^2$ & 52 & 10 & 150 & 0.05 & 500 & 10 & 600 & 0.05 & 500 \\
+	\hline
+\end{tabu}
+\end{center}
+
+\subsection{LinReg large ${\rm dim}(y)$}
+This experiment was identical to LinReg, except that we took $X_d$ to have dimensions $20 \times 2$, with 11 designs as before. We also altered the marginal variational distribution to reflect the new dimension of $y$. Other than that, the specification of all variational distributions was identical.
+
+The exact parameter settings, to get about 10 seconds of computation for each method, were
+\begin{center}
+\begin{tabu}{|c|c|c|c|c|c|c|c|c|c|}
+\hline
+	\multicolumn{2}{|c|}{NMC} & \multicolumn{4}{|c|}{Posterior} & \multicolumn{4}{|c|}{Marginal} \\
+	\hline
+	$N$ & $M$ & $N_t$ & $T$ & lr & $N$ & $N_t$ & $T$ & lr & $N$ \\
+	\hline
+	$90^2$ & 90 & 10 & 1000 & 0.05 & 500 & 10 & 700 & 0.05 & 500 \\
+	\hline
+\end{tabu}
+\end{center}
+
+\subsection{N$\Gamma^{-1}$Reg}
+We changed the model to 
+\begin{align}
+	\sigma^2 &\sim \Gamma^{-1}(\alpha, \beta) \\
+	\theta &\sim N(\mu_0, \Sigma_0) \\
+	y | \theta, \sigma^2, d & \sim N(X_d\theta, \sigma^2 I)
+\end{align}
+where $\alpha=3$ and $\beta=2$.
+
+We used a mean-field posterior variational distribution. For $\theta$, we used the same variational distribution as for LinReg. 
+For $\sigma^2$ we used an inverse Gamma variational distribution. We augmented the parameters $\phi$ with $\alpha_\text{p}, b_0$ and took $\beta_\text{p} = b_0 + \tfrac{1}{2}(y^Ty - y^TX_d\mu_\text{p})$. Then
+\begin{equation}
+	\qp(\sigma^2 | y, d; \phi) \sim \Gamma^{-1}(\alpha_\text{p}, \beta_\text{p})
+\end{equation}
+
+The marginal variational distribution was as in LinReg (a Gaussian).
+
+The exact parameter settings, to get about 10 seconds of computation for each method, were
+\begin{center}
+\begin{tabu}{|c|c|c|c|c|c|c|c|c|c|}
+\hline
+	\multicolumn{2}{|c|}{NMC} & \multicolumn{4}{|c|}{Posterior} & \multicolumn{4}{|c|}{Marginal} \\
+	\hline
+	$N$ & $M$ & $N_t$ & $T$ & lr & $N$ & $N_t$ & $T$ & lr & $N$ \\
+	\hline
+	$110^2$ & 110 & 10 & 800 & 0.05 & 500 & 10 & 1200 & 0.05 & 500 \\
+	\hline
+\end{tabu}
+\end{center}
+
+%\subsection{SigReg}
+%We first considered a linear regression model, but with different parameters
+%\begin{align}
+%	\mu_0 &= (1 \quad 5) \\
+%	\Sigma_0 &= \begin{pmatrix}
+%		0.25^2 & 0 \\
+%		0 & 4^2
+%	\end{pmatrix} \\
+%	\sigma^2 &= 1 \\
+%	X_d &=
+%	\begin{pmatrix}
+%		x & 1
+%	\end{pmatrix} \text{ a } (1 \times 2) \text{ matrix and } x \in [-15, 15] 
+%\end{align}
+%We also altered the model, adding a sigmoid transformation
+%\begin{equation}
+%	y'|\theta, d = \text{sigmoid}(k \cdot y)
+%\end{equation}
+%where $y$ is as in LinReg, and $k=2$.

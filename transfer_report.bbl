@@ -22,6 +22,13 @@ Berry, D.~A. and Fristedt, B. (1985).
   statistics and applied probability).
 \newblock {\em London: Chapman and Hall}, 5.
 
+\bibitem[Bingham et~al., 2018]{pyro}
+Bingham, E., Chen, J.~P., Jankowiak, M., Obermeyer, F., Pradhan, N.,
+  Karaletsos, T., Singh, R., Szerlip, P., Horsfall, P., and Goodman, N.~D.
+  (2018).
+\newblock {Pyro: Deep Universal Probabilistic Programming}.
+\newblock {\em arXiv preprint arXiv:1810.09538}.
+
 \bibitem[Bloem-Reddy et~al., 2018]{bntl}
 Bloem-Reddy, B., Foster, A., Mathieu, E., and Teh, Y.~W. (2018).
 \newblock Sampling and inference for beta neutral-to-the-left models of sparse
@@ -62,6 +69,11 @@ Chen, X., Duan, Y., Houthooft, R., Schulman, J., Sutskever, I., and Abbeel, P.
 Cohn, D.~A., Ghahramani, Z., and Jordan, M.~I. (1996).
 \newblock Active learning with statistical models.
 \newblock {\em Journal of artificial intelligence research}, 4:129--145.
+
+\bibitem[Dayan et~al., 1995]{dayan1995helmholtz}
+Dayan, P., Hinton, G.~E., Neal, R.~M., and Zemel, R.~S. (1995).
+\newblock The helmholtz machine.
+\newblock {\em Neural computation}, 7(5):889--904.
 
 \bibitem[de~Heide and Gr{\"u}nwald, 2017]{de2017}
 de~Heide, R. and Gr{\"u}nwald, P.~D. (2017).
@@ -120,6 +132,11 @@ Hern{\'a}ndez-Lobato, J.~M., Hoffman, M.~W., and Ghahramani, Z. (2014).
 Hu, I. (1998).
 \newblock On sequential designs in nonlinear problems.
 \newblock {\em Biometrika}, 85(2):496--503.
+
+\bibitem[Kingma and Welling, 2014]{kingma2014auto}
+Kingma, D.~P. and Welling, M. (2014).
+\newblock Auto-encoding variational {Bayes}.
+\newblock In {\em ICLR}.
 
 \bibitem[Kruschke, 2014]{kruschkebda}
 Kruschke, J. (2014).
@@ -182,6 +199,12 @@ Ouyang, L., Tessler, M.~H., Ly, D., and Goodman, N. (2016).
 \newblock Practical optimal experiment design with probabilistic programs.
 \newblock {\em arXiv preprint arXiv:1608.05046}.
 
+\bibitem[Paige and Wood, 2016]{paige2016inference}
+Paige, B. and Wood, F. (2016).
+\newblock Inference networks for sequential monte carlo in graphical models.
+\newblock In {\em International Conference on Machine Learning}, pages
+  3040--3049.
+
 \bibitem[Pang et~al., 2018]{pang2018}
 Pang, K., Dong, M., Wu, Y., and Hospedales, T. (2018).
 \newblock Meta-learning transferable active learning policies by deep
@@ -204,6 +227,17 @@ Rainforth, T., Cornish, R., Yang, H., Warrington, A., and Wood, F. (2018).
 \newblock On nesting monte carlo estimators.
 \newblock In {\em International Conference on Machine Learning}, pages
   4264--4273.
+
+\bibitem[Rezende and Mohamed, 2015]{rezende2015variational}
+Rezende, D.~J. and Mohamed, S. (2015).
+\newblock Variational inference with normalizing flows.
+\newblock {\em arXiv preprint arXiv:1505.05770}.
+
+\bibitem[Rezende et~al., 2014]{rezende2014stochastic}
+Rezende, D.~J., Mohamed, S., and Wierstra, D. (2014).
+\newblock Stochastic backpropagation and approximate inference in deep
+  generative models.
+\newblock In {\em ICML}.
 
 \bibitem[Rouder, 2014]{rouder2014}
 Rouder, J.~N. (2014).
@@ -235,6 +269,17 @@ Srinivas, N., Krause, A., Kakade, S.~M., and Seeger, M. (2009).
 \newblock Gaussian process optimization in the bandit setting: No regret and
   experimental design.
 \newblock {\em arXiv preprint arXiv:0912.3995}.
+
+\bibitem[Stuhlm{\"u}ller et~al., 2013]{stuhlmuller2013learning}
+Stuhlm{\"u}ller, A., Taylor, J., and Goodman, N. (2013).
+\newblock Learning stochastic inverses.
+\newblock In {\em Advances in neural information processing systems}, pages
+  3048--3056.
+
+\bibitem[Tabak and Turner, 2013]{tabak2013family}
+Tabak, E. and Turner, C.~V. (2013).
+\newblock A family of nonparametric density estimation algorithms.
+\newblock {\em Communications on Pure and Applied Mathematics}, 66(2):145--164.
 
 \bibitem[van Den~Berg et~al., 2003]{berg2003}
 van Den~Berg, J., Curtis, A., and Trampert, J. (2003).
