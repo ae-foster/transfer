@@ -11,45 +11,45 @@ I'm skipping whatever remains of this entry
 Warning--I didn't find a database entry for "sec:opteig"
 Warning--empty journal in ginsbourger2008
 Warning--empty journal in vincent2017
-You've used 41 entries,
+You've used 45 entries,
             1935 wiz_defined-function locations,
-            701 strings with 10654 characters,
-and the built_in function-call counts, 17506 in all, are:
-= -- 1712
-> -- 749
-< -- 27
-+ -- 264
-- -- 254
-* -- 1410
-:= -- 2967
-add.period$ -- 121
-call.type$ -- 41
-change.case$ -- 328
-chr.to.int$ -- 41
-cite$ -- 43
-duplicate$ -- 712
-empty$ -- 1207
-format.name$ -- 307
-if$ -- 3490
+            722 strings with 11250 characters,
+and the built_in function-call counts, 19026 in all, are:
+= -- 1859
+> -- 820
+< -- 29
++ -- 288
+- -- 278
+* -- 1542
+:= -- 3242
+add.period$ -- 133
+call.type$ -- 45
+change.case$ -- 359
+chr.to.int$ -- 45
+cite$ -- 47
+duplicate$ -- 766
+empty$ -- 1306
+format.name$ -- 337
+if$ -- 3777
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 44
-newline$ -- 206
-num.names$ -- 123
-pop$ -- 348
+missing$ -- 48
+newline$ -- 226
+num.names$ -- 135
+pop$ -- 373
 preamble$ -- 1
-purify$ -- 331
+purify$ -- 362
 quote$ -- 0
-skip$ -- 554
+skip$ -- 597
 stack$ -- 0
-substring$ -- 1172
-swap$ -- 146
+substring$ -- 1267
+swap$ -- 150
 text.length$ -- 12
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 238
+type$ -- 262
 warning$ -- 2
-while$ -- 138
+while$ -- 150
 width$ -- 0
-write$ -- 517
+write$ -- 567
 (There was 1 error message)

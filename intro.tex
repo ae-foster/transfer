@@ -97,6 +97,7 @@ then $\eig(d) = \expect_{y\sim p(y|d)}[\text{IG}(y, d)] $.
 where $H$ is the differential entropy.
 Then
 \begin{equation}
+	\label{eq:apeeig}
 	\eig(d) = \entropy{p(\theta)} - \ape(d)
 \end{equation}
 and the prior entropy is a constant w.r.t. $d$. Thus EIG maximisation corresponds to APE
@@ -149,7 +150,7 @@ Suppose we have a determinic, finite time horizon $t=1, ..., T$. We specify as P
 \end{itemize}
 Under this set-up, the \textit{optimal experiment design policy} is a map $\pi$ from histories $h_t$ to actions $a_t$ which maximises the total reward
 \begin{equation}
-	R_T = \expect \left[ \sum_{t=1}^T \gamma^t r_t \Huge{\mid} \pi \right]
+	R_T = \expect \left[ \sum_{t=1}^T \gamma^t r_t \bigg{\rvert} \pi \right]
 \end{equation}
 where $\gamma \in [0,1]$ is the discount factor, often set to 1 in finite horizons.
 
@@ -208,12 +209,14 @@ In reinforcement learning, greediness refers to maximising the one-step-ahead re
 which, with the reward of \eqref{eq:rlmutli}, corresponds to one-step EIG maximisation at each step. We primarily focus on this form of multi-step optimisation because it removes all aspects of future planning beyond a single step from an already difficult problem.
 
 \subsubsection{Non-greedy approaches}
-Some have considered non-greedy strategies \cite{gonzalez2016} \cite{pang2018}. See \cite[sec 6.1]{ryan2015} for a summary of `backwards induction' approaches.
+Some have considered non-greedy strategies \cite{gonzalez2016} \cite{pang2018}. See \cite[sec 6.1]{ryanreview} for a summary of `backwards induction' approaches.
 
 
 \subsubsection{Optional stopping}
 
 We finally mention another possible complication. Rather than a fixed and finite time horizon $T$, we may we allowed to continue experimentation indefinitely, choosing when to stop. One natural choice to stopping criterion is to terminate when the posterior entropy reaches a threshold value.
+
+Optional stopping in Bayesian data analysis is a hotly debated topic \\ \cite{rouder2014, de2017}, but can be rigorously justified using martingale theory with certain stopping rules \cite{shafer2011} in the context of hypothesis testing. Of particular interest are stopping criteria based on non-negative supermartingales. We note in passing that the posterior entropy is a supermartingale (see \eqref{eq:apeeig}) and is non-negative if $\theta$ is discrete.
 
 
 \subsection{Theoretical considerations}
@@ -359,7 +362,7 @@ One aspect that sets $\eig$ maximisation apart from conventional Bayesian optimi
 Optimal experiment design is a broadly applicable subject and has been re-discovered a number of times in various fields. The purpose of this section is twofold: firstly, to note specific problems tackled by OED and to identify the model $p(y, \theta | d)$ and design space $\mathcal{D}$ in use; secondly, to more broadly suggest which types of models and experiment design problems are relevant to a certain field.
 
 \subsection{Bayesian optimisation}
-We begin with a very brief section on Bayesian optimisation, as we discussed this area in \cite{sec:opteig}.
+We begin with a very brief section on Bayesian optimisation, as we discussed this area in \ref{sec:opteig}.
 
 In Bayesian optimisation, models are regression models and typically nonlinear in nature. Gaussian process models are popular. The parameter of interest is the location of the optimum \\ \cite{pes}. The design space $\mathcal{D}$ consists of either single points in the input space $\mathcal{X}$ (single acquisition), or vectors with entries in $\mathcal{X}$ (multiple acquisition). A number of experiment design strategies, here referred to as acquisition rules, have been proposed. See \cite{ginsbourger2008, azimi2012} for a discussion of single and multiple acquisition rules.
 

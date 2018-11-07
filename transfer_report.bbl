@@ -63,6 +63,11 @@ Cohn, D.~A., Ghahramani, Z., and Jordan, M.~I. (1996).
 \newblock Active learning with statistical models.
 \newblock {\em Journal of artificial intelligence research}, 4:129--145.
 
+\bibitem[de~Heide and Gr{\"u}nwald, 2017]{de2017}
+de~Heide, R. and Gr{\"u}nwald, P.~D. (2017).
+\newblock Why optional stopping is a problem for bayesians.
+\newblock {\em arXiv preprint arXiv:1708.08278}.
+
 \bibitem[Drovandi et~al., 2017]{drovandi2017}
 Drovandi, C.~C., Holmes, C., McGree, J.~M., Mengersen, K., Richardson, S., and
   Ryan, E.~G. (2017).
@@ -200,10 +205,25 @@ Rainforth, T., Cornish, R., Yang, H., Warrington, A., and Wood, F. (2018).
 \newblock In {\em International Conference on Machine Learning}, pages
   4264--4273.
 
+\bibitem[Rouder, 2014]{rouder2014}
+Rouder, J.~N. (2014).
+\newblock Optional stopping: No problem for bayesians.
+\newblock {\em Psychonomic Bulletin \& Review}, 21(2):301--308.
+
+\bibitem[Ryan et~al., 2018]{ryanreview}
+Ryan, E., Drovandi, C., McGree, J., and Pettitt, A. (2018).
+\newblock Fully bayesian optimal experimental design: A review.
+\newblock {\em Preprint eprints.qut.edu.au/75000/1/75000.pdf}.
+
 \bibitem[Ryan et~al., 2015]{ryan2015}
 Ryan, E.~G., Drovandi, C.~C., and Pettitt, A.~N. (2015).
 \newblock Fully bayesian experimental design for pharmacokinetic studies.
 \newblock {\em Entropy}, 17(3):1063--1089.
+
+\bibitem[Shafer et~al., 2011]{shafer2011}
+Shafer, G., Shen, A., Vereshchagin, N., Vovk, V., et~al. (2011).
+\newblock Test martingales, bayes factors and p-values.
+\newblock {\em Statistical Science}, 26(1):84--101.
 
 \bibitem[Shahriari et~al., 2016]{shahriari2016}
 Shahriari, B., Swersky, K., Wang, Z., Adams, R.~P., and De~Freitas, N. (2016).

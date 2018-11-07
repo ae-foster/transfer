@@ -18,29 +18,27 @@
 \BOOKMARK [2][-]{subsection.1.4.3}{Psychology}{section.1.4}% 18
 \BOOKMARK [2][-]{subsection.1.4.4}{Big data analysis}{section.1.4}% 19
 \BOOKMARK [2][-]{subsection.1.4.5}{Natural science}{section.1.4}% 20
-\BOOKMARK [0][-]{chapter.2}{Probabilistic modelling and inference}{}% 21
-\BOOKMARK [0][-]{chapter.3}{Probabilistic programming}{}% 22
-\BOOKMARK [0][-]{chapter.4}{Optimal experiment design}{}% 23
-\BOOKMARK [0][-]{chapter.5}{Future directions}{}% 24
-\BOOKMARK [1][-]{section.5.1}{EIG}{chapter.5}% 25
-\BOOKMARK [2][-]{subsection.5.1.1}{EIG estimation on simpler models}{section.5.1}% 26
-\BOOKMARK [2][-]{subsection.5.1.2}{EIG estimation on complex models}{section.5.1}% 27
-\BOOKMARK [2][-]{subsection.5.1.3}{Theory of EIG estimators}{section.5.1}% 28
-\BOOKMARK [2][-]{subsection.5.1.4}{EIG gradients}{section.5.1}% 29
-\BOOKMARK [2][-]{subsection.5.1.5}{EIG optimisation}{section.5.1}% 30
-\BOOKMARK [2][-]{subsection.5.1.6}{Model misspecification}{section.5.1}% 31
-\BOOKMARK [2][-]{subsection.5.1.7}{Sequential design and active learning}{section.5.1}% 32
-\BOOKMARK [2][-]{subsection.5.1.8}{Optional stopping}{section.5.1}% 33
-\BOOKMARK [2][-]{subsection.5.1.9}{Dynamic models}{section.5.1}% 34
-\BOOKMARK [1][-]{section.5.2}{Beyond EIG}{chapter.5}% 35
-\BOOKMARK [2][-]{subsection.5.2.1}{Causal inference}{section.5.2}% 36
-\BOOKMARK [2][-]{subsection.5.2.2}{Power}{section.5.2}% 37
-\BOOKMARK [2][-]{subsection.5.2.3}{Cost}{section.5.2}% 38
-\BOOKMARK [2][-]{subsection.5.2.4}{Non-greedy}{section.5.2}% 39
-\BOOKMARK [2][-]{subsection.5.2.5}{Other criteria}{section.5.2}% 40
-\BOOKMARK [2][-]{subsection.5.2.6}{Experiment design for model criticism}{section.5.2}% 41
-\BOOKMARK [0][-]{chapter.6}{Appendix}{}% 42
-\BOOKMARK [1][-]{section.6.1}{Multi-step experiment design as reinforcement learning}{chapter.6}% 43
-\BOOKMARK [2][-]{subsection.6.1.1}{Setup}{section.6.1}% 44
-\BOOKMARK [2][-]{subsection.6.1.2}{Connection to information-criterion}{section.6.1}% 45
-\BOOKMARK [0][-]{equation.6.1.7}{Bibliography}{}% 46
+\BOOKMARK [0][-]{chapter.2}{Variational optimal experiment design}{}% 21
+\BOOKMARK [0][-]{chapter.3}{Future directions}{}% 22
+\BOOKMARK [1][-]{section.3.1}{EIG}{chapter.3}% 23
+\BOOKMARK [2][-]{subsection.3.1.1}{EIG estimation on simpler models}{section.3.1}% 24
+\BOOKMARK [2][-]{subsection.3.1.2}{EIG estimation on complex models}{section.3.1}% 25
+\BOOKMARK [2][-]{subsection.3.1.3}{Theory of EIG estimators}{section.3.1}% 26
+\BOOKMARK [2][-]{subsection.3.1.4}{EIG gradients}{section.3.1}% 27
+\BOOKMARK [2][-]{subsection.3.1.5}{EIG optimisation}{section.3.1}% 28
+\BOOKMARK [2][-]{subsection.3.1.6}{Model misspecification}{section.3.1}% 29
+\BOOKMARK [2][-]{subsection.3.1.7}{Sequential design and active learning}{section.3.1}% 30
+\BOOKMARK [2][-]{subsection.3.1.8}{Optional stopping}{section.3.1}% 31
+\BOOKMARK [2][-]{subsection.3.1.9}{Dynamic models}{section.3.1}% 32
+\BOOKMARK [1][-]{section.3.2}{Beyond EIG}{chapter.3}% 33
+\BOOKMARK [2][-]{subsection.3.2.1}{Causal inference}{section.3.2}% 34
+\BOOKMARK [2][-]{subsection.3.2.2}{Power}{section.3.2}% 35
+\BOOKMARK [2][-]{subsection.3.2.3}{Cost}{section.3.2}% 36
+\BOOKMARK [2][-]{subsection.3.2.4}{Non-greedy}{section.3.2}% 37
+\BOOKMARK [2][-]{subsection.3.2.5}{Other criteria}{section.3.2}% 38
+\BOOKMARK [2][-]{subsection.3.2.6}{Experiment design for model criticism}{section.3.2}% 39
+\BOOKMARK [0][-]{chapter.4}{Appendix}{}% 40
+\BOOKMARK [1][-]{section.4.1}{Multi-step experiment design as reinforcement learning}{chapter.4}% 41
+\BOOKMARK [2][-]{subsection.4.1.1}{Setup}{section.4.1}% 42
+\BOOKMARK [2][-]{subsection.4.1.2}{Connection to information-criterion}{section.4.1}% 43
+\BOOKMARK [0][-]{equation.4.1.7}{Bibliography}{}% 44

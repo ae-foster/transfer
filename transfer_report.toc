@@ -5,51 +5,49 @@
 \contentsline {subsection}{\numberline {1.1.1}Problem specification}{5}{subsection.1.1.1}
 \contentsline {subsection}{\numberline {1.1.2}One-step design}{6}{subsection.1.1.2}
 \contentsline {subsection}{\numberline {1.1.3}Multi-step design}{8}{subsection.1.1.3}
-\contentsline {subsubsection}{Setup}{8}{section*.4}
+\contentsline {subsubsection}{Setup}{9}{section*.4}
 \contentsline {subsubsection}{Connection to EIG}{9}{section*.5}
 \contentsline {paragraph}{Horizon 1}{9}{section*.6}
-\contentsline {paragraph}{Horizon $T$}{9}{section*.7}
+\contentsline {paragraph}{Horizon $T$}{10}{section*.7}
 \contentsline {subsubsection}{The greedy approach}{10}{section*.8}
-\contentsline {subsubsection}{Non-greedy approaches}{10}{section*.9}
+\contentsline {subsubsection}{Non-greedy approaches}{11}{section*.9}
 \contentsline {subsubsection}{Optional stopping}{11}{section*.10}
 \contentsline {subsection}{\numberline {1.1.4}Theoretical considerations}{11}{subsection.1.1.4}
 \contentsline {section}{\numberline {1.2}Estimation of EIG}{12}{section.1.2}
 \contentsline {subsection}{\numberline {1.2.1}Challenges in EIG estimation}{12}{subsection.1.2.1}
-\contentsline {subsection}{\numberline {1.2.2}Nested Monte Carlo}{12}{subsection.1.2.2}
-\contentsline {subsection}{\numberline {1.2.3}Inference based approaches}{13}{subsection.1.2.3}
-\contentsline {subsection}{\numberline {1.2.4}Mutual information estimation}{13}{subsection.1.2.4}
-\contentsline {section}{\numberline {1.3}Optimisation of EIG}{14}{section.1.3}
+\contentsline {subsection}{\numberline {1.2.2}Nested Monte Carlo}{13}{subsection.1.2.2}
+\contentsline {subsection}{\numberline {1.2.3}Inference based approaches}{14}{subsection.1.2.3}
+\contentsline {subsection}{\numberline {1.2.4}Mutual information estimation}{14}{subsection.1.2.4}
+\contentsline {section}{\numberline {1.3}Optimisation of EIG}{15}{section.1.3}
 \contentsline {section}{\numberline {1.4}Applications}{15}{section.1.4}
 \contentsline {subsection}{\numberline {1.4.1}Bayesian optimisation}{15}{subsection.1.4.1}
-\contentsline {subsection}{\numberline {1.4.2}Active learning}{15}{subsection.1.4.2}
+\contentsline {subsection}{\numberline {1.4.2}Active learning}{16}{subsection.1.4.2}
 \contentsline {subsection}{\numberline {1.4.3}Psychology}{16}{subsection.1.4.3}
-\contentsline {subsection}{\numberline {1.4.4}Big data analysis}{16}{subsection.1.4.4}
-\contentsline {subsection}{\numberline {1.4.5}Natural science}{16}{subsection.1.4.5}
-\contentsline {chapter}{\numberline {2}Probabilistic modelling and inference}{17}{chapter.2}
-\contentsline {chapter}{\numberline {3}Probabilistic programming}{18}{chapter.3}
-\contentsline {chapter}{\numberline {4}Optimal experiment design}{19}{chapter.4}
-\contentsline {chapter}{\numberline {5}Future directions}{20}{chapter.5}
-\contentsline {section}{\numberline {5.1}EIG}{20}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}EIG estimation on simpler models}{20}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}EIG estimation on complex models}{20}{subsection.5.1.2}
-\contentsline {subsection}{\numberline {5.1.3}Theory of EIG estimators}{20}{subsection.5.1.3}
-\contentsline {subsection}{\numberline {5.1.4}EIG gradients}{20}{subsection.5.1.4}
-\contentsline {subsection}{\numberline {5.1.5}EIG optimisation}{20}{subsection.5.1.5}
-\contentsline {subsection}{\numberline {5.1.6}Model misspecification}{21}{subsection.5.1.6}
-\contentsline {subsection}{\numberline {5.1.7}Sequential design and active learning}{21}{subsection.5.1.7}
-\contentsline {subsection}{\numberline {5.1.8}Optional stopping}{21}{subsection.5.1.8}
-\contentsline {subsection}{\numberline {5.1.9}Dynamic models}{21}{subsection.5.1.9}
-\contentsline {section}{\numberline {5.2}Beyond EIG}{21}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Causal inference}{21}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Power}{21}{subsection.5.2.2}
-\contentsline {subsection}{\numberline {5.2.3}Cost}{21}{subsection.5.2.3}
-\contentsline {subsection}{\numberline {5.2.4}Non-greedy}{21}{subsection.5.2.4}
-\contentsline {subsection}{\numberline {5.2.5}Other criteria}{22}{subsection.5.2.5}
-\contentsline {subsection}{\numberline {5.2.6}Experiment design for model criticism}{22}{subsection.5.2.6}
-\contentsline {chapter}{\numberline {6}Appendix}{23}{chapter.6}
-\contentsline {section}{\numberline {6.1}Multi-step experiment design as reinforcement learning}{23}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Setup}{23}{subsection.6.1.1}
-\contentsline {subsection}{\numberline {6.1.2}Connection to information-criterion}{24}{subsection.6.1.2}
-\contentsline {subsubsection}{Horizon 1}{24}{section*.11}
-\contentsline {subsubsection}{Horizon $T$}{24}{section*.12}
-\contentsline {chapter}{Bibliography}{25}{equation.6.1.7}
+\contentsline {subsection}{\numberline {1.4.4}Big data analysis}{17}{subsection.1.4.4}
+\contentsline {subsection}{\numberline {1.4.5}Natural science}{17}{subsection.1.4.5}
+\contentsline {chapter}{\numberline {2}Variational optimal experiment design}{18}{chapter.2}
+\contentsline {chapter}{\numberline {3}Future directions}{19}{chapter.3}
+\contentsline {section}{\numberline {3.1}EIG}{19}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}EIG estimation on simpler models}{19}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}EIG estimation on complex models}{19}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}Theory of EIG estimators}{19}{subsection.3.1.3}
+\contentsline {subsection}{\numberline {3.1.4}EIG gradients}{19}{subsection.3.1.4}
+\contentsline {subsection}{\numberline {3.1.5}EIG optimisation}{19}{subsection.3.1.5}
+\contentsline {subsection}{\numberline {3.1.6}Model misspecification}{20}{subsection.3.1.6}
+\contentsline {subsection}{\numberline {3.1.7}Sequential design and active learning}{20}{subsection.3.1.7}
+\contentsline {subsection}{\numberline {3.1.8}Optional stopping}{20}{subsection.3.1.8}
+\contentsline {subsection}{\numberline {3.1.9}Dynamic models}{20}{subsection.3.1.9}
+\contentsline {section}{\numberline {3.2}Beyond EIG}{20}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Causal inference}{20}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Power}{20}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Cost}{20}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}Non-greedy}{20}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.5}Other criteria}{21}{subsection.3.2.5}
+\contentsline {subsection}{\numberline {3.2.6}Experiment design for model criticism}{21}{subsection.3.2.6}
+\contentsline {chapter}{\numberline {4}Appendix}{22}{chapter.4}
+\contentsline {section}{\numberline {4.1}Multi-step experiment design as reinforcement learning}{22}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Setup}{22}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Connection to information-criterion}{23}{subsection.4.1.2}
+\contentsline {subsubsection}{Horizon 1}{23}{section*.11}
+\contentsline {subsubsection}{Horizon $T$}{23}{section*.12}
+\contentsline {chapter}{Bibliography}{24}{equation.4.1.7}
