@@ -1,5 +1,10 @@
 \begin{thebibliography}{}
 
+\bibitem[Azimi et~al., 2012]{azimi2012}
+Azimi, J., Jalali, A., and Fern, X. (2012).
+\newblock Hybrid batch bayesian optimization.
+\newblock {\em arXiv preprint arXiv:1202.5597}.
+
 \bibitem[Barber and Agakov, 2004]{ba}
 Barber, D. and Agakov, F. (2004).
 \newblock The im algorithm: a variational approach to information maximization.
@@ -35,11 +40,6 @@ Box, G.~E. (1982).
 \newblock Choice of response surface design and alphabetic optimality.
 \newblock Technical report, WISCONSIN UNIV-MADISON MATHEMATICS RESEARCH CENTER.
 
-\bibitem[Chaloner, 1984]{chaloner1984}
-Chaloner, K. (1984).
-\newblock Optimal bayesian experimental design for linear models.
-\newblock {\em The Annals of Statistics}, pages 283--300.
-
 \bibitem[Chaloner and Verdinelli, 1995]{chaloner1995}
 Chaloner, K. and Verdinelli, I. (1995).
 \newblock Bayesian experimental design: A review.
@@ -58,16 +58,40 @@ Chen, X., Duan, Y., Houthooft, R., Schulman, J., Sutskever, I., and Abbeel, P.
 \newblock In {\em Advances in neural information processing systems}, pages
   2172--2180.
 
-\bibitem[Dasgupta, 2006]{dasgupta2006}
-Dasgupta, S. (2006).
-\newblock Coarse sample complexity bounds for active learning.
-\newblock In {\em Advances in neural information processing systems}, pages
-  235--242.
+\bibitem[Cohn et~al., 1996]{cohn1996}
+Cohn, D.~A., Ghahramani, Z., and Jordan, M.~I. (1996).
+\newblock Active learning with statistical models.
+\newblock {\em Journal of artificial intelligence research}, 4:129--145.
+
+\bibitem[Drovandi et~al., 2017]{drovandi2017}
+Drovandi, C.~C., Holmes, C., McGree, J.~M., Mengersen, K., Richardson, S., and
+  Ryan, E.~G. (2017).
+\newblock Principles of experimental design for big data analysis.
+\newblock {\em Statistical science: a review journal of the Institute of
+  Mathematical Statistics}, 32(3):385.
 
 \bibitem[Fedorov, 1972]{fedorov1972}
 Fedorov, V. (1972).
 \newblock {\em Theory of optimal experiments}.
 \newblock Academic Press, New York.
+
+\bibitem[Gal and Ghahramani, 2016]{gal2016}
+Gal, Y. and Ghahramani, Z. (2016).
+\newblock Dropout as a bayesian approximation: Representing model uncertainty
+  in deep learning.
+\newblock In {\em international conference on machine learning}, pages
+  1050--1059.
+
+\bibitem[Gelman et~al., 2013]{gelmanbda}
+Gelman, A., Stern, H.~S., Carlin, J.~B., Dunson, D.~B., Vehtari, A., and Rubin,
+  D.~B. (2013).
+\newblock {\em Bayesian data analysis}.
+\newblock Chapman and Hall/CRC.
+
+\bibitem[Ginsbourger et~al., 2008]{ginsbourger2008}
+Ginsbourger, D., Le~Riche, R., and Carraro, L. (2008).
+\newblock A multi-points criterion for deterministic parallel global
+  optimization based on gaussian processes.
 
 \bibitem[Golovin et~al., 2010]{golovin2010}
 Golovin, D., Krause, A., and Ray, D. (2010).
@@ -80,10 +104,23 @@ Gonz{\'a}lez, J., Osborne, M., and Lawrence, N. (2016).
 \newblock Glasses: Relieving the myopia of bayesian optimisation.
 \newblock In {\em Artificial Intelligence and Statistics}, pages 790--799.
 
+\bibitem[Hern{\'a}ndez-Lobato et~al., 2014]{pes}
+Hern{\'a}ndez-Lobato, J.~M., Hoffman, M.~W., and Ghahramani, Z. (2014).
+\newblock Predictive entropy search for efficient global optimization of
+  black-box functions.
+\newblock In {\em Advances in neural information processing systems}, pages
+  918--926.
+
 \bibitem[Hu, 1998]{hu1998}
 Hu, I. (1998).
 \newblock On sequential designs in nonlinear problems.
 \newblock {\em Biometrika}, 85(2):496--503.
+
+\bibitem[Kruschke, 2014]{kruschkebda}
+Kruschke, J. (2014).
+\newblock {\em Doing Bayesian data analysis: A tutorial with R, JAGS, and
+  Stan}.
+\newblock Academic Press.
 
 \bibitem[Lindley, 1956]{lindley1956}
 Lindley, D.~V. (1956).
@@ -101,6 +138,16 @@ Long, Q., Scavino, M., Tempone, R., and Wang, S. (2013).
   experimental designs based on laplace approximations.
 \newblock {\em Computer Methods in Applied Mechanics and Engineering},
   259:24--39.
+
+\bibitem[Marchant et~al., 2014]{marchant2014}
+Marchant, R., Ramos, F., Sanner, S., et~al. (2014).
+\newblock Sequential bayesian optimisation for spatial-temporal monitoring.
+\newblock In {\em UAI}, pages 553--562.
+
+\bibitem[McLeod et~al., 2017]{mcleod2017}
+McLeod, M., Osborne, M.~A., and Roberts, S.~J. (2017).
+\newblock Practical bayesian optimization for variable cost objectives.
+\newblock {\em arXiv preprint arXiv:1703.04335}.
 
 \bibitem[Medin and Schaffer, 1978]{medin1978}
 Medin, D.~L. and Schaffer, M.~M. (1978).
@@ -158,6 +205,17 @@ Ryan, E.~G., Drovandi, C.~C., and Pettitt, A.~N. (2015).
 \newblock Fully bayesian experimental design for pharmacokinetic studies.
 \newblock {\em Entropy}, 17(3):1063--1089.
 
+\bibitem[Shahriari et~al., 2016]{shahriari2016}
+Shahriari, B., Swersky, K., Wang, Z., Adams, R.~P., and De~Freitas, N. (2016).
+\newblock Taking the human out of the loop: A review of bayesian optimization.
+\newblock {\em Proceedings of the IEEE}, 104(1):148--175.
+
+\bibitem[Srinivas et~al., 2009]{srinivas2009}
+Srinivas, N., Krause, A., Kakade, S.~M., and Seeger, M. (2009).
+\newblock Gaussian process optimization in the bandit setting: No regret and
+  experimental design.
+\newblock {\em arXiv preprint arXiv:0912.3995}.
+
 \bibitem[van Den~Berg et~al., 2003]{berg2003}
 van Den~Berg, J., Curtis, A., and Trampert, J. (2003).
 \newblock Optimal nonlinear bayesian experimental design: an application to
@@ -173,9 +231,5 @@ Vanlier, J., Tiemann, C.~A., Hilbers, P.~A., and van Riel, N.~A. (2012).
 Vincent, B.~T. and Rainforth, T. (2017).
 \newblock The darc toolbox: automated, flexible, and efficient delayed and
   risky choice experiments using bayesian adaptive design.
-
-\bibitem[Youssef, ]{youssefreview}
-Youssef, N.~A.
-\newblock A review on optimal experimental design.
 
 \end{thebibliography}

@@ -8,48 +8,48 @@ Repeated entry---line 253 of file referencs.bib
  : @article{long2013
  :                  ,
 I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "sec:opteig"
+Warning--empty journal in ginsbourger2008
 Warning--empty journal in vincent2017
-Warning--empty year in youssefreview
-Warning--empty journal in youssefreview
-You've used 32 entries,
+You've used 41 entries,
             1935 wiz_defined-function locations,
-            655 strings with 8818 characters,
-and the built_in function-call counts, 13555 in all, are:
-= -- 1345
-> -- 520
+            701 strings with 10654 characters,
+and the built_in function-call counts, 17506 in all, are:
+= -- 1712
+> -- 749
 < -- 27
-+ -- 184
-- -- 174
-* -- 1061
-:= -- 2268
-add.period$ -- 94
-call.type$ -- 32
-change.case$ -- 246
-chr.to.int$ -- 32
-cite$ -- 35
-duplicate$ -- 570
-empty$ -- 964
-format.name$ -- 216
-if$ -- 2731
++ -- 264
+- -- 254
+* -- 1410
+:= -- 2967
+add.period$ -- 121
+call.type$ -- 41
+change.case$ -- 328
+chr.to.int$ -- 41
+cite$ -- 43
+duplicate$ -- 712
+empty$ -- 1207
+format.name$ -- 307
+if$ -- 3490
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 33
-newline$ -- 161
-num.names$ -- 96
-pop$ -- 257
+missing$ -- 44
+newline$ -- 206
+num.names$ -- 123
+pop$ -- 348
 preamble$ -- 1
-purify$ -- 247
+purify$ -- 331
 quote$ -- 0
-skip$ -- 451
+skip$ -- 554
 stack$ -- 0
-substring$ -- 965
-swap$ -- 126
-text.length$ -- 11
+substring$ -- 1172
+swap$ -- 146
+text.length$ -- 12
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 188
-warning$ -- 3
-while$ -- 112
+type$ -- 238
+warning$ -- 2
+while$ -- 138
 width$ -- 0
-write$ -- 404
+write$ -- 517
 (There was 1 error message)
