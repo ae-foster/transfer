@@ -1,6 +1,7 @@
 As outlined in Sections~\ref{sec:esteig} and~\ref{sec:opteig}, the main technical barriers to OED using EIG maximisation are the estimation and optimisation of EIG. Here we address methods for estimation.
 
 \section{Variational optimal experiment design}
+\label{sec:voed}
 \textbf{Note}: This section is broadly based on a paper recently submitted to the NIPS BDL workshop; we intend to submit a longer version to ICML 2019.
 \bigskip
 
@@ -22,6 +23,7 @@ than to treat separate values of $y$ as distinct inference problems.
 We construct a variational bound, $\mathcal{L}_p(d)$, using the amortized posterior $\qp(\theta | y,d)$:
 \begin{align}
 	\eig(d) =& \iint  p(y, \theta | d) \log \frac{p(\theta | y, d)q_{{p}}(\theta | y,d)}{\qp(\theta | y,d)} \, dy \, d\theta + \entropy{p(\theta)}  \\
+	\label{eq:postboundkl}
 	=& \iint p(y, \theta | d) \log \qp(\theta | y, d)  \, dy\, d\theta+\entropy{p(\theta)} + \mathbb{E}_{p(y|d)} \left[\text{KL}\left(p(\theta | y,d)||\qp(\theta | y, d)\right)\right]\\
 	\label{eq:postbound}
 	\ge& \iint p(y, \theta | d) \log \qp(\theta | y, d) \, dy\, d\theta+\entropy{p(\theta)} \triangleq \mathcal{L}_p(d).
@@ -66,6 +68,9 @@ noting that no re-parameterization is required as $p(y,\theta|d)$ is independent
 An analogous scheme can be constructed for the upper bound $\mathcal{U}_m(d;\phi)$, except that we now
 perform a minimization.
 
+\subsection{Consistency}
+Suppose that $\phi_n$ are the values obtained from the procedure outlined above. Disregarding Monte Carlo estimation error for a moment, we can see immediately from \eqref{eq:postboundkl} that provided $\forall y:\  \kl{p(\theta | y, d)}{\qp(\theta|y, d; \phi_n)} \downarrow 0$ as $n \to \infty$ then by Monotone Convergence, the EIG estimates converge to $\eig(d)$ as $n \to \infty$. The condition rarely applies because it requires the approximating family to include the true posterior. If $\kl{p(\theta | y, d)}{\qp(\theta|y, d; \phi_n)}$ is simply monotonic decreasing, then we have convergence to \eqref{eq:maxpost}, the best estimate possible within the given variational family.
+
 
 \subsection{Accounting for random effects}
 Note that the lower bound $\mathcal{L}_p(d)$ can be computed whether or not the model contains random effects (see Section~\ref{sec:challenges} for a discussion of random effects). On the other hand, the definition of $\mathcal{U}_m(d)$ involves $p(y|\theta,d)$ which is typically intractable in the case of random effects.
@@ -102,6 +107,32 @@ them back into~\eqref{eq:EIGp-app} to give
 which can then itself be approximated by conventional Monte Carlo
 sampling.
 
+\subsection{Choice of variational family}
+The success of variational OED relies heavily on a good choice of variational family (guide, in the language of Pyro). Here we briefly outline techniques that aid writing guides for Generalised Linear Mixed Models (GLMMs), which we define hierarchically as
+\begin{align}
+	\theta, \psi &\sim N(\mu_0, \Sigma_0) \\
+	\zeta &= X_d\theta \\
+	\eta &= \zeta + \tilde{X}_d \psi \\
+	y &\sim p(y|\eta)
+\end{align}
+which is a slight relaxation of typical GLMMs.
+
+We first consider posterior guides, $\qp$ and propose a multivariate Gaussian approximation. It can be shown that the bound \eqref{eq:postbound} is maximised when the mean and covariance of $\qp$ match that of the true posterior. We have
+\begin{align}
+	\expect(\theta|y, d) &= \expect(\expect[\theta|y,\zeta, d]|y, d) \\
+	\expect[\theta|\zeta, d] &= (X_d^T X_d)^{-1}X_d^T \zeta \\
+	\expect(\theta|y, d) &= (X_d^T X_d)^{-1}X_d^T \expect(\zeta|y)
+\end{align}
+so we have done the amortisation over $X_d$ analytically.
+
+Similarly, the covariance $\cov(\theta|y,d)$ is
+**not quite-- need correction for those random effects**
+\begin{align}
+	(X_d^TX_d)^{-1}X_d^T\cov(\zeta|y)X_d(X_d^TX_d)^{-1}
+\end{align}
+
+For marginal guides, simply note that $\ql$ depends on $\theta$ only through $X_d\theta$ --probably a shift in the mean...
+
 \subsection{Experiments}
 \label{sec:experiments}
 
@@ -123,14 +154,14 @@ Finally, we consider an example (N$\Gamma^{-1}$Reg) that is not purely Gaussian.
     \begin{tabu}{|c|[1pt]c|c|c|c|c|c|c|c|}    \hline
   & \multicolumn{2}{c|}{\small LinReg} & \multicolumn{2}{c|}{\small LinReg + RE}  & \multicolumn{2}{c|}{\small LinReg large ${\rm dim}(y)$}  & \multicolumn{2}{c|}{\small N$\Gamma^{-1}$Reg}  \\  
   \hline
-  & \small bias & \small var  & \small bias & \small var  & \small bias & \small var  & \small bias & \small var  \\
+  & \small bias & \small 2std  & \small bias & \small 2std  & \small bias & \small 2std  & \small bias & \small 2std  \\
   \tabucline[1pt]{-}
    \small NMC & \small 1.37 & \small 1.93 & \small 5.33 & \small 3.84 & \small 3.13 & \small 2.97  & \small 3.39 & \small 3.20   \\ \hline
     \small Posterior & \small -0.23 & \small 0.25   & \small -0.55 & \small 0.41   & \small -0.29 & \small 0.31 & \small -0.50 & \small 0.51      \\ \hline
    \small Marginal & \small 0.34   &\small 0.15  & \small 0.36  &\small 0.20 &\small 4.57 & \small 0.29 & \small 1.59 & \small 0.64    \\ \hline
     \end{tabu}
 \end{center}
-     \caption{Bias and variance of EIG estimation averaged over 10 runs and 11 designs. Each method was run for 10 seconds. For more details on the models and experimental setup see Appendix~\ref{sec:expdeets}.  Note that the directions of the bias for the
+     \caption{Bias and variance (we report $2\sigma$) of EIG estimation averaged over 10 runs and 11 designs. Each method was run for 10 seconds. For more details on the models and experimental setup see Appendix~\ref{sec:expdeets}.  Note that the directions of the bias for the
      posterior and marginal match the fact that they are lower and upper bounds, as would be expected.
  \vspace{-10pt}}
      \label{tab:abserrors}
@@ -166,35 +197,6 @@ Finally, we consider an example (N$\Gamma^{-1}$Reg) that is not purely Gaussian.
 	\label{fig:nig}
 \end{figure}
 
-\subsection{Choice of variational family}
-The success of variational OED relies heavily on a good choice of variational family (guide, in the language of Pyro). Here we briefly outline techniques that aid writing guides for Generalised Linear Mixed Models (GLMMs), which we define hierarchically as
-\begin{align}
-	\theta, \psi &\sim N(\mu_0, \Sigma_0) \\
-	\zeta &= X_d\theta \\
-	\eta &= \zeta + \tilde{X}_d \psi \\
-	y &\sim p(y|\eta)
-\end{align}
-which is a slight relaxation of typical GLMMs.
-
-We first consider posterior guides, $\qp$ and propose a multivariate Gaussian approximation. It can be shown that the bound \eqref{eq:postbound} is maximised when the mean and covariance of $\qp$ match that of the true posterior. We have
-\begin{align}
-	\expect(\theta|y, d) &= \expect(\expect[\theta|y,\zeta], d]|y, d) \\
-	\expect[\theta|\zeta, d] &= (X_d^T X_d)^{-1}X_d^T \zeta \\
-	\expect(\theta|y, d) &= (X_d^T X_d)^{-1}X_d^T \expect(\zeta|y)
-\end{align}
-so we have done the amortisation over $X_d$ analytically.
-
-Similarly, the covariance $\cov(\theta|y,d)$ is
-**not quite-- need correction for those random effects**
-\begin{align}
-	(X_d^TX_d)^{-1}X_d^T\cov(\zeta|y)X_d(X_d^TX_d)^{-1}
-\end{align}
-
-For marginal guides, simply note that $\ql$ depends on $\theta$ only through $X_d\theta$ --probably a shift in the mean...
-
-
-
-
 
 \section{Extensions}
 \subsection{Donsker-Varadhan}
@@ -209,32 +211,60 @@ Recall that the optimising $T_d$ is given by
 \end{equation}
 Whilst direction comparison between Donsker-Varadhan our previously proposed methods is difficult if $T_d$ is a generic neural network, we can instead try either of
 \begin{align}
+	\label{eq:dvpost}
 	T_{p, d} =& \log \frac{\qp(\theta | y,d)}{p(\theta)} \\
-	T_{m, d} =& \log \frac{p(y|\theta,d}{\qm(y|d)}
+	T_{m, d} =& \log \frac{p(y|\theta,d)}{\qm(y|d)}
 \end{align}
 where $\qp$ and $\qm$ are the variational densities of Section~\ref{sec:bounds}. The form of $T_d^*$ guarantees that the Donsker-Varadhan bound will be tight under the same conditions that give tightness in the bounds of the previous section.
 
 When compared, the Donsker-Varadhan bound fared poorly against the simpler bounds in experiments. A single evaluation of the bound required many more samples to be numerically stable.
 
-TODO: an experiment
 
 \subsection{Analytic entropy}
 Our proposed method is based on taking Monte Carlo sums of log densities to approximate integrals such as
 \begin{equation}
-	\ape(d) \approx \iint p(y, \theta | d) \log \qp (\theta | y, d; \phi)\, dy\, d\theta,
+	\label{eq:crossentropyest}
+	\ape(d) \approx -\iint p(y, \theta | d) \log \qp (\theta | y, d; \phi)\, dy\, d\theta,
 \end{equation}
 which can be rewritten as
 \begin{equation}
-	\ape(d) \approx \int p(y|d) \int p(\theta | y, d) \log \qp (\theta | y, d; \phi)\, d\theta\, dy
+	\ape(d) \approx -\int p(y|d) \int p(\theta | y, d) \log \qp (\theta | y, d; \phi)\, d\theta\, dy
 \end{equation}
 we could instead have used the following
 \begin{equation}
-	\ape(d) \approx \int p(y|d) \int \qp (\theta | y, d; \phi) \log \qp (\theta | y, d; \phi)\, d\theta\, dy = \int p(y|d) \entropy{\qp (\theta | y, d; \phi)} dy.
+	\ape(d) \approx -\int p(y|d) \int \qp (\theta | y, d; \phi) \log \qp (\theta | y, d; \phi)\, d\theta\, dy = -\int p(y|d) \entropy{\qp (\theta | y, d; \phi)} dy.
 \end{equation}
 If the variational family $\mathcal{Q}$ for $\qp$ had been chosen so that $\entropy{\qp (\theta | y, d; \phi)}$ is easily calculable, the new approximation may have significantly lower Monte Carlo estimation error.
 
-On the other hand, the new approximation does not bound $\eig(d)$ and so an entirely mechanism to \textit{learn} $\qp$ must be employed, perhaps using the previous form of the approximation.
+On the other hand, the new approximation does not bound $\ape(d)$ and so an entirely different mechanism to \textit{learn} $\qp$ must be employed. A correct learning approach is suggested by \cite{piera2009}, which showed that if $\kl{q_n}{p} \to 0$ then $\entropy{q_n} \to \entropy{p}$. In experiments, we trained $\qp$ using \eqref{eq:maxpost} just as in the original method. We used the analytic entropy in the final step.
 
-In practice, most computation time was spent learning $\qp$ rather than making the final Monte Carlo estimate and so the gains from this alternative approach may be small.
+In practice, most computation time was spent learning $\qp$ rather than making the final Monte Carlo estimate and so the gains from this alternative were negligible. 
 
-TODO: an experiment
+
+\subsection{Experiments}
+We compare the two suggested extensions against the posterior method of Section~\ref{sec:voed}. We used the same settings as the LinReg example. The biases and variances can be seen in Table~\ref{tab:abserrors2} and Figure~\ref{fig:lm2}. We see poorer performance from Donsker-Varadhan and little to tell between posterior, and posterior using analytic entropy.
+
+\begin{table}[h!]
+\begin{center}
+    \begin{tabu}{|c|[1pt]c|c|}    \hline
+  & \multicolumn{2}{c|}{\small LinReg2}  \\  
+  \hline
+  & \small bias & \small 2std   \\
+  \tabucline[1pt]{-}
+    \small Posterior & \small -0.24 & \small 0.32  \\
+    \small Posterior, with analytic entropy & \small -0.33 & 0.53 \\
+   \small Donsker-Varadhan & \small -0.46  & \small 1.01 \\ \hline
+    \end{tabu}
+\end{center}
+     \caption{Bias and variance (we report $2\sigma$) of EIG estimation averaged over 10 runs and 11 designs. Each method was run for 10 seconds. For more details on the models and experimental setup see Appendix~\ref{sec:expdeets}.
+ \vspace{-10pt}}
+     \label{tab:abserrors2}
+\end{table}
+
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[scale=.5]{figures/ae_and_dv.png}
+	\end{center}
+	\caption{LinReg2: EIG estimates for a linear model, with extension methods. Settings as in Figure~\ref{fig:lm}.}
+	\label{fig:lm2}
+\end{figure}

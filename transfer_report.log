@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.10.31)  7 NOV 2018 16:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.11.7)  8 NOV 2018 14:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -777,10 +777,10 @@ Library (tcolorbox): 'tcbfitting.code.tex' version '4.14'
 Library (tcolorbox): 'tcbxparse.code.tex' version '4.14'
 (/usr/local/texlive/2018/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 (/usr/local/texlive/2018/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2018-10-26 L3 programming layer (loader) 
+Package: expl3 2018-10-31 L3 programming layer (loader) 
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/l3kernel/expl3-code.tex
-Package: expl3 2018-10-26 L3 programming layer (code)
+Package: expl3 2018-10-31 L3 programming layer (code)
 \c_max_int=\count168
 \l_tmpa_int=\count169
 \l_tmpb_int=\count170
@@ -927,7 +927,7 @@ Package: expl3 2018-10-26 L3 programming layer (code)
 \l__seq_internal_b_int=\count317
 )
 (/usr/local/texlive/2018/texmf-dist/tex/latex/l3kernel/l3pdfmode.def
-File: l3pdfmode.def 2018-10-26 v L3 Experimental driver: PDF mode
+File: l3pdfmode.def 2018-10-31 v L3 Experimental driver: PDF mode
 \l__driver_color_stack_int=\count318
 ))
 Package: xparse 2018-10-17 L3 Experimental document command parser
@@ -1370,7 +1370,7 @@ converted-to.pdf>
 rtical_CMYK-eps-converted-to.pdf figures/Dept_Stats_logo_vertical_CMYK.eps>
 (epstopdf)             \includegraphics on input line 6.
 Package epstopdf Info: Output file is already uptodate.
-<figures/Dept_Stats_logo_vertical_CMYK-eps-converted-to.pdf, id=264, 110.4125pt
+<figures/Dept_Stats_logo_vertical_CMYK-eps-converted-to.pdf, id=275, 110.4125pt
  x 145.54375pt>
 File: figures/Dept_Stats_logo_vertical_CMYK-eps-converted-to.pdf Graphic file (
 type pdf)
@@ -1397,7 +1397,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.37 ....2}Analytic entropy}{24}{subsection.2.2.2}
+l.37 ....1}Donsker-Varadhan}{22}{subsection.2.2.1}
                                                    [1
 
 
@@ -1468,56 +1468,75 @@ Chapter 2.
 
 ]
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 60.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 62.
 
-[19]
+
+Overfull \hbox (41.68524pt too wide) in paragraph at lines 72--73
+\T1/cmr/m/n/10 ti-ma-tion er-ror for a mo-ment, we can see im-me-di-ately from 
+[] that pro-vided $\OMS/cmsy/m/n/10 8\OML/cmm/m/it/10 y \OT1/cmr/m/n/10 :  [] [
+] \OMS/cmsy/m/n/10 #
+ []
+
+[19] [20]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/lm.png, id=665, 722.7pt x 361.35pt>
+<figures/lm.png, id=693, 722.7pt x 361.35pt>
 File: figures/lm.png Graphic file (type png)
 <use figures/lm.png>
-Package pdftex.def Info: figures/lm.png  used on input line 141.
+Package pdftex.def Info: figures/lm.png  used on input line 172.
 (pdftex.def)             Requested size: 361.3491pt x 180.67456pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/lm_re.png, id=667, 722.7pt x 361.35pt>
+<figures/lm_re.png, id=695, 722.7pt x 361.35pt>
 File: figures/lm_re.png Graphic file (type png)
 <use figures/lm_re.png>
-Package pdftex.def Info: figures/lm_re.png  used on input line 149.
+Package pdftex.def Info: figures/lm_re.png  used on input line 180.
 (pdftex.def)             Requested size: 361.3491pt x 180.67456pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/lm_large_n.png, id=670, 722.7pt x 361.35pt>
+<figures/lm_large_n.png, id=698, 722.7pt x 361.35pt>
 File: figures/lm_large_n.png Graphic file (type png)
 <use figures/lm_large_n.png>
-Package pdftex.def Info: figures/lm_large_n.png  used on input line 156.
+Package pdftex.def Info: figures/lm_large_n.png  used on input line 187.
 (pdftex.def)             Requested size: 361.3491pt x 180.67456pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/nig.png, id=673, 722.7pt x 361.35pt>
+<figures/nig.png, id=701, 722.7pt x 361.35pt>
 File: figures/nig.png Graphic file (type png)
 <use figures/nig.png>
-Package pdftex.def Info: figures/nig.png  used on input line 163.
+Package pdftex.def Info: figures/nig.png  used on input line 194.
 (pdftex.def)             Requested size: 361.3491pt x 180.67456pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[20] [21 <./figures/lm.png>] [22 <./figures/lm_re.png> <./figures/lm_large_n.pn
-g>] [23 <./figures/nig.png>]) [24]
-Chapter 3.
-(./future.tex [25
+[21] [22 <./figures/lm.png>] [23 <./figures/lm_re.png> <./figures/lm_large_n.pn
+g>]
 
-] [26]) [27]
+LaTeX Warning: Citation `piera2009' on page 24 undefined on input line 239.
+
+<figures/ae_and_dv.png, id=753, 706.8006pt x 425.6703pt>
+File: figures/ae_and_dv.png Graphic file (type png)
+<use figures/ae_and_dv.png>
+Package pdftex.def Info: figures/ae_and_dv.png  used on input line 266.
+(pdftex.def)             Requested size: 353.39943pt x 212.83463pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) [24 <./figures/nig.png>] [25 <./figures/ae_and_dv.png>]
+Chapter 3.
+(./future.tex [26
+
+] [27]) [28]
 Chapter 4.
-(./appendix.tex [28
+(./appendix.tex [29
 
 ]
 
-LaTeX Warning: Citation `kingma2014adam' on page 29 undefined on input line 42.
+LaTeX Warning: Citation `kingma2014adam' on page 30 undefined on input line 42.
 
 
 
@@ -1528,7 +1547,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 86.
 
-[29]
+[30]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 102.
@@ -1545,10 +1564,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 102.
 
-) [30] (./transfer_report.bbl [31
+) [31] (./transfer_report.bbl [32
 
 
-] [32] [33]) [34]
+] [33] [34]) [35]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 143.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 143.
  (./transfer_report.aux
@@ -1556,7 +1575,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 143.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 143.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 143.
 Package rerunfilecheck Info: File `transfer_report.out' has not changed.
-(rerunfilecheck)             Checksum: 6763A4D9C1B44C4193C2E1AC03961911;3741.
+(rerunfilecheck)             Checksum: B0C6DD912E433D7EA4DC95F784C4F58E;3933.
 
 
 LaTeX Warning: There were undefined references.
@@ -1564,10 +1583,10 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 143.
  ) 
 Here is how much of TeX's memory you used:
- 47747 strings out of 492639
- 1081571 string characters out of 6129286
- 1273939 words of memory out of 5000000
- 50640 multiletter control sequences out of 15000+600000
+ 47766 strings out of 492639
+ 1081894 string characters out of 6129287
+ 1273549 words of memory out of 5000000
+ 50652 multiletter control sequences out of 15000+600000
  554808 words of font info for 76 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
  63i,16n,101p,1196b,625s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1615,10 +1634,10 @@ cm-super/sfrm1000.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm
 uper/sfti1000.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-sup
 er/sfti1200.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super
 /sftt1000.pfb>
-Output written on transfer_report.pdf (35 pages, 773852 bytes).
+Output written on transfer_report.pdf (36 pages, 826919 bytes).
 PDF statistics:
- 980 PDF objects out of 1000 (max. 8388607)
- 859 compressed objects within 9 object streams
- 270 named destinations out of 1000 (max. 500000)
- 622 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1014 PDF objects out of 1200 (max. 8388607)
+ 888 compressed objects within 9 object streams
+ 276 named destinations out of 1000 (max. 500000)
+ 651 words of extra memory for PDF output out of 10000 (max. 10000000)
 

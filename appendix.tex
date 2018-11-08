@@ -129,6 +129,23 @@ The exact parameter settings, to get about 10 seconds of computation for each me
 \end{tabu}
 \end{center}
 
+\subsection{LinReg2}
+We used the model of LinReg, and the following parameter settings
+
+The exact parameter settings, to get about 10 seconds of computation for each method, were
+\begin{center}
+\begin{tabu}{|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+	\multicolumn{4}{|c|}{Posterior} & \multicolumn{4}{|c|}{Posterior, with analytic entropy} & \multicolumn{4}{|c|}{Donsker-Varadhan} \\
+	\hline
+	$N_t$ & $T$ & lr & $N$ & $N_t$ & $T$ & lr & $N$ & $N_t$ & $T$ & lr & $N$ \\
+	\hline
+	10 & 1200 & 0.05 & 500 & 10 & 1200 & 0.05 & 50 & 100 & 100 & 0.05 & 500 \\
+	\hline
+\end{tabu}
+\end{center}
+
+
 %\subsection{SigReg}
 %We first considered a linear regression model, but with different parameters
 %\begin{align}
