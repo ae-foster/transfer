@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.11.7)  8 NOV 2018 14:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.11.7)  8 NOV 2018 18:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1397,7 +1397,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.37 ....1}Donsker-Varadhan}{22}{subsection.2.2.1}
+l.37 ....2}Analytic entropy}{23}{subsection.2.2.2}
                                                    [1
 
 
@@ -1456,21 +1456,17 @@ Overfull \hbox (18.74002pt too wide) in paragraph at lines 380--381
 -mal de-sign was ex-plored in [[]].
  []
 
-
-Overfull \hbox (8.77121pt too wide) in paragraph at lines 391--392
+[16]
+Overfull \hbox (8.77121pt too wide) in paragraph at lines 392--393
 \T1/cmr/m/n/10 In most ap-pli-ca-tions, we as-sume that ex-per-i-ments will be 
 car-ried out af-ter de-sign. In [[]],
  []
 
-[16]) [17]
+) [17]
 Chapter 2.
 (./voed.tex [18
 
 ]
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 62.
-
-
 Overfull \hbox (41.68524pt too wide) in paragraph at lines 72--73
 \T1/cmr/m/n/10 ti-ma-tion er-ror for a mo-ment, we can see im-me-di-ately from 
 [] that pro-vided $\OMS/cmsy/m/n/10 8\OML/cmm/m/it/10 y \OT1/cmr/m/n/10 :  [] [
@@ -1478,96 +1474,80 @@ Overfull \hbox (41.68524pt too wide) in paragraph at lines 72--73
  []
 
 [19] [20]
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<figures/lm.png, id=693, 722.7pt x 361.35pt>
+<figures/lm.png, id=699, 722.7pt x 361.35pt>
 File: figures/lm.png Graphic file (type png)
 <use figures/lm.png>
-Package pdftex.def Info: figures/lm.png  used on input line 172.
+Package pdftex.def Info: figures/lm.png  used on input line 147.
 (pdftex.def)             Requested size: 361.3491pt x 180.67456pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<figures/lm_re.png, id=695, 722.7pt x 361.35pt>
+<figures/lm_re.png, id=701, 722.7pt x 361.35pt>
 File: figures/lm_re.png Graphic file (type png)
 <use figures/lm_re.png>
-Package pdftex.def Info: figures/lm_re.png  used on input line 180.
+Package pdftex.def Info: figures/lm_re.png  used on input line 155.
 (pdftex.def)             Requested size: 361.3491pt x 180.67456pt.
+
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/lm_large_n.png, id=698, 722.7pt x 361.35pt>
+<figures/lm_large_n.png, id=704, 722.7pt x 361.35pt>
 File: figures/lm_large_n.png Graphic file (type png)
 <use figures/lm_large_n.png>
-Package pdftex.def Info: figures/lm_large_n.png  used on input line 187.
+Package pdftex.def Info: figures/lm_large_n.png  used on input line 162.
 (pdftex.def)             Requested size: 361.3491pt x 180.67456pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/nig.png, id=701, 722.7pt x 361.35pt>
+<figures/nig.png, id=707, 722.7pt x 361.35pt>
 File: figures/nig.png Graphic file (type png)
 <use figures/nig.png>
-Package pdftex.def Info: figures/nig.png  used on input line 194.
+Package pdftex.def Info: figures/nig.png  used on input line 169.
 (pdftex.def)             Requested size: 361.3491pt x 180.67456pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[21] [22 <./figures/lm.png>] [23 <./figures/lm_re.png> <./figures/lm_large_n.pn
-g>]
-
-LaTeX Warning: Citation `piera2009' on page 24 undefined on input line 239.
-
-<figures/ae_and_dv.png, id=753, 706.8006pt x 425.6703pt>
+[21 <./figures/lm.png>] [22 <./figures/lm_re.png> <./figures/lm_large_n.png>]
+[23 <./figures/nig.png>]
+<figures/ae_and_dv.png, id=751, 706.8006pt x 425.6703pt>
 File: figures/ae_and_dv.png Graphic file (type png)
 <use figures/ae_and_dv.png>
-Package pdftex.def Info: figures/ae_and_dv.png  used on input line 266.
+Package pdftex.def Info: figures/ae_and_dv.png  used on input line 241.
 (pdftex.def)             Requested size: 353.39943pt x 212.83463pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-) [24 <./figures/nig.png>] [25 <./figures/ae_and_dv.png>]
+) [24 <./figures/ae_and_dv.png>]
 Chapter 3.
-(./future.tex [26
+(./future.tex [25
 
-] [27]) [28]
+] [26]) [27]
 Chapter 4.
-(./appendix.tex [29
+(./appendix.tex [28
 
-]
+] [29] [30]
 
-LaTeX Warning: Citation `kingma2014adam' on page 30 undefined on input line 42.
-
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 128.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 86.
+(hyperref)                removing `math shift' on input line 128.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 86.
-
-[30]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 102.
+(hyperref)                removing `math shift' on input line 144.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\Gamma' on input line 102.
+(hyperref)                removing `\Gamma' on input line 144.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `superscript' on input line 102.
+(hyperref)                removing `superscript' on input line 144.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 102.
+(hyperref)                removing `math shift' on input line 144.
 
-) [31] (./transfer_report.bbl [32
+[31]) [32] (./transfer_report.bbl [33
 
 
-] [33] [34]) [35]
+] [34] [35]) [36]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 143.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 143.
  (./transfer_report.aux
@@ -1575,7 +1555,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 143.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 143.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 143.
 Package rerunfilecheck Info: File `transfer_report.out' has not changed.
-(rerunfilecheck)             Checksum: B0C6DD912E433D7EA4DC95F784C4F58E;3933.
+(rerunfilecheck)             Checksum: B11A89D8B23B05203476433ADA74E602;3928.
 
 
 LaTeX Warning: There were undefined references.
@@ -1583,10 +1563,10 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 143.
  ) 
 Here is how much of TeX's memory you used:
- 47766 strings out of 492639
- 1081894 string characters out of 6129287
- 1273549 words of memory out of 5000000
- 50652 multiletter control sequences out of 15000+600000
+ 47781 strings out of 492639
+ 1082094 string characters out of 6129287
+ 1272832 words of memory out of 5000000
+ 50657 multiletter control sequences out of 15000+600000
  554808 words of font info for 76 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
  63i,16n,101p,1196b,625s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1634,10 +1614,10 @@ cm-super/sfrm1000.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm
 uper/sfti1000.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-sup
 er/sfti1200.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super
 /sftt1000.pfb>
-Output written on transfer_report.pdf (36 pages, 826919 bytes).
+Output written on transfer_report.pdf (37 pages, 830687 bytes).
 PDF statistics:
- 1014 PDF objects out of 1200 (max. 8388607)
- 888 compressed objects within 9 object streams
- 276 named destinations out of 1000 (max. 500000)
+ 1045 PDF objects out of 1200 (max. 8388607)
+ 910 compressed objects within 10 object streams
+ 286 named destinations out of 1000 (max. 500000)
  651 words of extra memory for PDF output out of 10000 (max. 10000000)
 

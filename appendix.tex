@@ -1,18 +1,60 @@
+\section{Variational families for GLMMs}
+\label{sec:glmms}
+The success of variational OED relies heavily on a good choice of variational family (guide, in the language of Pyro). Here we briefly outline techniques that aid writing guides for Generalised Linear Mixed Models (GLMMs), which we define hierarchically as
+\begin{align}
+	\theta, \psi &\sim N(\mu, \Sigma) \\
+	\eta &= X_{d, \theta} \theta + X_{d, \psi} \psi \\
+	y &\sim p(y|\eta) \text{ with } \expect[y|\eta] = g^{-1}(\eta).
+\end{align}
+
+We first consider posterior guides, $\qp$, and propose a multivariate Gaussian approximation. It can be shown that the bound \eqref{eq:postbound} is maximised when the mean and covariance of $\qp$ match that of the true posterior. We have
+\begin{align}
+	\expect(\theta|y, d) &= \expect(\expect[\theta|\eta, d]|y, d) \\
+	\label{eq:eeta}
+	\expect[\theta|\eta, d] &= G_d \eta \\
+	\implies \expect(\theta|y, d) &= G_d \expect(\eta|y, d).
+\end{align}
+Similarly, the covariance $\cov(\theta|y,d)$ is
+\begin{align}
+	\cov(\theta | y, d) &= \expect(\cov[\theta | \eta, d] | y,d) + \cov( \expect[\theta | \eta, d] | y, d) \\
+	\cov[\theta | \eta, d] &= H_d \\
+	\cov( \expect[\theta | \eta, y, d] | y, d) &= 
+	G_d \cov(\eta|y, d) G_d^T \text{ from \eqref{eq:eeta}} \\
+	\implies \cov(\theta | y, d) &= H_d + G_d \cov(\eta|y, d) G_d^T
+\end{align}
+The matrices $G_d$ and $H_d$ can be computed explicitly
+\begin{align}
+	H_d^{-1} &= \Sigma_{\theta\theta}^{-1} + X_{d, \theta}^T(X_{d, \psi}[\Sigma_{\psi\psi} - \Sigma_{\psi\theta}\Sigma_{\theta\theta}^{-1}\Sigma_{\theta\psi}]X_{d, \psi}^T)^{-1}X_{d, \theta}, \\
+	G_d &= H_d(\Sigma_{\theta\theta}^{-1}\mu_\theta + X_{d, \theta}^T(X_{d, \psi}[\Sigma_{\psi\psi} - \Sigma_{\psi\theta}\Sigma_{\theta\theta}^{-1}\Sigma_{\theta\psi}]X_{d, \psi}^T)^{-1}(\eta - X_{d, \psi}\mu_\psi)).
+\end{align}
+In some cases, $\eta | y, d$ may be significantly easier to learn than $\theta | y, d$.
+
+Turning now to marginal guides, $\qm$, and likelihood guides, $\ql$, we first note that the likelihood $p(y|\eta)$ is critical in determining the correct guide. A response $y$ in $\{0, 1\}$ needs a very different guide to one in $\R$. Any suitable density estimator may be used for $\qm(y|d)$. For $\ql(y|\theta,d)$ we note that $y$ depends on $\theta$ only through $X_{d, \theta}\theta$. In many cases, simply shifting certain parameters by $X_{d, \theta}\theta$ can give a good approximation. For logistic regression, for example, we wish to estimate
+\begin{equation}
+	\int p(\epsilon) f(X_{d,\theta}\theta + \epsilon) d\epsilon = f(X_{d,\theta}\theta) + \tfrac{1}{2} \text{Var}(\epsilon)f''(X_{d,\theta}\theta) + ...
+\end{equation}
+where $\epsilon = X_{d,\psi}\psi$ assuming for now $\mu_\psi=0$, and $f$ is the logistic function. We approximate this as
+\begin{equation}
+	\tfrac{1}{2}\left(f(X_{d,\theta}\theta + \phi) + f(X_{d,\theta}\theta - \phi)\right).
+\end{equation}
+
+
+
 \section{Experiment details}
 \label{sec:expdeets}
 
 \subsection{LinReg}
 A classical Bayesian linear regression model has the following form
 \begin{align}
-	\theta &\sim N(\mu_0, \Sigma_0) \\
+	\theta &\sim N(\mu_\theta, \Sigma_{\theta\theta}) \\
 	y | \theta, d & \sim N(X_d\theta, \sigma^2 I)
 \end{align}
 where $X_d$ is the design matrix.
 
 In our LinReg example, we took:
 \begin{align}
-	\mu_0 &= 0 \\
-	\Sigma_0 &= \begin{pmatrix}
+	\mu_\theta &= 0 \\
+	\Sigma_{\theta\theta} &= \begin{pmatrix}
 		10^2 & 0 \\
 		0 & 0.1^2
 	\end{pmatrix} \\
@@ -32,7 +74,7 @@ with all 11 possible designs considered.
 We chose families of variational distributions that include the true posterior (or true marginal). For the amortised posterior, we set $\phi = (\Lambda, \delta, \Sigma_\text{p})$ and let
 \begin{align}
 	\qp(\theta | y, d; \phi) &\sim N(\mu_\text{p}, \Sigma_\text{p}) \\
-	\text{where } \mu_\text{p} &= (X_d^T X_d+\Lambda)^{-1}(X_d^T X_d + \Lambda)(y + \delta)
+	\text{where } \mu_\text{p} &= (X_d^T X_d+\Lambda)^{-1}X_d^T(y + \delta)
 \end{align}
 and $\Lambda$ is a diagonal matrix and $\Sigma_\text{p}$ is positive definite. For the marginal, we simple take $\phi = (\mu_\text{m}, \Sigma_\text{m})$ and
 \begin{equation}
@@ -57,18 +99,18 @@ The exact parameter settings, to get about 10 seconds of computation for each me
 \subsection{LinReg + RE}
 In this experiment, we extended the model to include random effects. Specifically, 
 \begin{align}
-	\theta &\sim N(\mu_0, \Sigma_0) \\
-	\tilde{\theta} &\sim N(\tilde{\mu}_0, \tilde{\Sigma}_0) \\
-	y | \theta, d & \sim N(X_d\theta+ \tilde{X}\tilde{\theta}, \sigma^2 I)
+	\theta &\sim N(\mu_\theta, \Sigma_{\theta\theta}) \\
+	\psi &\sim N(\mu_\psi, \Sigma_{\psi\psi}) \\
+	y | \theta, d & \sim N(X_{d,\theta}\theta+ X_{d,\psi}\psi, \sigma^2 I)
 \end{align}
 where
 \begin{align}
-	\tilde{\mu}_0 &= 0 \\
-	\tilde{\Sigma}_0 &= I_{10} \\
-	\tilde{X} &= I_{10}
+	\mu_\psi &= 0 \\
+	\Sigma_{\psi\psi} &= I_{10} \\
+	X_{d,\psi} &= I_{10}
 \end{align}
-Here $\theta$ is the random variable of interest, while $\tilde{\theta}$ is a nuisance variable that needs to be integrated out.
-The variational distribution for the likelihood, $\ql$, was the same as $\qm$, except that the mean was shifted by $X_d\theta$.
+and $X_{d,\theta}$ was the $X_d$ from the previous example. Here $\theta$ is the random variable of interest, while $\psi$ is a nuisance variable that needs to be integrated out.
+The variational distribution for the likelihood, $\ql$, was the same as $\qm$, except that the mean was shifted by $X_{d,\theta}\theta$.
 
 The exact parameter settings, to get about 10 seconds of computation for each method, were
 \begin{center}
@@ -103,7 +145,7 @@ The exact parameter settings, to get about 10 seconds of computation for each me
 We changed the model to 
 \begin{align}
 	\sigma^2 &\sim \Gamma^{-1}(\alpha, \beta) \\
-	\theta &\sim N(\mu_0, \Sigma_0) \\
+	\theta &\sim N(\mu_\theta, \Sigma_{\theta\theta}) \\
 	y | \theta, \sigma^2, d & \sim N(X_d\theta, \sigma^2 I)
 \end{align}
 where $\alpha=3$ and $\beta=2$.
@@ -131,8 +173,6 @@ The exact parameter settings, to get about 10 seconds of computation for each me
 
 \subsection{LinReg2}
 We used the model of LinReg, and the following parameter settings
-
-The exact parameter settings, to get about 10 seconds of computation for each method, were
 \begin{center}
 \begin{tabu}{|c|c|c|c|c|c|c|c|c|c|c|c|}
 \hline

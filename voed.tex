@@ -59,7 +59,7 @@ $y_i, \theta_i \sim p(y, \theta | d)$;
 in a probabilistic programming context this corresponds to running the model forwards with no conditioning.
 We can then construct the required Monte Carlo estimates for the gradient as
 \begin{equation}
-\nabla_{\phi} \mathcal{L}_p(d;\phi) \approx \nabla_\phi \left\{\frac{1}{N}\sum_{i=1}^N \log \qp(\theta_i|y_i, d; \phi)\right\} \quad \text{where} \quad y_i, \theta_i \overset{\tiny{\text{i.i.d.}}}{\sim} p(y, \theta | d),
+\nabla_{\phi} \mathcal{L}_p(d;\phi) \approx \nabla_\phi \left\{\frac{1}{N}\sum_{i=1}^N \log \qp(\theta_i|y_i, d; \phi)\right\} \quad \text{where} \quad y_i, \theta_i \overset{{\text{i.i.d.}}}{\sim} p(y, \theta | d),
 \end{equation}
 %\begin{equation}
 %\nabla_{\phi} \mathcal{L}_p(d;\phi) \approx \nabla_\phi \left\{\frac{1}{N}\sum_{i=1}^N \log \qp(\theta_i|y_i, d; \phi) - \frac{1}{N} \sum_{i=1}^N \log p(\theta_i)\right\} \quad \text{where} \quad y_i, \theta_i \overset{\tiny{\text{i.i.d.}}}{\sim} p(y, \theta | d),
@@ -107,36 +107,11 @@ them back into~\eqref{eq:EIGp-app} to give
 which can then itself be approximated by conventional Monte Carlo
 sampling.
 
-\subsection{Choice of variational family}
-The success of variational OED relies heavily on a good choice of variational family (guide, in the language of Pyro). Here we briefly outline techniques that aid writing guides for Generalised Linear Mixed Models (GLMMs), which we define hierarchically as
-\begin{align}
-	\theta, \psi &\sim N(\mu_0, \Sigma_0) \\
-	\zeta &= X_d\theta \\
-	\eta &= \zeta + \tilde{X}_d \psi \\
-	y &\sim p(y|\eta)
-\end{align}
-which is a slight relaxation of typical GLMMs.
-
-We first consider posterior guides, $\qp$ and propose a multivariate Gaussian approximation. It can be shown that the bound \eqref{eq:postbound} is maximised when the mean and covariance of $\qp$ match that of the true posterior. We have
-\begin{align}
-	\expect(\theta|y, d) &= \expect(\expect[\theta|y,\zeta, d]|y, d) \\
-	\expect[\theta|\zeta, d] &= (X_d^T X_d)^{-1}X_d^T \zeta \\
-	\expect(\theta|y, d) &= (X_d^T X_d)^{-1}X_d^T \expect(\zeta|y)
-\end{align}
-so we have done the amortisation over $X_d$ analytically.
-
-Similarly, the covariance $\cov(\theta|y,d)$ is
-**not quite-- need correction for those random effects**
-\begin{align}
-	(X_d^TX_d)^{-1}X_d^T\cov(\zeta|y)X_d(X_d^TX_d)^{-1}
-\end{align}
-
-For marginal guides, simply note that $\ql$ depends on $\theta$ only through $X_d\theta$ --probably a shift in the mean...
 
 \subsection{Experiments}
 \label{sec:experiments}
 
-We validate our EIG estimators on a selection of generalized linear models. These serve as useful benchmarks, since they are workhorse models in many different scientific disciplines. Our results are summarized in Table~\ref{tab:abserrors} and Fig.~\ref{fig:lm}-\ref{fig:nig}. In all four cases, both estimators
+We validate our EIG estimators on a selection of Generalized Linear Mixed Models. These serve as useful benchmarks, since they are workhorse models in many different scientific disciplines. See Appendix~\ref{sec:glmms} for a discussion of suitable variational families for these models. Our results are summarized in Table~\ref{tab:abserrors} and Fig.~\ref{fig:lm}-\ref{fig:nig}. In all four cases, both estimators
 (i.e.~the posterior method based on $\qp$ and the marginal method\footnote{correcting for random effects as necessary} based on $\qm$) 
 gave significantly lower variance than the NMC baseline, and in all but one case a
 significantly lower bias as well. We note that NMC especially struggles with random effects (LinReg + RE). More worryingly still, the bias of the NMC estimator can exhibit strong systematic variation as a function of the design, see Fig.~\ref{fig:lm}-\ref{fig:nig}. This is problematic because it can lead to the choice of a significantly suboptimal design. It is also worth emphasizing the utility of having multiple variational methods at our disposal: while the marginal method yields poor EIG estimates for the model with a large output dimension, the posterior method delivers high quality estimates. 

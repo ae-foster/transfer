@@ -133,6 +133,11 @@ Hu, I. (1998).
 \newblock On sequential designs in nonlinear problems.
 \newblock {\em Biometrika}, 85(2):496--503.
 
+\bibitem[Kingma and Ba, 2014]{kingma2014adam}
+Kingma, D.~P. and Ba, J. (2014).
+\newblock Adam: A method for stochastic optimization.
+\newblock {\em arXiv preprint arXiv:1412.6980}.
+
 \bibitem[Kingma and Welling, 2014]{kingma2014auto}
 Kingma, D.~P. and Welling, M. (2014).
 \newblock Auto-encoding variational {Bayes}.
@@ -160,6 +165,11 @@ Long, Q., Scavino, M., Tempone, R., and Wang, S. (2013).
   experimental designs based on laplace approximations.
 \newblock {\em Computer Methods in Applied Mechanics and Engineering},
   259:24--39.
+
+\bibitem[Lueckmann et~al., 2018]{lueckmann2018}
+Lueckmann, J.-M., Bassetto, G., Karaletsos, T., and Macke, J.~H. (2018).
+\newblock Likelihood-free inference with emulator networks.
+\newblock {\em arXiv preprint arXiv:1805.09294}.
 
 \bibitem[Marchant et~al., 2014]{marchant2014}
 Marchant, R., Ramos, F., Sanner, S., et~al. (2014).
@@ -215,6 +225,11 @@ Pang, K., Dong, M., Wu, Y., and Hospedales, T. (2018).
 Paninski, L. (2005).
 \newblock Asymptotic theory of information-theoretic experimental design.
 \newblock {\em Neural Computation}, 17(7):1480--1507.
+
+\bibitem[Piera and Parada, 2009]{piera2009}
+Piera, F.~J. and Parada, P. (2009).
+\newblock On convergence properties of shannon entropy.
+\newblock {\em Problems of Information Transmission}, 45(2):75--94.
 
 \bibitem[Pronzato, 2010]{pronzato2010}
 Pronzato, L. (2010).

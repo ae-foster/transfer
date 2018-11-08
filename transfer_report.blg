@@ -8,48 +8,47 @@ Repeated entry---line 253 of file referencs.bib
  : @article{long2013
  :                  ,
 I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "kingma2014adam"
 Warning--empty journal in ginsbourger2008
 Warning--empty journal in vincent2017
-You've used 54 entries,
+You've used 57 entries,
             1935 wiz_defined-function locations,
-            764 strings with 12625 characters,
-and the built_in function-call counts, 23117 in all, are:
-= -- 2263
-> -- 997
-< -- 37
-+ -- 354
-- -- 338
-* -- 1866
-:= -- 3914
-add.period$ -- 160
-call.type$ -- 54
-change.case$ -- 434
-chr.to.int$ -- 54
-cite$ -- 56
-duplicate$ -- 937
-empty$ -- 1589
-format.name$ -- 416
-if$ -- 4607
+            777 strings with 13046 characters,
+and the built_in function-call counts, 24181 in all, are:
+= -- 2366
+> -- 1046
+< -- 39
++ -- 370
+- -- 354
+* -- 1955
+:= -- 4108
+add.period$ -- 169
+call.type$ -- 57
+change.case$ -- 457
+chr.to.int$ -- 57
+cite$ -- 59
+duplicate$ -- 977
+empty$ -- 1657
+format.name$ -- 439
+if$ -- 4808
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 57
-newline$ -- 271
-num.names$ -- 162
-pop$ -- 457
+missing$ -- 60
+newline$ -- 286
+num.names$ -- 171
+pop$ -- 476
 preamble$ -- 1
-purify$ -- 437
+purify$ -- 460
 quote$ -- 0
-skip$ -- 728
+skip$ -- 760
 stack$ -- 0
-substring$ -- 1543
-swap$ -- 190
+substring$ -- 1598
+swap$ -- 193
 text.length$ -- 15
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 316
+type$ -- 334
 warning$ -- 2
-while$ -- 181
+while$ -- 189
 width$ -- 0
-write$ -- 680
+write$ -- 717
 (There was 1 error message)
