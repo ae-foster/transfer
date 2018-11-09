@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.11.7)  8 NOV 2018 18:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.11.7)  9 NOV 2018 16:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1370,7 +1370,7 @@ converted-to.pdf>
 rtical_CMYK-eps-converted-to.pdf figures/Dept_Stats_logo_vertical_CMYK.eps>
 (epstopdf)             \includegraphics on input line 6.
 Package epstopdf Info: Output file is already uptodate.
-<figures/Dept_Stats_logo_vertical_CMYK-eps-converted-to.pdf, id=275, 110.4125pt
+<figures/Dept_Stats_logo_vertical_CMYK-eps-converted-to.pdf, id=263, 110.4125pt
  x 145.54375pt>
 File: figures/Dept_Stats_logo_vertical_CMYK-eps-converted-to.pdf Graphic file (
 type pdf)
@@ -1407,57 +1407,39 @@ l.37 ....2}Analytic entropy}{23}{subsection.2.2.2}
 
  [2] [3
 
-] (./preface.tex
-
-LaTeX Warning: Reference `chap:oed' on page 4 undefined on input line 3.
-
-
-LaTeX Warning: Reference `chap:probabilistic_modelling' on page 4 undefined on 
-input line 3.
-
-
-LaTeX Warning: Reference `chap:ppl' on page 4 undefined on input line 3.
-
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 3.
-(/usr/local/texlive/2018/texmf-dist/tex/latex/base/t1cmtt.fd
-File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-
-LaTeX Warning: Reference `chap:oed' on page 4 undefined on input line 3.
-
-) [4
+] (./preface.tex) [4
 
 ]
 Chapter 1.
 (./intro.tex [5
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 54.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 55.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 54.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 55.
 
-Overfull \hbox (6.4477pt too wide) in paragraph at lines 63--65
+Overfull \hbox (6.4477pt too wide) in paragraph at lines 64--66
 \T1/cmr/m/n/10 which leads to the the Fisher In-for-ma-tion Ma-trix, used in ma
 ny ex-per-i-ment de-sign cri-te-ria [[]],
  []
 
 [6] [7] [8] [9]
-Overfull \hbox (17.9773pt too wide) in paragraph at lines 212--213
+Overfull \hbox (17.9773pt too wide) in paragraph at lines 213--214
 \T1/cmr/m/n/10 Some have con-sid-ered non-greedy strate-gies [[]] [[]]. See [[]
 ,
  []
 
 [10] [11] [12] [13] [14] [15]
-Overfull \hbox (18.74002pt too wide) in paragraph at lines 380--381
+Overfull \hbox (18.74002pt too wide) in paragraph at lines 381--382
 []\T1/cmr/m/n/10 The con-nec-tion be-tween ac-tive learn-ing and Bayesian op-ti
 -mal de-sign was ex-plored in [[]].
  []
 
 [16]
-Overfull \hbox (8.77121pt too wide) in paragraph at lines 392--393
+Overfull \hbox (8.77121pt too wide) in paragraph at lines 393--394
 \T1/cmr/m/n/10 In most ap-pli-ca-tions, we as-sume that ex-per-i-ments will be 
 car-ried out af-ter de-sign. In [[]],
  []
@@ -1474,12 +1456,12 @@ Overfull \hbox (41.68524pt too wide) in paragraph at lines 72--73
  []
 
 [19] [20]
-<figures/lm.png, id=699, 722.7pt x 361.35pt>
+<figures/lm.png, id=684, 722.7pt x 361.35pt>
 File: figures/lm.png Graphic file (type png)
 <use figures/lm.png>
 Package pdftex.def Info: figures/lm.png  used on input line 147.
 (pdftex.def)             Requested size: 361.3491pt x 180.67456pt.
-<figures/lm_re.png, id=701, 722.7pt x 361.35pt>
+<figures/lm_re.png, id=686, 722.7pt x 361.35pt>
 File: figures/lm_re.png Graphic file (type png)
 <use figures/lm_re.png>
 Package pdftex.def Info: figures/lm_re.png  used on input line 155.
@@ -1488,7 +1470,7 @@ Package pdftex.def Info: figures/lm_re.png  used on input line 155.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/lm_large_n.png, id=704, 722.7pt x 361.35pt>
+<figures/lm_large_n.png, id=689, 722.7pt x 361.35pt>
 File: figures/lm_large_n.png Graphic file (type png)
 <use figures/lm_large_n.png>
 Package pdftex.def Info: figures/lm_large_n.png  used on input line 162.
@@ -1496,7 +1478,7 @@ Package pdftex.def Info: figures/lm_large_n.png  used on input line 162.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/nig.png, id=707, 722.7pt x 361.35pt>
+<figures/nig.png, id=692, 722.7pt x 361.35pt>
 File: figures/nig.png Graphic file (type png)
 <use figures/nig.png>
 Package pdftex.def Info: figures/nig.png  used on input line 169.
@@ -1506,7 +1488,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 [21 <./figures/lm.png>] [22 <./figures/lm_re.png> <./figures/lm_large_n.png>]
 [23 <./figures/nig.png>]
-<figures/ae_and_dv.png, id=751, 706.8006pt x 425.6703pt>
+<figures/ae_and_dv.png, id=736, 706.8006pt x 425.6703pt>
 File: figures/ae_and_dv.png Graphic file (type png)
 <use figures/ae_and_dv.png>
 Package pdftex.def Info: figures/ae_and_dv.png  used on input line 241.
@@ -1515,11 +1497,11 @@ Package pdftex.def Info: figures/ae_and_dv.png  used on input line 241.
 Chapter 3.
 (./future.tex [25
 
-] [26]) [27]
+] [26] [27] [28] [29]) [30]
 Chapter 4.
-(./appendix.tex [28
+(./appendix.tex [31
 
-] [29] [30]
+] [32] [33]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 128.
@@ -1544,32 +1526,28 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 144.
 
-[31]) [32] (./transfer_report.bbl [33
+[34]) [35] (./transfer_report.bbl [36
 
 
-] [34] [35]) [36]
+] [37] [38] [39]) [40]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 143.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 143.
- (./transfer_report.aux
-(./title_page.aux))
+
+(./transfer_report.aux (./title_page.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 143.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 143.
 Package rerunfilecheck Info: File `transfer_report.out' has not changed.
-(rerunfilecheck)             Checksum: B11A89D8B23B05203476433ADA74E602;3928.
-
-
-LaTeX Warning: There were undefined references.
-
+(rerunfilecheck)             Checksum: D0BC854AD022CA265D930AB1D8A9CA3F;3853.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 143.
  ) 
 Here is how much of TeX's memory you used:
- 47781 strings out of 492639
- 1082094 string characters out of 6129287
- 1272832 words of memory out of 5000000
- 50657 multiletter control sequences out of 15000+600000
- 554808 words of font info for 76 fonts, out of 8000000 for 9000
+ 47788 strings out of 492639
+ 1081895 string characters out of 6129287
+ 1272479 words of memory out of 5000000
+ 50649 multiletter control sequences out of 15000+600000
+ 554495 words of font info for 75 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
- 63i,16n,101p,1196b,625s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 63i,16n,101p,1325b,625s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exi
 st, replaced by a fixed one
 
@@ -1612,12 +1590,11 @@ c/cm-super/sfrm0900.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/
 cm-super/sfrm1000.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm
 -super/sfrm2488.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-s
 uper/sfti1000.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-sup
-er/sfti1200.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super
-/sftt1000.pfb>
-Output written on transfer_report.pdf (37 pages, 830687 bytes).
+er/sfti1200.pfb>
+Output written on transfer_report.pdf (41 pages, 825138 bytes).
 PDF statistics:
- 1045 PDF objects out of 1200 (max. 8388607)
- 910 compressed objects within 10 object streams
- 286 named destinations out of 1000 (max. 500000)
- 651 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1085 PDF objects out of 1200 (max. 8388607)
+ 947 compressed objects within 10 object streams
+ 305 named destinations out of 1000 (max. 500000)
+ 627 words of extra memory for PDF output out of 10000 (max. 10000000)
 

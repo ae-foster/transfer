@@ -1,48 +1,104 @@
-\section{EIG}
-\subsection{EIG estimation on simpler models}
-Current project. Focus is on linear-type models (see Kruschke) that are used in applied stats. We can implement some semi-whitebox methods here. The aim is to use these models and EIG estimators in active learning loops. So we want sub-second estimation. This leads to methods based on relatively structued guides.
+In this section, we outline ideas for future research in OED. Some ideas are clear next steps proceeding from the greedy EIG maximisation paradigm that has been adopted so far. The ultimate goal of this project would be a probabilistic programming framework that can efficiently design (near) optimal experiments for a wide variety of models and design spaces. There are also theoretical questions about this paradigm that ought to be addressed.
 
-\subsection{EIG estimation on complex models}
-Very related, but taking a more black box approach. Assume that the model is too complex to build a structured guide, but that the experiment is very expensive. So we can spend more time on EIG estimation. Deep learning approaches, like Donsker-Varadhan, might look more attractive.
+It is also possible to address shortcomings in the current framework. Non-greedy strategies, and experiment design with costs both connect with the POMDP formulation of the problem. The open question is how far we can maintain good performance whilst beginning to tackle these issues.
 
-\subsection{Theory of EIG estimators}
-Are estimators statistically consistent? Can we estimate, bound or approximate the error, or the relative error across different $d$?
+Moving beyond EIG entirely forces us to confront more fundamental questions of what practitioners need from experiment design. One aspect that is clearly important is the connection with causal inference -- indeed some scientists view avoiding false causal inferences as \textit{the} problem of experiment design, optimal or otherwise. Another issue of importance is model misspecification. EIG in some sense assumes that the model is exactly true. Would optimal design look the same if we admitted a probability that the model was incorrect? Suppose instead, we sought to design experiments that actively exposed flaws in the model.
 
-\subsection{EIG gradients}
-How best to estimate the gradient $\partial_d \text{EIG}$? Can we obtain bounds? What would Rainforth gradient estimation look like? Can we optimise EIG in a GAN-like fashion -- iterative updates of $q$ and $d$.
+With such a diversity of interesting questions in this area, the difficulty is prioritisation. So far, we have sought to strike the balance between building things that work efficiently on some problems, and maintaining generality and provable correctness. Potential applications, interest and advice will guide future priorities.
 
-\subsection{EIG optimisation}
-Are there special features of EIG that we can exploit when using Bayes opt, or something else, to do EIG optimisation?
 
-\subsection{Model misspecification}
-How best to deal with model misspecification in experiment design. A uniform increase in $y$ entropy does not change design... what would be the right paradigm for this?
+\section{Greedy EIG maximisation}
+\subsection{Expanding the scope of variational OED}
+Variational optimal experiment design as outlined in Chapter~\ref{chap:voed}, whilst a generally applicable idea, is currently limited in practice to (a subset of) GLMMs. The guides are highly structured and exploit knowledge of the models. If we are interested in OED for sequential human-in-the-loop experiments, there is a definite upper limit on acceptable computation time. This would encourage us to delve forwards with simpler models. The objective would be to drive computation down as far as possible.
 
-\subsection{Sequential design and active learning}
-Further considerations for using EIG estimation/optimisation in a live active learning loop.
+On the other hand, our literature review highlighted the interest in a number of other more complex models. When experiments are very expensive or timely, there is scope to allow a much longer OED computation time. Among `complex' models, nonlinear regression models are foremost. We can broadly divide these into parametric models (e.g. the differential equation model of \cite{vanlier2012}) and Bayesian nonparametric models where the Gaussian process is the leading example. We should also distinguish between the Bayesian optimisation case --  in which the only quantity we are interested in is the location of the optimum -- and cases where we genuinely want to maximise information about the entire function. These two classes of nonlinear regression models suggest different variational approaches. For highly nonlinear parametric models, it is likely that we dispense with assuming any knowledge of the nonlinearities and fall back on flexible approximators like deep neural networks. Gaussian processes, on the other hand, have mathematical structure that can be exploited (e.g. \cite{pes}). Benchmarks, particularly for Bayesian optimisation, are likely to be harder to beat for the GP. The interest in such OED problems, though, is correspondingly high.
+
+We could instead ask: in which cases does OED deliver the greatest benefit? That is, under which conditions would an experimental program without OED, or with inaccurate OED, be inefficient? A partial answer to this question can be given by the interpretation of EIG as epistemic uncertainty in the response (see Section~\ref{sec:onestep} for derivation)
+\begin{equation}
+	\eig(d) = \entropy{p(y|d)} - \expect_{p(\theta)}[\entropy{p(y|\theta,d)}].
+\end{equation}
+Thus $\eig(d)$ will be low whenever $p(y|d)$ is certain. This is intuitive -- if our current model already accurately predicts $y$ at query $d$, little we be gained from confirming that outcome. However, high uncertainty in $y|d$ is not enough. We also need the expected aleatoric uncertainty to be low. Put another way, if knowing the exact values of $\theta$ still fails to resolve the uncertainty in the outcome then querying at $d$ will not tell us much about $\theta$. We can manufacture interesting OED problems using these two insights. First, data censoring means that $\entropy{p(y|d)}$ will be low unless we avoid the censored region. Secondly, allowing the strength of random effects to be higher for some $d$ than others means $\entropy{p(y|\theta,d)}$ will be high unless we avoid the noisy region.
+
+One possible problem to explore is modelling distances, for instance using multi-dimensional scaling \cite{torgerson1952multidimensional}. The design would be a pair $d = (x_1, x_2)$ of object to compare. This could become a very interesting problem if i) the response was censored for very dissimilar objects, ii) responses on previous objects allow us to accurately predict the outcome on some others. Both of these ideas could reduce $\entropy{p(y|d)}$ for certain designs. One specific application is in psychology when studying the similarity between concepts \cite{shepard1962analysis}.
+
+\subsection{Importance weighting correction to variational OED}
+The variational methods of Section~\ref{sec:voed} are biased and, if $\mathcal{Q}$ is chosen poorly, do not converge to the true EIG. NMC, though sometimes very slow, is a consistent procedure. We explore the connection between the two here. We have
+\begin{equation}
+	\eig(d) = \iint p(y, \theta | d) \log p(y|\theta, d) \, dy \, d\theta - \int p(y|d) \log \left( \int p(y|\theta,d) p(\theta) \, d\theta \right) \, dy
+\end{equation}
+and conventional NMC proceeds by estimating the integral $\int p(y|\theta,d) p(\theta) \, d\theta$ using fresh samples from $p(\theta)$. We could instead use $\qp(\theta|y,d)$ as a proposal
+\begin{equation}
+	\int p(y|\theta,d) p(\theta) \, d\theta = \int p(y|\theta,d) \frac{p(\theta)}{\qp(\theta|y,d)} \qp(\theta|y,d) \, d\theta.
+\end{equation}
+Using one Monte Carlo sample for this integral reduces to the estimators used in Section~\ref{sec:voed}. If we instead used $M$ samples, we would have a new NMC estimator
+\begin{equation}
+	\eig(d) \approx \frac{1}{N}\sum_{n=1}^N \left[ \log p(y_n | \theta_n, d) - \log \left(\frac{1}{M} \sum_{m=1}^M p(y_n | \theta_{nm}, d)\frac{p(\theta_{nm})}{\qp(\theta_{nm}|y_n,d)} \right) \right]
+\end{equation}
+where
+\begin{align}
+	y_n, \theta_n \simiid & \ p(y, \theta | d) \\
+	\theta_{nm}|y_n \simiid & \ \qp(\theta|y_n,d).
+\end{align}
+and we would have a consistent estimator that likely converges much faster than conventional NMC. Note the connection with the IWAE \cite{iwae}, an importance weighting correction to the VAE ELBO.
+
+It would also be interesting to see if we can find a correction that uses $\qm$, our approximation to the marginal, rather than $\qp$.
+
+
+\subsection{Estimating the gradient of EIG}
+Thus far, we have primarily focused on point estimation of $\eig(d)$. Many optimisation procedures (over $d$) rely instead on estimates of $\nabla_d\,\eig(d)$. We first note that, as $\eig$ is an expectation over $p(y,\theta|d)$, the reparametrization trick and its extensions \cite{tucker2017rebar, rezende2014stochastic} would be attractive here.
+
+Suppose that we use our variational OED estimates in place of true EIG evaluations. Then the global optimisation problem tackled is
+\begin{equation}
+	\max_d \max_\phi \left\{ \iint p(y, \theta | d) \log \qp (\theta | y, d; \phi)\, dy\, d\theta  \right\} + \entropy{p(\theta)}.
+\end{equation}
+Rather than a lengthy process of optimising $\phi$ at each step, we could iterate between gradient steps in $\phi$ and $d$ space (or compute a combined gradient step) to reach the global optimum, as is done with the Generative Adversarial Network (GAN) \cite{goodfellow2014generative}. If successful, this approach could make finding local optima of $\eig$ computationally similar in difficulty to evaluating $\eig$ at a single point.
+Alternatively, using gradient information within Gaussian process driven Bayesian optimisation \cite{osborne2009gaussian} is possible, and may be preferable in OED where a global optimum is desired.
+
+\subsection{A sequential design framework in a probabilistic language}
+Implementation in Pyro has so far focused on EIG estimation procedures. Building a general purpose toolkit for sequential OED remains a project of both software development and research. In such development, we would like to maintain the ability to change the EIG estimation and optimisation procedures relatively easily, including combining them as in the previous section. Part of the process that has not received a great deal of attention thus far is the sequential aspect of the problem. Having designed and performed an experiment, we need to compute the posterior on $\theta$, and then proceed using this as a new prior. When using posterior variational OED, that based on $\qp$, we will already have an approximation to the posterior. If sampling techniques (e.g. MCMC) are used to sample the posterior, we will no longer assume access to the density $p(\theta)$. Fortunately, this does not affect our current estimators: in one, the density is never used and in the other $\entropy{p(\theta)}$ is a constant in an optimisation problem that we can safely ignore. An approach using Population Monte Carlo (PMC) was outlined in \cite{vincent2017}.
+
 
 \subsection{Optional stopping}
-Suppose we use posterior entropy as an optional stopping criterion, and use EIG for sequential experiment design. How would this impact final conclusions that we are able to make about data?
-
-\subsection{Dynamic models}
-Experiment design for systems that change as a result of the experimentation. Things like the atmosphere or a pond.
+We conclude by outlining more theoretical directions we might wish to take. As was mentioned very briefly in Section~\ref{sec:optstop}, optional stopping might form part of sequential OED. Statistical analysis of optional stopping has a long history~\cite{chernoff1972sequential}. Which optional stopping rules are we allowed to use in EIG driven sequential experimentation with Bayesian data analysis? Bayesian analysis is concerned not only with testing hypotheses but also with establishing uncertainty. Which conclusions are we able to draw from our posterior when that posterior was created from optional stopping?
 
 
-\section{Beyond EIG}
+\subsection{EIG and power}
+Frequentist statisticians typically design experiments using a notion of statistical power (that is tied to a specific hypothesis). What is the connection between EIG and power?
+
+Our interest in information arises from a belief that optimising overall information will allow us to tackle many downstream tasks. We would like to make a statement like the following: `EIG optimisation is optimal when an unknown problem is to be solved using the final posterior'. Such a problem could be a hypothesis test. The connection with decision theory should also be explored.
+
+
+\section{Beyond greedy EIG maximisation}
+\subsection{Cost and non-greedy optimisation}
+Frequently, experimentation is not free and the cost varies with the design. This is particularly the case when the magnitude of the experiment is a design parameter. With the inclusion of costs, we might wish to optimise
+\begin{equation}
+	U(d) = \eig(d) - \lambda C(d)
+\end{equation}
+where $C(d)$ is the cost of the design and $\lambda$ is a constant that determines the trade-off between information and cost.
+
+When designing a single experiment, the inclusion of cost seems relatively simple. In the multi-step case, the inclusion of cost may be more important. For example, in a sequential design problem with costs and a finite horizon $T$, it would make sense to perform cheaper experiments at early times. Once some aspects of the system are understood, we can proceed to more expensive experiments with less risk of performing the wrong experiment. In the case of a fixed budget, we would be happy to use up our entire budget at time $T$, but would be much more cautious at time $1$.
+
+Proceeding to the question of non-greedy optimisation more generally, it has been noted that we can view the problem as a POMDP and so generic methods like Partially Observable Monte Carlo Planning \cite{pomcp} are applicable. Suppose we wish to maximise total information gain, possibly including costs. Are there features of the problem that allow us to do significantly better than using generic POMDP solvers?
 
 \subsection{Causal inference}
-What if we design an experiment for causal strucuture learning? \textit{And} information? How do these fields intersect? Speak to Robin Evans.
+It is common in science that experiments are performed to learn causal structure or to estimate expectations defined using \textit{do}-calculus \cite{pearl2009causal} such as $\expect[Y | do(X=x)]$. Many flaws in scientific experiment design are the result, not of gaining too little information, but of making inappropriate causal assumptions or incorrectly estimating these sorts of expectations.
 
-\subsection{Power}
-This is a theoretical question. How does the Bayesian notion of EIG intersect with frequentist notions of experiment design, in particular, statistical power?
+How does experiment design for causal inference intersect with experiment design for information? It is possible that causal statistics simply defines a subset $\mathcal{D}' \subseteq \mathcal{D}$ of designs that are valid from a causal inference perspective. We could then seek $\max_{d\in\mathcal{D}'}\ \eig(d)$. Alternatively, information about certain latent variables might be more valuable in determining the causal structure than others, altering the optimisation problem entirely.
 
-\subsection{Cost}
-Designing experiments for information, but with a cost assicatiated with each experiment. Sequential case may be more interesting that one shot (which seems simple).
 
-\subsection{Non-greedy}
-Related to above. Solving the non-greedy experimental design problem brings in elements from POMDPs and RL. Should we use EIG here? Should we use RL reward functions? Are they in some sense (approximately) the same? Could greedy EIG optimisation arise as a good approximation to the RL task?
+\subsection{Model misspecification}
+Box told us that all statistical models are wrong \cite{box1976}. How, then, can we design experiments and account for model misspecification? Recalling the interpretation of EIG as epistemic uncertainty in $y|d$, certain corrections will not lead us to make different design decisions. For instance, increasing $\entropy{p(y|d)}$ and $\entropy{p(y|\theta,d)}$ by a constant to account for additional uncertainty (this could happen by the addition of independent noise) will not change design decisions. We could also encode our model uncertainty in a Bayesian hierarchical model where we sample some $V \in \{0, 1\}$ to decide if we trust our model. If untrusted, we fall back on some high variance model. This would only change design decisions if the fall back model depended on $d$ or $\theta$, or if $V$ was regarded as part of $\theta$. Then, the exact form of the fall back model would make all the difference in determining optimal designs.
 
-\subsection{Other criteria}
-In active learning, they have criteria about the expected misclassification, and some other criteria. Can we connect these? In classical experiment design they have all these mysterious criteria like $D$-optimality and so on.
+If we have empirical samples of $y|d$, from previous experiments, we might stand a better chance of at least detecting model misspecification. It's possible that we could even make this the objective of the experimental program.
 
 \subsection{Experiment design for model criticism}
-Rather than assuming the model to be true and looking to gain information within the model, suppose instead that we have an empirical distribution and seek a new experiment to best expose flaws in the whole model. For instance, when comparing the posterior predictive and empirical distributions (possibly conditional on an input).
+Rather than assuming the model to be true and looking to gain information within the model, suppose instead that we have data from some prior experiments and seek a new experiment to best expose flaws in the whole model. Scientists often criticise models by comparing the posterior predictive and empirical distributions (possibly conditional on some input). Could we turn this into an objective function, similar to EIG, that would let us design experiments to quickly expose flaws in models?
+
+
+\subsection{Dynamic models}
+A foundational assumption in our sequential OED set-up was that experimentation does not change the underlying system. Many systems do change as we experiment with them. In such a system, would the latent variables of interest also change with time? If so, standard Bayesian data analysis would not be appropriate. If some time-invariant characteristics could be found then we might have a better chance. We could still formulate this model as a POMDP in the usual way if $h_{t+1}$ depends only on $h_t$ and $\theta$. A first model to consider might be one with a Markovian structure, i.e. we would allow $y_{t+1}$ to depend on $\theta$ and $d_{t+1}$ as usual, but also on $y_t$ and $d_t$. In such a setting the non-greedy formulation of the problem would come to the fore. For instance, it might be important to explore the entire state space or avoid absorbing states that would terminate learning.
+
+
+\subsection{Other criteria}
+Alternatives to EIG for one-step design abound \cite{chaloner1995}. Particularly interesting are those employed in active learning that target expected misclassification or expected error on a test set. It could be interesting to explore these i) theoretically, to see if EIG is somehow connected to these other criteria, ii) empirically, to see if altering the criterion used actually changes the experiment design significantly.
+

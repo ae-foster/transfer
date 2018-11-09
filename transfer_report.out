@@ -22,7 +22,7 @@
 \BOOKMARK [1][-]{section.2.1}{Variational optimal experiment design}{chapter.2}% 22
 \BOOKMARK [2][-]{subsection.2.1.1}{Bounding EIG}{section.2.1}% 23
 \BOOKMARK [2][-]{subsection.2.1.2}{Estimation}{section.2.1}% 24
-\BOOKMARK [2][-]{subsection.2.1.3}{Consistency}{section.2.1}% 25
+\BOOKMARK [2][-]{subsection.2.1.3}{Convergence}{section.2.1}% 25
 \BOOKMARK [2][-]{subsection.2.1.4}{Accounting for random effects}{section.2.1}% 26
 \BOOKMARK [2][-]{subsection.2.1.5}{Experiments}{section.2.1}% 27
 \BOOKMARK [1][-]{section.2.2}{Extensions}{chapter.2}% 28
@@ -30,29 +30,26 @@
 \BOOKMARK [2][-]{subsection.2.2.2}{Analytic entropy}{section.2.2}% 30
 \BOOKMARK [2][-]{subsection.2.2.3}{Experiments}{section.2.2}% 31
 \BOOKMARK [0][-]{chapter.3}{Future directions}{}% 32
-\BOOKMARK [1][-]{section.3.1}{EIG}{chapter.3}% 33
-\BOOKMARK [2][-]{subsection.3.1.1}{EIG estimation on simpler models}{section.3.1}% 34
-\BOOKMARK [2][-]{subsection.3.1.2}{EIG estimation on complex models}{section.3.1}% 35
-\BOOKMARK [2][-]{subsection.3.1.3}{Theory of EIG estimators}{section.3.1}% 36
-\BOOKMARK [2][-]{subsection.3.1.4}{EIG gradients}{section.3.1}% 37
-\BOOKMARK [2][-]{subsection.3.1.5}{EIG optimisation}{section.3.1}% 38
-\BOOKMARK [2][-]{subsection.3.1.6}{Model misspecification}{section.3.1}% 39
-\BOOKMARK [2][-]{subsection.3.1.7}{Sequential design and active learning}{section.3.1}% 40
-\BOOKMARK [2][-]{subsection.3.1.8}{Optional stopping}{section.3.1}% 41
-\BOOKMARK [2][-]{subsection.3.1.9}{Dynamic models}{section.3.1}% 42
-\BOOKMARK [1][-]{section.3.2}{Beyond EIG}{chapter.3}% 43
-\BOOKMARK [2][-]{subsection.3.2.1}{Causal inference}{section.3.2}% 44
-\BOOKMARK [2][-]{subsection.3.2.2}{Power}{section.3.2}% 45
-\BOOKMARK [2][-]{subsection.3.2.3}{Cost}{section.3.2}% 46
-\BOOKMARK [2][-]{subsection.3.2.4}{Non-greedy}{section.3.2}% 47
-\BOOKMARK [2][-]{subsection.3.2.5}{Other criteria}{section.3.2}% 48
-\BOOKMARK [2][-]{subsection.3.2.6}{Experiment design for model criticism}{section.3.2}% 49
-\BOOKMARK [0][-]{chapter.4}{Appendix}{}% 50
-\BOOKMARK [1][-]{section.4.1}{Variational families for GLMMs}{chapter.4}% 51
-\BOOKMARK [1][-]{section.4.2}{Experiment details}{chapter.4}% 52
-\BOOKMARK [2][-]{subsection.4.2.1}{LinReg}{section.4.2}% 53
-\BOOKMARK [2][-]{subsection.4.2.2}{LinReg + RE}{section.4.2}% 54
-\BOOKMARK [2][-]{subsection.4.2.3}{LinReg large dim\(y\)}{section.4.2}% 55
-\BOOKMARK [2][-]{subsection.4.2.4}{N-1Reg}{section.4.2}% 56
-\BOOKMARK [2][-]{subsection.4.2.5}{LinReg2}{section.4.2}% 57
-\BOOKMARK [0][-]{subsection.4.2.5}{Bibliography}{}% 58
+\BOOKMARK [1][-]{section.3.1}{Greedy EIG maximisation}{chapter.3}% 33
+\BOOKMARK [2][-]{subsection.3.1.1}{Expanding the scope of variational OED}{section.3.1}% 34
+\BOOKMARK [2][-]{subsection.3.1.2}{Importance weighting correction to variational OED}{section.3.1}% 35
+\BOOKMARK [2][-]{subsection.3.1.3}{Estimating the gradient of EIG}{section.3.1}% 36
+\BOOKMARK [2][-]{subsection.3.1.4}{A sequential design framework in a probabilistic language}{section.3.1}% 37
+\BOOKMARK [2][-]{subsection.3.1.5}{Optional stopping}{section.3.1}% 38
+\BOOKMARK [2][-]{subsection.3.1.6}{EIG and power}{section.3.1}% 39
+\BOOKMARK [1][-]{section.3.2}{Beyond greedy EIG maximisation}{chapter.3}% 40
+\BOOKMARK [2][-]{subsection.3.2.1}{Cost and non-greedy optimisation}{section.3.2}% 41
+\BOOKMARK [2][-]{subsection.3.2.2}{Causal inference}{section.3.2}% 42
+\BOOKMARK [2][-]{subsection.3.2.3}{Model misspecification}{section.3.2}% 43
+\BOOKMARK [2][-]{subsection.3.2.4}{Experiment design for model criticism}{section.3.2}% 44
+\BOOKMARK [2][-]{subsection.3.2.5}{Dynamic models}{section.3.2}% 45
+\BOOKMARK [2][-]{subsection.3.2.6}{Other criteria}{section.3.2}% 46
+\BOOKMARK [0][-]{chapter.4}{Appendix}{}% 47
+\BOOKMARK [1][-]{section.4.1}{Variational families for GLMMs}{chapter.4}% 48
+\BOOKMARK [1][-]{section.4.2}{Experiment details}{chapter.4}% 49
+\BOOKMARK [2][-]{subsection.4.2.1}{LinReg}{section.4.2}% 50
+\BOOKMARK [2][-]{subsection.4.2.2}{LinReg + RE}{section.4.2}% 51
+\BOOKMARK [2][-]{subsection.4.2.3}{LinReg large dim\(y\)}{section.4.2}% 52
+\BOOKMARK [2][-]{subsection.4.2.4}{N-1Reg}{section.4.2}% 53
+\BOOKMARK [2][-]{subsection.4.2.5}{LinReg2}{section.4.2}% 54
+\BOOKMARK [0][-]{subsection.4.2.5}{Bibliography}{}% 55

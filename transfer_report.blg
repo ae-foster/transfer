@@ -10,45 +10,45 @@ Repeated entry---line 253 of file referencs.bib
 I'm skipping whatever remains of this entry
 Warning--empty journal in ginsbourger2008
 Warning--empty journal in vincent2017
-You've used 57 entries,
+You've used 67 entries,
             1935 wiz_defined-function locations,
-            777 strings with 13046 characters,
-and the built_in function-call counts, 24181 in all, are:
-= -- 2366
-> -- 1046
-< -- 39
-+ -- 370
-- -- 354
-* -- 1955
-:= -- 4108
-add.period$ -- 169
-call.type$ -- 57
-change.case$ -- 457
-chr.to.int$ -- 57
-cite$ -- 59
-duplicate$ -- 977
-empty$ -- 1657
-format.name$ -- 439
-if$ -- 4808
+            827 strings with 14480 characters,
+and the built_in function-call counts, 28708 in all, are:
+= -- 2825
+> -- 1207
+< -- 50
++ -- 426
+- -- 408
+* -- 2309
+:= -- 4841
+add.period$ -- 199
+call.type$ -- 67
+change.case$ -- 532
+chr.to.int$ -- 67
+cite$ -- 69
+duplicate$ -- 1170
+empty$ -- 1990
+format.name$ -- 506
+if$ -- 5739
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 60
-newline$ -- 286
-num.names$ -- 171
-pop$ -- 476
+missing$ -- 71
+newline$ -- 336
+num.names$ -- 201
+pop$ -- 556
 preamble$ -- 1
-purify$ -- 460
+purify$ -- 536
 quote$ -- 0
-skip$ -- 760
+skip$ -- 914
 stack$ -- 0
-substring$ -- 1598
-swap$ -- 193
-text.length$ -- 15
+substring$ -- 1956
+swap$ -- 242
+text.length$ -- 20
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 334
+type$ -- 392
 warning$ -- 2
-while$ -- 189
+while$ -- 229
 width$ -- 0
-write$ -- 717
+write$ -- 846
 (There was 1 error message)

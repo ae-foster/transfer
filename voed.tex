@@ -68,7 +68,7 @@ noting that no re-parameterization is required as $p(y,\theta|d)$ is independent
 An analogous scheme can be constructed for the upper bound $\mathcal{U}_m(d;\phi)$, except that we now
 perform a minimization.
 
-\subsection{Consistency}
+\subsection{Convergence}
 Suppose that $\phi_n$ are the values obtained from the procedure outlined above. Disregarding Monte Carlo estimation error for a moment, we can see immediately from \eqref{eq:postboundkl} that provided $\forall y:\  \kl{p(\theta | y, d)}{\qp(\theta|y, d; \phi_n)} \downarrow 0$ as $n \to \infty$ then by Monotone Convergence, the EIG estimates converge to $\eig(d)$ as $n \to \infty$. The condition rarely applies because it requires the approximating family to include the true posterior. If $\kl{p(\theta | y, d)}{\qp(\theta|y, d; \phi_n)}$ is simply monotonic decreasing, then we have convergence to \eqref{eq:maxpost}, the best estimate possible within the given variational family.
 
 

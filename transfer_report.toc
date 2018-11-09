@@ -29,7 +29,7 @@
 \contentsline {section}{\numberline {2.1}Variational optimal experiment design}{18}{section.2.1}
 \contentsline {subsection}{\numberline {2.1.1}Bounding EIG}{19}{subsection.2.1.1}
 \contentsline {subsection}{\numberline {2.1.2}Estimation}{19}{subsection.2.1.2}
-\contentsline {subsection}{\numberline {2.1.3}Consistency}{19}{subsection.2.1.3}
+\contentsline {subsection}{\numberline {2.1.3}Convergence}{19}{subsection.2.1.3}
 \contentsline {subsection}{\numberline {2.1.4}Accounting for random effects}{20}{subsection.2.1.4}
 \contentsline {subsection}{\numberline {2.1.5}Experiments}{20}{subsection.2.1.5}
 \contentsline {section}{\numberline {2.2}Extensions}{21}{section.2.2}
@@ -37,29 +37,26 @@
 \contentsline {subsection}{\numberline {2.2.2}Analytic entropy}{23}{subsection.2.2.2}
 \contentsline {subsection}{\numberline {2.2.3}Experiments}{24}{subsection.2.2.3}
 \contentsline {chapter}{\numberline {3}Future directions}{25}{chapter.3}
-\contentsline {section}{\numberline {3.1}EIG}{25}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}EIG estimation on simpler models}{25}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}EIG estimation on complex models}{25}{subsection.3.1.2}
-\contentsline {subsection}{\numberline {3.1.3}Theory of EIG estimators}{25}{subsection.3.1.3}
-\contentsline {subsection}{\numberline {3.1.4}EIG gradients}{25}{subsection.3.1.4}
-\contentsline {subsection}{\numberline {3.1.5}EIG optimisation}{25}{subsection.3.1.5}
-\contentsline {subsection}{\numberline {3.1.6}Model misspecification}{26}{subsection.3.1.6}
-\contentsline {subsection}{\numberline {3.1.7}Sequential design and active learning}{26}{subsection.3.1.7}
-\contentsline {subsection}{\numberline {3.1.8}Optional stopping}{26}{subsection.3.1.8}
-\contentsline {subsection}{\numberline {3.1.9}Dynamic models}{26}{subsection.3.1.9}
-\contentsline {section}{\numberline {3.2}Beyond EIG}{26}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Causal inference}{26}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Power}{26}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Cost}{26}{subsection.3.2.3}
-\contentsline {subsection}{\numberline {3.2.4}Non-greedy}{26}{subsection.3.2.4}
-\contentsline {subsection}{\numberline {3.2.5}Other criteria}{27}{subsection.3.2.5}
-\contentsline {subsection}{\numberline {3.2.6}Experiment design for model criticism}{27}{subsection.3.2.6}
-\contentsline {chapter}{\numberline {4}Appendix}{28}{chapter.4}
-\contentsline {section}{\numberline {4.1}Variational families for GLMMs}{28}{section.4.1}
-\contentsline {section}{\numberline {4.2}Experiment details}{29}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}LinReg}{29}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}LinReg + RE}{30}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3}LinReg large ${\rm dim}(y)$}{31}{subsection.4.2.3}
-\contentsline {subsection}{\numberline {4.2.4}N$\Gamma ^{-1}$Reg}{31}{subsection.4.2.4}
-\contentsline {subsection}{\numberline {4.2.5}LinReg2}{32}{subsection.4.2.5}
-\contentsline {chapter}{Bibliography}{33}{subsection.4.2.5}
+\contentsline {section}{\numberline {3.1}Greedy EIG maximisation}{25}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Expanding the scope of variational OED}{25}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Importance weighting correction to variational OED}{26}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}Estimating the gradient of EIG}{27}{subsection.3.1.3}
+\contentsline {subsection}{\numberline {3.1.4}A sequential design framework in a probabilistic language}{28}{subsection.3.1.4}
+\contentsline {subsection}{\numberline {3.1.5}Optional stopping}{28}{subsection.3.1.5}
+\contentsline {subsection}{\numberline {3.1.6}EIG and power}{28}{subsection.3.1.6}
+\contentsline {section}{\numberline {3.2}Beyond greedy EIG maximisation}{28}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Cost and non-greedy optimisation}{28}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Causal inference}{29}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Model misspecification}{29}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}Experiment design for model criticism}{30}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.5}Dynamic models}{30}{subsection.3.2.5}
+\contentsline {subsection}{\numberline {3.2.6}Other criteria}{30}{subsection.3.2.6}
+\contentsline {chapter}{\numberline {4}Appendix}{31}{chapter.4}
+\contentsline {section}{\numberline {4.1}Variational families for GLMMs}{31}{section.4.1}
+\contentsline {section}{\numberline {4.2}Experiment details}{32}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}LinReg}{32}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}LinReg + RE}{33}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}LinReg large ${\rm dim}(y)$}{34}{subsection.4.2.3}
+\contentsline {subsection}{\numberline {4.2.4}N$\Gamma ^{-1}$Reg}{34}{subsection.4.2.4}
+\contentsline {subsection}{\numberline {4.2.5}LinReg2}{35}{subsection.4.2.5}
+\contentsline {chapter}{Bibliography}{36}{subsection.4.2.5}

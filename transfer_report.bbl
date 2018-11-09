@@ -42,10 +42,21 @@ Bloem-Reddy, B., Mathieu, E., Foster, A., Rainforth, T., Teh, Y.~W., Ge, H.,
   probabilistic programs.
 \newblock In {\em NIPS Workshop on Advances in Approximate Bayesian Inference}.
 
+\bibitem[Box, 1976]{box1976}
+Box, G.~E. (1976).
+\newblock Science and statistics.
+\newblock {\em Journal of the American Statistical Association},
+  71(356):791--799.
+
 \bibitem[Box, 1982]{box1982}
 Box, G.~E. (1982).
 \newblock Choice of response surface design and alphabetic optimality.
 \newblock Technical report, WISCONSIN UNIV-MADISON MATHEMATICS RESEARCH CENTER.
+
+\bibitem[Burda et~al., 2015]{iwae}
+Burda, Y., Grosse, R., and Salakhutdinov, R. (2015).
+\newblock Importance weighted autoencoders.
+\newblock {\em arXiv preprint arXiv:1509.00519}.
 
 \bibitem[Chaloner and Verdinelli, 1995]{chaloner1995}
 Chaloner, K. and Verdinelli, I. (1995).
@@ -64,6 +75,11 @@ Chen, X., Duan, Y., Houthooft, R., Schulman, J., Sutskever, I., and Abbeel, P.
   maximizing generative adversarial nets.
 \newblock In {\em Advances in neural information processing systems}, pages
   2172--2180.
+
+\bibitem[Chernoff, 1972]{chernoff1972sequential}
+Chernoff, H. (1972).
+\newblock {\em Sequential analysis and optimal design}, volume~8.
+\newblock Siam.
 
 \bibitem[Cohn et~al., 1996]{cohn1996}
 Cohn, D.~A., Ghahramani, Z., and Jordan, M.~I. (1996).
@@ -120,6 +136,13 @@ Golovin, D., Krause, A., and Ray, D. (2010).
 Gonz{\'a}lez, J., Osborne, M., and Lawrence, N. (2016).
 \newblock Glasses: Relieving the myopia of bayesian optimisation.
 \newblock In {\em Artificial Intelligence and Statistics}, pages 790--799.
+
+\bibitem[Goodfellow et~al., 2014]{goodfellow2014generative}
+Goodfellow, I., Pouget-Abadie, J., Mirza, M., Xu, B., Warde-Farley, D., Ozair,
+  S., Courville, A., and Bengio, Y. (2014).
+\newblock Generative adversarial nets.
+\newblock In {\em Advances in neural information processing systems}, pages
+  2672--2680.
 
 \bibitem[Hern{\'a}ndez-Lobato et~al., 2014]{pes}
 Hern{\'a}ndez-Lobato, J.~M., Hoffman, M.~W., and Ghahramani, Z. (2014).
@@ -204,6 +227,12 @@ Nowozin, S., Cseke, B., and Tomioka, R. (2016).
 \newblock In {\em Advances in Neural Information Processing Systems}, pages
   271--279.
 
+\bibitem[Osborne et~al., 2009]{osborne2009gaussian}
+Osborne, M.~A., Garnett, R., and Roberts, S.~J. (2009).
+\newblock Gaussian processes for global optimization.
+\newblock In {\em 3rd international conference on learning and intelligent
+  optimization (LION3)}, pages 1--15.
+
 \bibitem[Ouyang et~al., 2016]{ouyang2016}
 Ouyang, L., Tessler, M.~H., Ly, D., and Goodman, N. (2016).
 \newblock Practical optimal experiment design with probabilistic programs.
@@ -225,6 +254,11 @@ Pang, K., Dong, M., Wu, Y., and Hospedales, T. (2018).
 Paninski, L. (2005).
 \newblock Asymptotic theory of information-theoretic experimental design.
 \newblock {\em Neural Computation}, 17(7):1480--1507.
+
+\bibitem[Pearl et~al., 2009]{pearl2009causal}
+Pearl, J. et~al. (2009).
+\newblock Causal inference in statistics: An overview.
+\newblock {\em Statistics surveys}, 3:96--146.
 
 \bibitem[Piera and Parada, 2009]{piera2009}
 Piera, F.~J. and Parada, P. (2009).
@@ -284,6 +318,18 @@ Shahriari, B., Swersky, K., Wang, Z., Adams, R.~P., and De~Freitas, N. (2016).
 \newblock Taking the human out of the loop: A review of bayesian optimization.
 \newblock {\em Proceedings of the IEEE}, 104(1):148--175.
 
+\bibitem[Shepard, 1962]{shepard1962analysis}
+Shepard, R.~N. (1962).
+\newblock The analysis of proximities: multidimensional scaling with an unknown
+  distance function. i.
+\newblock {\em Psychometrika}, 27(2):125--140.
+
+\bibitem[Silver and Veness, 2010]{pomcp}
+Silver, D. and Veness, J. (2010).
+\newblock Monte-carlo planning in large pomdps.
+\newblock In {\em Advances in neural information processing systems}, pages
+  2164--2172.
+
 \bibitem[Srinivas et~al., 2009]{srinivas2009}
 Srinivas, N., Krause, A., Kakade, S.~M., and Seeger, M. (2009).
 \newblock Gaussian process optimization in the bandit setting: No regret and
@@ -300,6 +346,19 @@ Stuhlm{\"u}ller, A., Taylor, J., and Goodman, N. (2013).
 Tabak, E. and Turner, C.~V. (2013).
 \newblock A family of nonparametric density estimation algorithms.
 \newblock {\em Communications on Pure and Applied Mathematics}, 66(2):145--164.
+
+\bibitem[Torgerson, 1952]{torgerson1952multidimensional}
+Torgerson, W.~S. (1952).
+\newblock Multidimensional scaling: I. theory and method.
+\newblock {\em Psychometrika}, 17(4):401--419.
+
+\bibitem[Tucker et~al., 2017]{tucker2017rebar}
+Tucker, G., Mnih, A., Maddison, C.~J., Lawson, J., and Sohl-Dickstein, J.
+  (2017).
+\newblock Rebar: Low-variance, unbiased gradient estimates for discrete latent
+  variable models.
+\newblock In {\em Advances in Neural Information Processing Systems}, pages
+  2627--2636.
 
 \bibitem[van Den~Berg et~al., 2003]{berg2003}
 van Den~Berg, J., Curtis, A., and Trampert, J. (2003).

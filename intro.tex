@@ -22,7 +22,7 @@ We assume the data analysis model for the experiment takes the form given by the
 	\tikzstyle{every node}=[draw,shape=circle]
 	\node[draw,fill=lightgray] (y) at (0, 0) {$y$};
 	\node (t) at (2, 1) {$\theta$};
-	\node[draw,shape=rectangle] (d) at (-2, 1) {$d$};
+	\node[draw,shape=rectangle,fill=lightgray] (d) at (-2, 1) {$d$};
 	\draw [->] (d) -- (y);
 	\draw [->] (t) -- (y);
 \end{tikzpicture}
@@ -38,6 +38,7 @@ The likelihood $p(y_t | \theta, d_t)$ is assumed unchanged. That is, experimenta
 
 
 \subsection{One-step design}
+\label{sec:onestep}
 We begin with the case of designing one experiment, after which we will collect and analyse our data. In selecting an optimal experiment design, we must first say with respect to what utility a design is considered optimal. We begin by very briefly discussing a range of choices for utility. We then focus on a natural Bayesian choice of utility, the expected information gain.
 
 Suppose $\mathcal{D}$ is the space of admissible designs. We seek a utility $U: \mathcal{D} \to \R$. The optimal design would then be
@@ -115,19 +116,19 @@ then we have
 \item Epistemic uncertainty.
 The total entropy or uncertainty in response $y$ is
 \begin{equation}
-	H_{tot} = \entropy{p(y|d)}
+	H_{tot}(d) = \entropy{p(y|d)}
 \end{equation}
 the aleatoric uncertainty under parameter $\theta$ is
 \begin{equation}
-	H_{alea}(\theta) = \entropy{p(y|\theta, d)}
+	H_{alea}(\theta, d) = \entropy{p(y|\theta, d)}
 \end{equation}
 Under prior $p(\theta)$, the expected aleatoric uncertainty is
 \begin{equation}
-	H_{alea} = \expect_{\theta \sim p(\theta)}\left[ \entropy{p(y|\theta, d)} \right]
+	H_{alea}(d) = \expect_{\theta \sim p(\theta)}\left[ \entropy{p(y|\theta, d)} \right]
 \end{equation}
 The epistemic uncertainty, under $p(\theta)$, is
 \begin{align}
-	H_{epist} =& H_{tot} - H_{alea}\\
+	H_{epist}(d) =& H_{tot}(d) - H_{alea}(d)\\
 	=&\entropy{p(y|d)} - \expect_{\theta \sim p(\theta)}\left[ \entropy{p(y|\theta, d)} \right] \\
 	=&-\int p(y|d)\log p(y|d)dy + \iint p(y, \theta | d)\log p(y|\theta, d) dy \, d\theta\\
 	=& \eig(d)
@@ -213,7 +214,7 @@ Some have considered non-greedy strategies \cite{gonzalez2016} \cite{pang2018}. 
 
 
 \subsubsection{Optional stopping}
-
+\label{sec:optstop}
 We finally mention another possible complication. Rather than a fixed and finite time horizon $T$, we may we allowed to continue experimentation indefinitely, choosing when to stop. One natural choice to stopping criterion is to terminate when the posterior entropy reaches a threshold value.
 
 Optional stopping in Bayesian data analysis is a hotly debated topic \\ \cite{rouder2014, de2017}, but can be rigorously justified using martingale theory with certain stopping rules \cite{shafer2011} in the context of hypothesis testing. Of particular interest are stopping criteria based on non-negative supermartingales. We note in passing that the posterior entropy is a supermartingale (see \eqref{eq:apeeig}) and is non-negative if $\theta$ is discrete.
