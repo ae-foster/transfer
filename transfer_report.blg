@@ -4,10 +4,6 @@ The top-level auxiliary file: transfer_report.aux
 A level-1 auxiliary file: title_page.aux
 The style file: apalike.bst
 Database file #1: referencs.bib
-Repeated entry---line 253 of file referencs.bib
- : @article{long2013
- :                  ,
-I'm skipping whatever remains of this entry
 Warning--empty journal in ginsbourger2008
 Warning--empty journal in vincent2017
 You've used 67 entries,
@@ -51,4 +47,4 @@ warning$ -- 2
 while$ -- 229
 width$ -- 0
 write$ -- 846
-(There was 1 error message)
+(There were 2 warnings)

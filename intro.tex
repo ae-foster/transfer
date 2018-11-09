@@ -1,4 +1,4 @@
-Much of machine learning is concerned with the analysis of given data. By contrast, the field of optimal experiment design (OED) is concerned with the creation of new data by experimentation or query. In many contexts, careful design of the experiment leads to more efficient learning. The gain in efficiency can be dramatic \cite{myung2013}.
+Much of machine learning is concerned with the analysis of given data. By contrast, the field of optimal experiment design (OED) is concerned with the creation of new data by experimentation or query. In many contexts, careful design of the experiment leads to more efficient learning. The gain in efficiency can be dramatic \cite{myung2013}. Learning more efficiently can translate into reduced costs, time saved, fewer lives risked or less damage to the environment.
 
 Idealised active learning can be represented as follows
 \begin{center}
@@ -36,14 +36,16 @@ standard Bayesian updating, namely at experiment iteration $t$, we replace $p(\t
 $p(\theta | d_{1:t-1}, y_{1:t-1})$, where $d_{1:t-1}$ and  $y_{1:t-1}$ are the designs and outcomes at previous steps of the experiment.
 The likelihood $p(y_t | \theta, d_t)$ is assumed unchanged. That is, experimentation does not change the behaviour of the underlying system from time to time, conditional upon $\theta$.
 
+A classical example is the linear regression model. In this case $d$ is a design matrix $X_d$, $\theta$ is a coefficient vector with a Gaussian prior, and $y|\theta,d \sim N(X_d\theta, \sigma^2 I)$.
+
 
 \subsection{One-step design}
 \label{sec:onestep}
 We begin with the case of designing one experiment, after which we will collect and analyse our data. In selecting an optimal experiment design, we must first say with respect to what utility a design is considered optimal. We begin by very briefly discussing a range of choices for utility. We then focus on a natural Bayesian choice of utility, the expected information gain.
 
-Suppose $\mathcal{D}$ is the space of admissible designs. We seek a utility $U: \mathcal{D} \to \R$. The optimal design would then be
+Suppose $\mathcal{D}$ is the space of admissible designs. We seek a utility $U: \mathcal{D} \to \R$. An optimal design would then be
 \begin{equation}
-	d^* = \argmax_{d \in \mathcal{D}} \ U(d).
+	d^* \in \argmax_{d \in \mathcal{D}} \ U(d).
 \end{equation}
 
 Suppose initially that we can assign a real-valued utility $U(y, \theta, d)$ to the event of observing $y$ under design $d$ when the true latent variable was $\theta$. We can average over $y$ to obtain
@@ -77,7 +79,7 @@ Work dating back to \cite{lindley1956} instead uses an information-theoretic uti
 \begin{equation}
 	U(y, \theta, d) = \log \frac{p(\theta | y, d)}{p(\theta)} = \log \frac{p(y | \theta, d)}{p(y|d)}
 \end{equation}
-and Lindley established that this is the only form that satisfies certain intuitive properties of an informative experiment. For this reason, we will focus on this utility. See \cite{chaloner1995, ryan2015} for a fuller discussion of utility functions used in experiment design.
+and Lindley established that this is the only form that satisfies certain intuitive properties of an informative experiment. For this reason, we will focus on this utility. See \cite{chaloner1995, ryanreview} for a fuller discussion of utility functions used in experiment design.
 
 With the information-theoretic utility and Bayesian averaging, we arrive at the following form for $U(d)$, called the \textbf{expected information gain (EIG)}
 \begin{equation}
@@ -92,6 +94,7 @@ The EIG can be interpreted in a number of ways
 then $\eig(d) = \expect_{y\sim p(y|d)}[\text{IG}(y, d)] $.
 \item From APE. Define the \textbf{average posterior entropy} (APE) as 
 \begin{align}
+	\label{eq:apedef}
 	\ape(d) &= \iint p(y, \theta | d) \log p(\theta | y, d) \ dy \ d\theta \\
 	&= -\int p(y|d) \entropy{p(\theta | y, d)} dy
 \end{align}
@@ -135,16 +138,16 @@ The epistemic uncertainty, under $p(\theta)$, is
 \end{align}
 
 \end{enumerate}
-We shall see that the connection to mutual information in particular is handy for estimating EIG, because modern techniques for estimating MI have been developed in the recent past.
+We shall see that the connection to mutual information in particular is handy for estimating EIG, because techniques for estimating MI have been developed in the recent past.
 
 
 \subsection{Multi-step design}
-We turn to the case of multi-step, or adaptive, experiment design. In this context, we are able to base the next experiment on previous experimental designs and outcomes. Designing a sequence of multiple experiments, with a view to maximise expected utility can be viewed as a Partially Observable Markov Decision Process (POMDP) \cite{marchant2014}, and falls within the scope of reinforcement learning \cite{pang2018}. The problem is also referred to as backward induction or stochastic dynamic programming. The formal reframing of OED as a POMDP is laid out below.
+We turn to the case of multi-step, or adaptive, experiment design. In this context, we are able to base the next experiment on previous experimental designs and outcomes. Designing a sequence of multiple experiments, with a view to maximise expected utility can be viewed as a Partially Observable Markov Decision Process (POMDP) \cite{marchant2014}, and falls within the scope of reinforcement learning \cite{pang2018}. The problem is also referred to as \textit{backward induction} or \textit{stochastic dynamic programming}. The formal reframing of OED as a POMDP is laid out below.
 
 \subsubsection{Setup}
 Suppose we have a determinic, finite time horizon $t=1, ..., T$. We specify as Partially Observable Markov Decision Process (POMDP) as follows.
 \begin{itemize}
-\item States $s_t = (\theta, h_t)$, where $h_t = d_{1:t}, y_{1:t}$ the history of designs $d$ and outcomes $y$ up to the current time. Here $y_t \sim p(y | \theta, d)$ is the outcome of performing the experiment using design $d_t$. The practical state $s'_t$ consists of the sufficient statistics for $\theta$ obtained from $h_t$. These can be used to compute the belief states $b_t$, encoding the full posterior for $\theta$ given that history $h_t$.
+\item States $s_t = (\theta, h_t)$, where $h_t = d_{1:t}, y_{1:t}$ the history of designs $d$ and outcomes $y$ up to the current time. Here $y_t \sim p(y | \theta, d)$ is the outcome of performing the experiment using design $d_t$.  The belief states $b_t(\theta)$, the states that we can actually observe, are the posterior for $\theta$ given the history $h_t$ (and the prior $p(\theta)$). So $b_t(\theta) = p(\theta | h_t)$.
 \item Actions $a_t = d_{t+1}$. Transitions correspond to running the experiment and producing the outcome $y_{t+1}$.
 \item Observations $o_t = h_t$. Thus the only unobserved part of the state $(\theta, h_t)$ is the latent $\theta$.
 \item Rewards $r_t = r(t, \theta, h_t)$. We take $r$ to be a non-random function. Note that in many OED settings, we take $r_t = 0$ for $t<T$. Intuitively, this means we only care about our final understanding of or action upon the system, not the path taken to it. This is the choice made by \cite{gonzalez2016} among others.
@@ -157,8 +160,10 @@ where $\gamma \in [0,1]$ is the discount factor, often set to 1 in finite horizo
 
 
 \subsubsection{Connection to EIG}
+In this section, we first show that when $T=1$ our POMDP formulation, with an appropriate choice of reward, does give back the EIG maximisation approach we discussed previously. We then look at a general horizon $T$ with an information-theoretic reward, and show that two different ways of writing down the information-theoretic reward are actually equivalent.
+
 \paragraph{Horizon 1}
-Suppose $T=1$. Choose the following reward function
+Suppose $T=1$. Choose the following reward function (which comes from the information-theoretic utility)
 \begin{equation}
 r(1, \theta, h) = \log \frac{p(\theta | y, d)}{p(\theta)} = \log \frac{p(y | \theta, d)}{p(y|d)}
 \end{equation}
@@ -166,7 +171,7 @@ The $Q$-function of action $d_1$ is the expected reward
 \begin{equation}
 	Q(s_0, d_1) = E_{y \sim p(y|\theta, d)}[r(t, \theta, d_1, y)]
 \end{equation}
-Since we have no observation of $\theta$, the belief $Q$-function of the belief state $p(\theta)$ and action $d_1$ is
+Since we do not know $\theta$, we marginalise it out using our prior $p(\theta)$. This is equivalent to computing the $Q$-function on \textit{belief states} rather than the original states. The $Q$-function of the belief state $p(\theta)$ and action $d_1$ is
 \begin{equation}
 	Q(p(\theta), d_1) = E_{\theta \sim p(\theta)}\{E_{y \sim p(y|\theta, d)}[r(t, \theta, d_1, y)]\}
 \end{equation}
@@ -178,7 +183,7 @@ which reduces to the familiar expression
 \paragraph{Horizon $T$}
 This formalism provides a convenient way to avoid the greedy approach to sequential design that is compatible with the information-theoretic objective of \cite{lindley1956}.
 
-Suppose the belief at time $t$ is $b_t(\theta)$. This can be computed from the sufficient stats $s'_t$. We take the reward to be $0$ at $t<T$ and
+Suppose the belief at time $t$ is $b_t(\theta)$. We take the reward to be $0$ at $t<T$ and
 \begin{equation}
 	r(T, \theta, h_T) = r(T, \theta, b_T(\theta)) = \log \frac{b_T(\theta) }{p(\theta)}
 \end{equation}
@@ -203,11 +208,11 @@ and this is equivalent to the previous formulation. To see this, consider the be
 where $p(y_{t+1:T}|\theta, d_{t+1})$ assumes an optimal strategy after step $t+1$, under reward \eqref{eq:rlmutli}. We can now see by induction that the optimal strategy and $Q$-functions are the same for either choice of reward structure.
 
 \subsubsection{The greedy approach}
-In reinforcement learning, greediness refers to maximising the one-step-ahead reward, namely
+In reinforcement learning and operational research, greediness refers to maximising the one-step-ahead reward, namely
 \begin{equation}
 	a_t = \argmax_{a_t \in \mathcal{A}} \left(\expect[r_{t+1} | a_t] \right)
 \end{equation}
-which, with the reward of \eqref{eq:rlmutli}, corresponds to one-step EIG maximisation at each step. We primarily focus on this form of multi-step optimisation because it removes all aspects of future planning beyond a single step from an already difficult problem.
+which, with the reward of \eqref{eq:rlmutli}, corresponds to one-step EIG maximisation at each step. The greedy approach is a commonly employed heuristic in many optimisation settings. We primarily focus on this form of multi-step optimisation because it removes all aspects of future planning beyond a single step from an already difficult problem.
 
 \subsubsection{Non-greedy approaches}
 Some have considered non-greedy strategies \cite{gonzalez2016} \cite{pang2018}. See \cite[sec 6.1]{ryanreview} for a summary of `backwards induction' approaches.
@@ -243,17 +248,19 @@ To the first question, the answer is simply that the posterior is the same as if
 and the following conditional density for $\theta$
 \begin{align}
 	p(\theta | y_1, d_1, y_2, d_2) =& \frac{p(\theta, y_1, d_1, y_2, d_2)}{p(y_1, d_1, y_2, d_2)} \\
+	\label{eq:posteriordvar}
 	=& \frac{p(\theta)p(d_1)p(y_1|\theta, d_1)p(d_2|y_1,d_1)p(y_2|\theta,d_2)}{\int p(\theta)p(d_1)p(y_1|\theta, d_1)p(d_2|y_1,d_1)p(y_2|\theta,d_2) d\theta} \\
 	=& \frac{p(d_1)p(d_2|y_1,d_1)\ p(\theta)p(y_1|\theta, d_1)p(y_2|\theta,d_2)}{p(d_1)p(d_2|y_1,d_1)\ \int p(\theta)p(y_1|\theta, d_1)p(y_2|\theta,d_2) d\theta} \\
+	\label{eq:posteriordfix}
 	=& \frac{p(\theta)p(y_1|\theta, d_1)p(y_2|\theta,d_2)}{\int p(\theta)p(y_1|\theta, d_1)p(y_2|\theta,d_2) d\theta}
 \end{align}
-showing that the dependence between $d_2$ and $d_1, y_1$ need not bother us. A related question from \cite{berry1985} was whether the map that takes the observed data to the posterior is a measurable function. This was addressed in \cite[pp. 18-20]{berry1985} in the restricted setting of the multi-armed bandit.
+showing that computing the posterior when regarding $d_2$ as a random variable that depends on $y_1, d_1$, \eqref{eq:posteriordvar}, and computing it considering $d_2$ as a fixed and pre-ordained quantity, \eqref{eq:posteriordfix}, actually give the same result. A related question from \cite{berry1985} was whether the map that takes the observed data to the posterior is a measurable function. This was addressed in \cite[pp. 18-20]{berry1985} in the restricted setting of the multi-armed bandit.
 
 A powerful answer to the second question was given by \cite{paninski2005} and is a form of Bernstein--von Mises Theorem for EIG maximisation OED. Under relatively mild conditions, for any neighbourhood $\mathcal{U}$ of the true parameter value $\theta_0$ we have
 \begin{equation}
-	p(\mathcal{U} | y_{1:T}, d_{1:T}) \to 1 \text{ as } T \to \infty \text{ in probability}
+	p(\mathcal{U} | y_{1:T}, d_{1:T}) \to 1 \text{ as } T \to \infty \text{ in probability.}
 \end{equation}
-Under further conditions, we can show that the posteriors $p(\theta | y_{1:T}, d_{1:T})$ are asymptotically Normal with covariance matrix $\Sigma_\text{info}$. The same result holds for i.i.d. sampling of designs, giving rise to $\Sigma_\text{iid}$. We have that $\text{det}\ \Sigma_\text{info} \le \text{det}\ \Sigma_\text{iid}$. This led \cite{paninski2005} to say ``Thus, information maximization is in a rigorous sense asymptotically more efficient than the i.i.d. sampling strategy.'' Related results were obtained by \cite{pronzato2010} and \cite{hu1998}.
+Under further conditions, we can show that the posteriors $p(\theta | y_{1:T}, d_{1:T})$ are asymptotically Normal with some covariance matrix $\Sigma_\text{info}$. The same result holds for i.i.d. sampling of designs, giving rise to some other covariance matrix $\Sigma_\text{iid}$. We have that $\text{det}\ \Sigma_\text{info} \le \text{det}\ \Sigma_\text{iid}$. This led \cite{paninski2005} to say ``Thus, information maximization is in a rigorous sense asymptotically more efficient than the i.i.d. sampling strategy.'' Related results were obtained by \cite{pronzato2010} and \cite{hu1998}.
 
 \section{Estimation of EIG}
 \label{sec:esteig}
@@ -322,7 +329,7 @@ A number of authors \cite{long2013, ryan2015} use some form of Laplace approxima
 
 \subsection{Mutual information estimation}
 \label{sec:mie}
-As mentioned previously, EIG estimation is mathematically equivalent to mutual information estimation, a topic that has received recent attention in part due to the connection with Generative Adversarial Networks (GANs) \cite{infogan} and disentanglement \cite{tianqichen}. In the following section, we drop $d$ from our graphical model, and consider a joint density $p(y, \theta) = p(\theta)p(y|\theta)$.
+As mentioned previously, EIG estimation is mathematically equivalent to mutual information estimation, a topic that has received recent attention in part due to the connection with Generative Adversarial Networks (GANs) \cite{infogan, fgan} and disentanglement \cite{tianqichen}. In the following section, we drop $d$ from our graphical model, and consider a joint density $p(y, \theta) = p(\theta)p(y|\theta)$.
 
 Since $p(\theta|y)$ is typically an intractable, we might use an approximation $q(\theta|y)$. An idea used by \cite{ba} and \cite{infogan} is to bound the mutual information in terms of an amortised posterior $q(\theta|y)$ as
 \begin{align}
@@ -348,7 +355,7 @@ Practical implementations arising from both these objective functions follow fro
 \label{sec:opteig}
 So far, little attention has been paid to the design $d$. We suppose now that $d \in \mathcal{D}$ and we seek
 \begin{equation}
-	d^* = \argmax_{d\in\mathcal{D}} \quad \eig(d)
+	d^* \in \argmax_{d\in\mathcal{D}} \  \eig(d)
 \end{equation}
 the optimal design. As outlined in the previous section, we can have only approximate estimates of $\eig(d)$. Thus we seek a global optimum of a unknown function which we have only noisy evaluations of. This puts us squarely in the domain of Bayesian optimisation \cite{shahriari2016}. When $\mathcal{D}$ is finite, we might instead call it a bandit problem.
 

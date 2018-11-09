@@ -20,7 +20,7 @@ than to treat separate values of $y$ as distinct inference problems.
 
 \subsection{Bounding EIG}
 \label{sec:bounds}
-We construct a variational bound, $\mathcal{L}_p(d)$, using the amortized posterior $\qp(\theta | y,d)$:
+We construct a variational lower bound, $\mathcal{L}_p(d)$, using the amortized posterior $\qp(\theta | y,d)$:
 \begin{align}
 	\eig(d) =& \iint  p(y, \theta | d) \log \frac{p(\theta | y, d)q_{{p}}(\theta | y,d)}{\qp(\theta | y,d)} \, dy \, d\theta + \entropy{p(\theta)}  \\
 	\label{eq:postboundkl}
@@ -88,8 +88,8 @@ we have from Gibbs' inequality
 \end{align}
 %%%
 Here we can no longer derive a direct bound on the EIG, but we can still
-use these inequalities to train to amortized densities, which will yield the
-true EIG if they match the true densities.
+use these inequalities to train an approximate marginal density $\qm$ and an amortized approximate likelihood $\ql$, which will yield the
+true EIG if they match the true marginal and likelihood respectively.
 Namely, suppose $\mathcal{Q}_1$ is a family of variational distributions  $\qm(y|d; \phi_1)$ indexed by $\phi_1$ 
 and $\mathcal{Q}_2$ is a family of variational distributions $\ql(y|\theta,d; \phi_2)$ indexed by $\phi_2$. Then a suitable objective for learning $\phi_1, \phi_2$ is
 \begin{align}
@@ -201,11 +201,11 @@ Our proposed method is based on taking Monte Carlo sums of log densities to appr
 	\label{eq:crossentropyest}
 	\ape(d) \approx -\iint p(y, \theta | d) \log \qp (\theta | y, d; \phi)\, dy\, d\theta,
 \end{equation}
-which can be rewritten as
+where the APE was defined in \eqref{eq:apedef} and is simple $\entropy{p(\theta)} - \eig(d)$. The above equation can be rewritten as
 \begin{equation}
-	\ape(d) \approx -\int p(y|d) \int p(\theta | y, d) \log \qp (\theta | y, d; \phi)\, d\theta\, dy
+	\ape(d) \approx -\int p(y|d) \int p(\theta | y, d) \log \qp (\theta | y, d; \phi)\, d\theta\, dy.
 \end{equation}
-we could instead have used the following
+We could instead have used the following
 \begin{equation}
 	\ape(d) \approx -\int p(y|d) \int \qp (\theta | y, d; \phi) \log \qp (\theta | y, d; \phi)\, d\theta\, dy = -\int p(y|d) \entropy{\qp (\theta | y, d; \phi)} dy.
 \end{equation}

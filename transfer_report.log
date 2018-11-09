@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.11.7)  9 NOV 2018 16:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.11.7)  9 NOV 2018 18:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1414,32 +1414,32 @@ Chapter 1.
 (./intro.tex [5
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 55.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 57.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 55.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 57.
 
-Overfull \hbox (6.4477pt too wide) in paragraph at lines 64--66
+Overfull \hbox (6.4477pt too wide) in paragraph at lines 66--68
 \T1/cmr/m/n/10 which leads to the the Fisher In-for-ma-tion Ma-trix, used in ma
 ny ex-per-i-ment de-sign cri-te-ria [[]],
  []
 
-[6] [7] [8] [9]
-Overfull \hbox (17.9773pt too wide) in paragraph at lines 213--214
+[6] [7] [8] [9] [10]
+Overfull \hbox (17.9773pt too wide) in paragraph at lines 218--219
 \T1/cmr/m/n/10 Some have con-sid-ered non-greedy strate-gies [[]] [[]]. See [[]
 ,
  []
 
-[10] [11] [12] [13] [14] [15]
-Overfull \hbox (18.74002pt too wide) in paragraph at lines 381--382
+[11] [12] [13] [14] [15]
+Overfull \hbox (18.74002pt too wide) in paragraph at lines 388--389
 []\T1/cmr/m/n/10 The con-nec-tion be-tween ac-tive learn-ing and Bayesian op-ti
 -mal de-sign was ex-plored in [[]].
  []
 
 [16]
-Overfull \hbox (8.77121pt too wide) in paragraph at lines 393--394
+Overfull \hbox (8.77121pt too wide) in paragraph at lines 400--401
 \T1/cmr/m/n/10 In most ap-pli-ca-tions, we as-sume that ex-per-i-ments will be 
 car-ried out af-ter de-sign. In [[]],
  []
@@ -1456,12 +1456,12 @@ Overfull \hbox (41.68524pt too wide) in paragraph at lines 72--73
  []
 
 [19] [20]
-<figures/lm.png, id=684, 722.7pt x 361.35pt>
+<figures/lm.png, id=686, 722.7pt x 361.35pt>
 File: figures/lm.png Graphic file (type png)
 <use figures/lm.png>
 Package pdftex.def Info: figures/lm.png  used on input line 147.
 (pdftex.def)             Requested size: 361.3491pt x 180.67456pt.
-<figures/lm_re.png, id=686, 722.7pt x 361.35pt>
+<figures/lm_re.png, id=688, 722.7pt x 361.35pt>
 File: figures/lm_re.png Graphic file (type png)
 <use figures/lm_re.png>
 Package pdftex.def Info: figures/lm_re.png  used on input line 155.
@@ -1470,7 +1470,7 @@ Package pdftex.def Info: figures/lm_re.png  used on input line 155.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/lm_large_n.png, id=689, 722.7pt x 361.35pt>
+<figures/lm_large_n.png, id=691, 722.7pt x 361.35pt>
 File: figures/lm_large_n.png Graphic file (type png)
 <use figures/lm_large_n.png>
 Package pdftex.def Info: figures/lm_large_n.png  used on input line 162.
@@ -1478,7 +1478,7 @@ Package pdftex.def Info: figures/lm_large_n.png  used on input line 162.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/nig.png, id=692, 722.7pt x 361.35pt>
+<figures/nig.png, id=694, 722.7pt x 361.35pt>
 File: figures/nig.png Graphic file (type png)
 <use figures/nig.png>
 Package pdftex.def Info: figures/nig.png  used on input line 169.
@@ -1488,7 +1488,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 [21 <./figures/lm.png>] [22 <./figures/lm_re.png> <./figures/lm_large_n.png>]
 [23 <./figures/nig.png>]
-<figures/ae_and_dv.png, id=736, 706.8006pt x 425.6703pt>
+<figures/ae_and_dv.png, id=740, 706.8006pt x 425.6703pt>
 File: figures/ae_and_dv.png Graphic file (type png)
 <use figures/ae_and_dv.png>
 Package pdftex.def Info: figures/ae_and_dv.png  used on input line 241.
@@ -1541,13 +1541,13 @@ Package rerunfilecheck Info: File `transfer_report.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 143.
  ) 
 Here is how much of TeX's memory you used:
- 47788 strings out of 492639
- 1081895 string characters out of 6129287
- 1272479 words of memory out of 5000000
- 50649 multiletter control sequences out of 15000+600000
+ 47791 strings out of 492639
+ 1081942 string characters out of 6129287
+ 1272642 words of memory out of 5000000
+ 50652 multiletter control sequences out of 15000+600000
  554495 words of font info for 75 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
- 63i,16n,101p,1325b,625s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 63i,16n,101p,1084b,625s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exi
 st, replaced by a fixed one
 
@@ -1591,10 +1591,10 @@ cm-super/sfrm1000.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm
 -super/sfrm2488.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-s
 uper/sfti1000.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-sup
 er/sfti1200.pfb>
-Output written on transfer_report.pdf (41 pages, 825138 bytes).
+Output written on transfer_report.pdf (41 pages, 825182 bytes).
 PDF statistics:
- 1085 PDF objects out of 1200 (max. 8388607)
- 947 compressed objects within 10 object streams
+ 1089 PDF objects out of 1200 (max. 8388607)
+ 951 compressed objects within 10 object streams
  305 named destinations out of 1000 (max. 500000)
  627 words of extra memory for PDF output out of 10000 (max. 10000000)
 

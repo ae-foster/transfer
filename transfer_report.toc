@@ -9,20 +9,20 @@
 \contentsline {subsubsection}{Connection to EIG}{9}{section*.5}
 \contentsline {paragraph}{Horizon 1}{9}{section*.6}
 \contentsline {paragraph}{Horizon $T$}{10}{section*.7}
-\contentsline {subsubsection}{The greedy approach}{10}{section*.8}
+\contentsline {subsubsection}{The greedy approach}{11}{section*.8}
 \contentsline {subsubsection}{Non-greedy approaches}{11}{section*.9}
 \contentsline {subsubsection}{Optional stopping}{11}{section*.10}
 \contentsline {subsection}{\numberline {1.1.4}Theoretical considerations}{11}{subsection.1.1.4}
 \contentsline {section}{\numberline {1.2}Estimation of EIG}{12}{section.1.2}
-\contentsline {subsection}{\numberline {1.2.1}Challenges in EIG estimation}{12}{subsection.1.2.1}
+\contentsline {subsection}{\numberline {1.2.1}Challenges in EIG estimation}{13}{subsection.1.2.1}
 \contentsline {subsection}{\numberline {1.2.2}Nested Monte Carlo}{13}{subsection.1.2.2}
 \contentsline {subsection}{\numberline {1.2.3}Inference based approaches}{14}{subsection.1.2.3}
 \contentsline {subsection}{\numberline {1.2.4}Mutual information estimation}{14}{subsection.1.2.4}
 \contentsline {section}{\numberline {1.3}Optimisation of EIG}{15}{section.1.3}
-\contentsline {section}{\numberline {1.4}Applications}{15}{section.1.4}
-\contentsline {subsection}{\numberline {1.4.1}Bayesian optimisation}{15}{subsection.1.4.1}
+\contentsline {section}{\numberline {1.4}Applications}{16}{section.1.4}
+\contentsline {subsection}{\numberline {1.4.1}Bayesian optimisation}{16}{subsection.1.4.1}
 \contentsline {subsection}{\numberline {1.4.2}Active learning}{16}{subsection.1.4.2}
-\contentsline {subsection}{\numberline {1.4.3}Psychology}{16}{subsection.1.4.3}
+\contentsline {subsection}{\numberline {1.4.3}Psychology}{17}{subsection.1.4.3}
 \contentsline {subsection}{\numberline {1.4.4}Big data analysis}{17}{subsection.1.4.4}
 \contentsline {subsection}{\numberline {1.4.5}Natural science}{17}{subsection.1.4.5}
 \contentsline {chapter}{\numberline {2}Estimating EIG}{18}{chapter.2}
@@ -41,15 +41,15 @@
 \contentsline {subsection}{\numberline {3.1.1}Expanding the scope of variational OED}{25}{subsection.3.1.1}
 \contentsline {subsection}{\numberline {3.1.2}Importance weighting correction to variational OED}{26}{subsection.3.1.2}
 \contentsline {subsection}{\numberline {3.1.3}Estimating the gradient of EIG}{27}{subsection.3.1.3}
-\contentsline {subsection}{\numberline {3.1.4}A sequential design framework in a probabilistic language}{28}{subsection.3.1.4}
+\contentsline {subsection}{\numberline {3.1.4}A sequential design framework in a probabilistic language}{27}{subsection.3.1.4}
 \contentsline {subsection}{\numberline {3.1.5}Optional stopping}{28}{subsection.3.1.5}
 \contentsline {subsection}{\numberline {3.1.6}EIG and power}{28}{subsection.3.1.6}
 \contentsline {section}{\numberline {3.2}Beyond greedy EIG maximisation}{28}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}Cost and non-greedy optimisation}{28}{subsection.3.2.1}
 \contentsline {subsection}{\numberline {3.2.2}Causal inference}{29}{subsection.3.2.2}
 \contentsline {subsection}{\numberline {3.2.3}Model misspecification}{29}{subsection.3.2.3}
-\contentsline {subsection}{\numberline {3.2.4}Experiment design for model criticism}{30}{subsection.3.2.4}
-\contentsline {subsection}{\numberline {3.2.5}Dynamic models}{30}{subsection.3.2.5}
+\contentsline {subsection}{\numberline {3.2.4}Experiment design for model criticism}{29}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.5}Dynamic models}{29}{subsection.3.2.5}
 \contentsline {subsection}{\numberline {3.2.6}Other criteria}{30}{subsection.3.2.6}
 \contentsline {chapter}{\numberline {4}Appendix}{31}{chapter.4}
 \contentsline {section}{\numberline {4.1}Variational families for GLMMs}{31}{section.4.1}
